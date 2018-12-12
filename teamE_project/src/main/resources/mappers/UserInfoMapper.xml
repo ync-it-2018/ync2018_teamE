@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.ync.project.mapper.UserInfoMapper">
+<insert id="create">
+INSERT INTO TE_USERINFORMATION (USER_ID, USER_BIRTHDAY, USER_ADDRESS, USER_PASSWORD, USER_NAME, USER_PHONENUM, USER_EMAIL, MILE_PRICE) 
+VALUES (#{user_id}, TO_DATE(#{user_birthday}, 'YYYY-MM-DD'), #{user_address}, #{user_password}, #{user_name}, #{user_phonenum}, #{user_email}, 500); 
+</insert>
+
+<select id="read" resultType="UserInfoVO">
+	SELECT  *
+	FROM 	te_userinformation 
+	WHERE	user_id = #{user_id}
+</select>
+
+<delete id="delete">
+	delete from te_userinformation where user_id = #{user_id}
+</delete>
+
+<select id="listAll" resultType="UserInfoVO">
+	<![CDATA[
+	SELECT 	user_id,
+			user_name,
+			user_email,
+			user_phonenum,
+			mile_price
+	FROM te_userinformation 
+	ORDER BY user_id DESC
+	]]>  
+</select>
+ 
+
+<select id="listPage"  resultType="UserInfoVO">
+	<![CDATA[
+	SELECT	user_id,
+			user_name,
+			user_email,
+			user_phonenum,
+			mile_price
+	FROM   (SELECT 	/*+INDEX_DESC(te_userinformation te_xpk_userinformation_pk)*/
+					rownum rn,
+					user_id,
+					user_name,
+					user_email,
+					user_phonenum,
+					mile_price
+	  		FROM	te_userinformation
+			WHERE	rownum <= #{page} * #{perPageNum}
+			)
+	WHERE 	rn > (#{page} -1) * #{perPageNum}
+	]]>
+</select>
+
+<select id="listCriteria" resultType="UserInfoVO">
+	<![CDATA[
+	SELECT	user_id,
+			user_name,
+			user_email,
+			user_phonenum,
+			mile_price
+	FROM   (SELECT 	/*+INDEX_DESC(te_userinformation te_xpk_userinformation_pk)*/
+					rownum rn,
+					user_id,
+					user_name,
+					user_email,
+					user_phonenum,
+					mile_price
+	  		FROM	te_userinformation
+			WHERE	rownum <= #{page} * #{perPageNum}
+			)
+	WHERE 	rn > (#{page} -1) * #{perPageNum}
+	ORDER BY user_id DESC
+	]]>
+</select>
+
+<select id="countPaging" resultType="int">
+	<![CDATA[
+	SELECT	count(user_id) 
+	FROM	te_userinformation 
+	]]>
+</select>
+
+<select id="listSearch"  resultType="UserInfoVO">
+	<![CDATA[
+		SELECT	user_id,
+				user_name,
+				user_email,
+				user_phonenum,
+				mile_price
+		FROM   (SELECT 	/*+INDEX_DESC(te_userinformation te_xpk_userinformation_pk)*/
+						rownum rn,
+						user_id,
+						user_name,
+						user_email,
+						user_phonenum,
+						mile_price
+		  		FROM	te_userinformation
+	]]>
+		<!--
+		<where> 엘리먼트로 검색을 하지 않았을 경우 AND rownum <= 과 같이 WHERE 구문이 빠져버린다.
+		따라서 <where> 를 사용하면 AND나 OR로 구문이 시작되면 AND나 OR를 지워버린다.
+		아래 구문과 동일한 기능. 
+		<trim prefix="WHERE" prefixOverrides="AND|OR ">
+		  ... 
+		</trim>
+		http://www.mybatis.org/mybatis-3/ko/dynamic-sql.html 참고
+		-->
+		<where>
+				<include refid="search"></include>
+				<![CDATA[
+				AND rownum <= #{page} * #{perPageNum}
+				ORDER BY user_id DESC
+		  		)
+				]]>
+		</where>
+	<![CDATA[
+		WHERE rn > (#{page} -1) * #{perPageNum}
+		
+	]]>
+</select>
+
+<select id="listSearchCount"  resultType="int">
+	<![CDATA[
+		SELECT	count(user_id)
+		FROM	te_userinformation
+	]]>
+</select>
+<!-- 분리되기 전 listSearch 쿼리 시작 -->
+<select id="listSearch_old"  resultType="NoticeVO">
+	<![CDATA[
+		SELECT	user_id,
+				user_name,
+				user_email,
+				user_phonenum,
+				mile_price
+		FROM   (SELECT 	/*+INDEX_DESC(te_userinformation te_xpk_userinformation_pk)*/
+						rownum rn,
+						user_id,
+						user_name,
+						user_email,
+						user_phonenum,
+						mile_price
+		  		FROM	te_userinformation
+	]]>
+		<!--
+		<where> 엘리먼트로 검색을 하지 않았을 경우 AND rownum <= 과 같이 WHERE 구문이 빠져버린다.
+		따라서 <where> 를 사용하면 AND나 OR로 구문이 시작되면 AND나 OR를 지워버린다.
+		아래 구문과 동일한 기능. 
+		<trim prefix="WHERE" prefixOverrides="AND|OR ">
+		  ... 
+		</trim>
+		http://www.mybatis.org/mybatis-3/ko/dynamic-sql.html 참고
+		-->
+		<where>
+				
+				<if test="searchType != null" >
+					<if test="searchType == 't'.toString()">
+						AND notice_title LIKE '%'|| #{keyword}||'%'
+					</if>
+					<if test="searchType == 'c'.toString()">
+						AND notice_contents LIKE '%'|| #{keyword}||'%'
+					</if>
+					<if test="searchType == 'w'.toString()">
+						AND admin_id LIKE '%'|| #{keyword}||'%'
+					</if>    
+					<if test="searchType == 'tc'.toString()">
+						AND (notice_title LIKE '%'|| #{keyword}||'%' OR notice_contents LIKE '%'|| #{keyword}||'%')
+					</if>      
+				</if>
+
+				<![CDATA[
+				AND rownum <= #{page} * #{perPageNum}
+		  		)
+				]]>
+		</where>
+	<![CDATA[
+		WHERE rn > (#{page} -1) * #{perPageNum}
+	]]>
+</select>
+
+<!-- 동적SQL (<sql>로 분리) 작성된 최종 SQL 시작-->
+<sql id="search">
+	<if test="searchType != null" >
+		<if test="searchType == 't'.toString()">
+			AND notice_title LIKE '%'|| #{keyword}||'%'
+		</if>
+		<if test="searchType == 'c'.toString()">
+			AND notice_contents LIKE '%'|| #{keyword}||'%'
+		</if>
+		<if test="searchType == 'w'.toString()">
+			AND admin_id LIKE '%'|| #{keyword}||'%'
+		</if>    
+		<if test="searchType == 'tc'.toString()">
+			AND (notice_title LIKE '%'|| #{keyword}||'%' OR notice_contents LIKE '%'|| #{keyword}||'%')
+		</if>      
+	</if>
+</sql>
+
+</mapper>

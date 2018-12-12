@@ -1,0 +1,96 @@
+package kr.ync.project.front.controller;
+
+import java.util.Date;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.util.WebUtils;
+
+import kr.ync.project.admin.service.AdminService;
+import kr.ync.project.front.domain.UserLoginVO;
+import kr.ync.project.front.dto.UserLoginDTO;
+import kr.ync.project.front.service.UserLoginService;
+import kr.ync.project.admin.controller.AdminInfoController;
+import kr.ync.project.admin.domain.AdminVO;
+import kr.ync.project.admin.dto.LoginDTO;
+import lombok.extern.slf4j.Slf4j;
+
+@Controller
+@RequestMapping("/front/user/*")
+@Slf4j
+public class UserLoginController {
+
+	@Autowired
+	private UserLoginService service;
+
+	@GetMapping(value = "/login")
+	public void loginGET(@ModelAttribute("dto") UserLoginDTO dto) {
+
+	}
+	
+	@GetMapping(value = "/loginError")
+	public String loginError(@ModelAttribute("dto") UserLoginDTO dto) {
+		return "front/user/loginError";
+	}	
+	
+	@PostMapping(value = "/loginPost")
+	public void loginPOST(UserLoginDTO dto, HttpSession session, Model model) throws Exception {
+
+		UserLoginVO vo = service.login(dto);
+
+		if (vo == null) {
+			return;
+		}
+
+		model.addAttribute("UserLoginVO", vo);
+
+		if (dto.isUseCookie()) {
+
+			int amount = 60 * 60 * 24 * 7;
+
+			Date sessionLimit = new Date(System.currentTimeMillis() + (1000 * amount));
+
+			service.keepLogin(vo.getUser_id(), session.getId(), sessionLimit);
+		}
+
+	}
+
+	@GetMapping(value = "/logout")
+	public void logout(HttpServletRequest request, HttpServletResponse response, HttpSession session)
+			throws Exception {
+
+		log.info("logout.................................1");
+
+		Object obj = session.getAttribute("login");
+
+		if (obj != null) {
+			UserLoginVO vo = (UserLoginVO) obj;
+			log.info("logout.................................2");
+			session.removeAttribute("login");
+			session.invalidate();
+
+			log.info("logout.................................3");
+			Cookie loginCookie = WebUtils.getCookie(request, "loginCookie");
+
+			if (loginCookie != null) {
+				log.info("logout.................................4");
+				loginCookie.setPath("/");
+				loginCookie.setMaxAge(0);
+				response.addCookie(loginCookie);
+				service.keepLogin(vo.getUser_id(), session.getId(), new Date());
+				log.info("logout success................");
+			}
+		}
+		response.sendRedirect("/");
+	}
+}

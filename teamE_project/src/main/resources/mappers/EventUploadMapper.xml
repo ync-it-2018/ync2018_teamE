@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.ync.project.mapper.EventUploadMapper">
+
+<insert id="create">
+	INSERT INTO te_ask (ask_num, ask_title, ask_contents, admin_id, ask_date) 
+	VALUES(SEQ_BOARD.NEXTVAL, #{ask_title},#{ask_contents}, #{admin_id}, to_date(sysdate,'yyyy/mm/dd'))
+</insert>
+
+<select id="read" resultType="CServiceVO">
+	SELECT  ask_num,
+	 		ask_title,
+	 		ask_contents,
+	 		ask_answercontent,
+	 		user_id,
+	 		admin_id,
+	 		ask_date
+	FROM 	te_ask 
+	WHERE	ask_num = #{ask_num}
+</select>
+
+<update id="update">
+	UPDATE te_ask SET ask_answercontent = #{ask_answercontent},
+						ask_answerstate = '1',
+						 admin_id = #{admin_id}
+	WHERE ask_num = #{ask_num}
+</update>
+
+<!-- 댓글 count update -->
+
+<!-- 게시글 view count update -->
+
+<delete id="delete">
+	delete from te_ask where ask_num = #{ask_num}
+</delete>
+
+<select id="listAll" resultType="CServiceVO">
+	<![CDATA[
+	SELECT 	ask_num,
+			ask_title,
+			ask_contents,
+			admin_id,
+			ask_date
+	FROM te_ask 
+	WHERE ask_num > 0 
+	ORDER BY ask_num DESC, ask_date DESC
+	]]>  
+</select>
+ 
+
+<select id="listPage"  resultType="CServiceVO">
+	<![CDATA[
+	SELECT	ask_num,
+			ask_title,
+			ask_contents,
+			admin_id,
+			ask_date,
+	FROM   (SELECT 	/*+INDEX_DESC(te_ask pk_board)*/
+					rownum rn,
+					ask_num,
+					ask_title,
+					ask_contents,
+					admin_id,
+					ask_date,
+	  		FROM	te_ask
+			WHERE	rownum <= #{page} * #{perPageNum}
+			AND		ask_num > 0
+			)
+	WHERE 	rn > (#{page} -1) * #{perPageNum}
+	]]>
+</select>
+
+<select id="listCriteria" resultType="CServiceVO">
+	<![CDATA[
+	SELECT	ask_num,
+			ask_title,
+			ask_contents,
+			admin_id,
+			ask_date
+	FROM   (SELECT 	/*+INDEX_DESC(te_ask pk_board)*/
+					rownum rn,
+					ask_num,
+					ask_title,
+					ask_contents,
+					admin_id,
+					ask_date
+	  		FROM	te_ask
+			WHERE	rownum <= #{page} * #{perPageNum}
+			AND		ask_num > 0
+			)
+	WHERE 	rn > (#{page} -1) * #{perPageNum}
+	]]>
+</select>
+
+<select id="countPaging" resultType="int">
+	<![CDATA[
+	SELECT	count(ask_num) 
+	FROM	te_ask 
+	WHERE	ask_num > 0 
+	]]>
+</select>
+
+<!-- 분리되기 전 listSearch 쿼리 시작 -->
+<select id="listSearch_old"  resultType="CServiceVO">
+	<![CDATA[
+		SELECT	ask_num,
+				ask_title,
+				ask_contents,
+				admin_id,
+				ask_date
+		FROM   (SELECT 	/*+INDEX_DESC(te_ask pk_board)*/
+						rownum rn,
+						ask_num,
+						ask_title,
+						ask_contents,
+						admin_id,
+						ask_date
+		  		FROM	te_ask
+	]]>
+		<!--
+		<where> 엘리먼트로 검색을 하지 않았을 경우 AND rownum <= 과 같이 WHERE 구문이 빠져버린다.
+		따라서 <where> 를 사용하면 AND나 OR로 구문이 시작되면 AND나 OR를 지워버린다.
+		아래 구문과 동일한 기능. 
+		<trim prefix="WHERE" prefixOverrides="AND|OR ">
+		  ... 
+		</trim>
+		http://www.mybatis.org/mybatis-3/ko/dynamic-sql.html 참고
+		-->
+		<where>
+				
+				<if test="searchType != null" >
+					<if test="searchType == 't'.toString()">
+						AND ask_title LIKE '%'|| #{keyword}||'%'
+					</if>
+					<if test="searchType == 'c'.toString()">
+						AND ask_contents LIKE '%'|| #{keyword}||'%'
+					</if>
+					<if test="searchType == 'w'.toString()">
+						AND admin_id LIKE '%'|| #{keyword}||'%'
+					</if>    
+					<if test="searchType == 'tc'.toString()">
+						AND (ask_title LIKE '%'|| #{keyword}||'%' OR ask_contents LIKE '%'|| #{keyword}||'%')
+					</if>      
+				</if>
+
+				<![CDATA[
+				AND rownum <= #{page} * #{perPageNum}
+				AND ask_num > 0
+				ORDER BY notice_num DESC
+		  		)
+				]]>
+		</where>
+	<![CDATA[
+		WHERE rn > (#{page} -1) * #{perPageNum}
+	]]>
+</select>
+
+<!-- 동적SQL (<sql>로 분리) 작성된 최종 SQL 시작-->
+<sql id="search">
+	<if test="searchType != null" >
+		<if test="searchType == 't'.toString()">
+			AND ask_title LIKE '%'|| #{keyword}||'%'
+		</if>
+		<if test="searchType == 'c'.toString()">
+			AND ask_contents LIKE '%'|| #{keyword}||'%'
+		</if>
+		<if test="searchType == 'w'.toString()">
+			AND admin_id LIKE '%'|| #{keyword}||'%'
+		</if>    
+		<if test="searchType == 'tc'.toString()">
+			AND (ask_title LIKE '%'|| #{keyword}||'%' OR ask_contents LIKE '%'|| #{keyword}||'%')
+		</if>      
+	</if>
+</sql>
+
+<select id="listSearch"  resultType="CServiceVO">
+	<![CDATA[
+		SELECT	ask_num,
+				ask_title,
+				ask_contents,
+				ask_date,
+				ask_answerstate,
+				ask_answercontent,
+				ask_ansdate,
+				user_id,
+				admin_id
+		FROM   (SELECT 	
+						rownum rn,
+						ask_num,
+						ask_title,
+						ask_contents,
+						ask_date,
+						ask_answerstate,
+						ask_answercontent,
+						ask_ansdate,
+						user_id,
+						admin_id
+		  		FROM	te_ask
+				where rownum <= #{page} * #{perPageNum}
+				AND ask_num > 0
+				ORDER BY ask_num DESC
+		  		)
+				
+		WHERE rn > (#{page} -1) * #{perPageNum}
+	]]>
+</select>
+
+<select id="listSearchCount"  resultType="int">
+	<![CDATA[
+		SELECT	count(ask_num)
+		FROM	te_ask
+	]]>
+	
+	<where>
+		<include refid="search"></include>
+		<![CDATA[
+			AND ask_num > 0
+		]]>
+	</where>
+</select>
+<!-- 동적SQL (<sql>로 분리) 작성된 최종 SQL 끝-->
+
+<!-- 첨부파일 관련 SQL -->
+<insert id="addAttach">
+	INSERT INTO tbl_attach(fullname, ask_num) VALUES (#{fullName}, SEQ_BOARD.CURRVAL)
+</insert> 
+
+
+<select id="getAttach" resultType="string">
+	SELECT	fullname
+	FROM	tbl_attach
+	WHERE 	ask_num = #{ask_num}
+	ORDER BY ask_date
+</select> 
+
+ 
+<delete id="deleteAttach">
+	DELETE FROM te_ask WHERE ask_num = #{ask_num}
+</delete>
+
+<insert id="replaceAttach">
+	INSERT INTO tbl_attach(fullname, ask_num) VALUES (#{fullName}, #{ask_num})
+</insert>
+</mapper>

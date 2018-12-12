@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.ync.project.mapper.AdminMapper">
+
+	<select id="login" resultType="AdminVO">
+		SELECT	admin_id,
+				admin_password,
+				admin_name
+		FROM	te_admin
+		WHERE	admin_id = #{admin_id}
+		AND		admin_password = #{admin_password}
+	</select>
+  
+	<update id="keepLogin" >
+		UPDATE te_admin SET 	sessionKey = #{sessionId},
+	  							sessionLimit = #{next}
+		WHERE admin_id = #{admin_id}
+	</update>
+
+	<select id="checkUserWithSessionKey" resultType="AdminVO">
+		SELECT 	*
+		FROM	te_admin
+		WHERE	sessionKey = #{value}
+		AND		sessionlimit > SYSDATE
+	</select>	
+
+</mapper>
+
+

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.ync.project.mapper.NoticeBoardMapper">
+
+<insert id="create">
+	INSERT INTO te_notice (notice_num, notice_title, notice_contents, admin_id, notice_date) 
+	VALUES(SEQ_BOARD.NEXTVAL, #{notice_title},#{notice_contents}, #{admin_id}, to_date(sysdate,'yyyy/mm/dd')) 
+</insert>
+
+<select id="read" resultType="NoticeVO">
+	SELECT  notice_num,
+	 		notice_title,
+	 		notice_contents,
+	 		admin_id,
+	 		notice_date
+	FROM 	te_notice 
+	WHERE	notice_num = #{notice_num}
+</select>
+
+<update id="update">
+	UPDATE te_notice SET notice_title = #{notice_title},
+						 notice_contents = #{notice_contents},
+						 admin_id = #{admin_id}
+	WHERE notice_num = #{notice_num}
+</update>
+
+<!-- 댓글 count update -->
+
+<!-- 게시글 view count update -->
+
+<delete id="delete">
+	delete from te_notice where notice_num = #{notice_num}
+</delete>
+
+<select id="listAll" resultType="NoticeVO">
+	<![CDATA[
+	SELECT 	notice_num,
+			notice_title,
+			notice_contents,
+			admin_id,
+			notice_date
+	FROM te_notice 
+	WHERE notice_num > 0 
+	ORDER BY notice_num DESC, notice_date DESC
+	]]>  
+</select>
+ 
+
+<select id="listPage"  resultType="NoticeVO">
+	<![CDATA[
+	SELECT	notice_num,
+			notice_title,
+			notice_contents,
+			admin_id,
+			notice_date,
+	FROM   (SELECT 	/*+INDEX_DESC(te_notice te_xpk_notice_pk)*/
+					rownum rn,
+					notice_num,
+					notice_title,
+					notice_contents,
+					admin_id,
+					notice_date,
+	  		FROM	te_notice
+			WHERE	rownum <= #{page} * #{perPageNum}
+			AND		notice_num > 0
+			)
+	WHERE 	rn > (#{page} -1) * #{perPageNum}
+	]]>
+</select>
+
+<select id="listCriteria" resultType="NoticeVO">
+	<![CDATA[
+	SELECT	notice_num,
+			notice_title,
+			notice_contents,
+			admin_id,
+			notice_date
+	FROM   (SELECT 	/*+INDEX_DESC(te_notice te_xpk_notice_pk)*/
+					rownum rn,
+					notice_num,
+					notice_title,
+					notice_contents,
+					admin_id,
+					notice_date
+	  		FROM	te_notice
+			WHERE	rownum <= #{page} * #{perPageNum}
+			AND		notice_num > 0
+			)
+	WHERE 	rn > (#{page} -1) * #{perPageNum}
+	ORDER BY notice_num DESC
+	]]>
+</select>
+
+<select id="countPaging" resultType="int">
+	<![CDATA[
+	SELECT	count(notice_num) 
+	FROM	te_notice 
+	WHERE	notice_num > 0 
+	]]>
+</select>
+
+<!-- 분리되기 전 listSearch 쿼리 시작 -->
+<select id="listSearch_old"  resultType="NoticeVO">
+	<![CDATA[
+		SELECT	notice_num,
+				notice_title,
+				notice_contents,
+				admin_id,
+				notice_date
+		FROM   (SELECT 	/*+INDEX_DESC(te_notice te_xpk_notice_pk)*/
+						rownum rn,
+						notice_num,
+						notice_title,
+						notice_contents,
+						admin_id,
+						notice_date
+		  		FROM	te_notice
+	]]>
+		<!--
+		<where> 엘리먼트로 검색을 하지 않았을 경우 AND rownum <= 과 같이 WHERE 구문이 빠져버린다.
+		따라서 <where> 를 사용하면 AND나 OR로 구문이 시작되면 AND나 OR를 지워버린다.
+		아래 구문과 동일한 기능. 
+		<trim prefix="WHERE" prefixOverrides="AND|OR ">
+		  ... 
+		</trim>
+		http://www.mybatis.org/mybatis-3/ko/dynamic-sql.html 참고
+		-->
+		<where>
+				
+				<if test="searchType != null" >
+					<if test="searchType == 't'.toString()">
+						AND notice_title LIKE '%'|| #{keyword}||'%'
+					</if>
+					<if test="searchType == 'c'.toString()">
+						AND notice_contents LIKE '%'|| #{keyword}||'%'
+					</if>
+					<if test="searchType == 'w'.toString()">
+						AND admin_id LIKE '%'|| #{keyword}||'%'
+					</if>    
+					<if test="searchType == 'tc'.toString()">
+						AND (notice_title LIKE '%'|| #{keyword}||'%' OR notice_contents LIKE '%'|| #{keyword}||'%')
+					</if>      
+				</if>
+
+				<![CDATA[
+				AND rownum <= #{page} * #{perPageNum}
+				AND notice_num > 0
+		  		)
+				]]>
+		</where>
+	<![CDATA[
+		WHERE rn > (#{page} -1) * #{perPageNum}
+	]]>
+</select>
+
+<!-- 동적SQL (<sql>로 분리) 작성된 최종 SQL 시작-->
+<sql id="search">
+	<if test="searchType != null" >
+		<if test="searchType == 't'.toString()">
+			AND notice_title LIKE '%'|| #{keyword}||'%'
+		</if>
+		<if test="searchType == 'c'.toString()">
+			AND notice_contents LIKE '%'|| #{keyword}||'%'
+		</if>
+		<if test="searchType == 'w'.toString()">
+			AND admin_id LIKE '%'|| #{keyword}||'%'
+		</if>    
+		<if test="searchType == 'tc'.toString()">
+			AND (notice_title LIKE '%'|| #{keyword}||'%' OR notice_contents LIKE '%'|| #{keyword}||'%')
+		</if>      
+	</if>
+</sql>
+
+<select id="listSearch"  resultType="NoticeVO">
+	<![CDATA[
+		SELECT	notice_num,
+				notice_title,
+				notice_contents,
+				admin_id,
+				notice_date
+		FROM   (SELECT 	/*+INDEX_DESC(te_notice te_xpk_notice_pk)*/
+						rownum rn,
+						notice_num,
+						notice_title,
+						notice_contents,
+						admin_id,
+						notice_date
+		  		FROM	te_notice
+	]]>
+		<!--
+		<where> 엘리먼트로 검색을 하지 않았을 경우 AND rownum <= 과 같이 WHERE 구문이 빠져버린다.
+		따라서 <where> 를 사용하면 AND나 OR로 구문이 시작되면 AND나 OR를 지워버린다.
+		아래 구문과 동일한 기능. 
+		<trim prefix="WHERE" prefixOverrides="AND|OR ">
+		  ... 
+		</trim>
+		http://www.mybatis.org/mybatis-3/ko/dynamic-sql.html 참고
+		-->
+		<where>
+				<include refid="search"></include>
+				<![CDATA[
+				AND rownum <= #{page} * #{perPageNum}
+				AND notice_num > 0
+				ORDER BY notice_num DESC
+		  		)
+				]]>
+		</where>
+	<![CDATA[
+		WHERE rn > (#{page} -1) * #{perPageNum}
+		
+	]]>
+</select>
+
+<select id="listSearchCount"  resultType="int">
+	<![CDATA[
+		SELECT	count(notice_num)
+		FROM	te_notice
+	]]>
+	
+	<where>
+		<include refid="search"></include>
+		<![CDATA[
+			AND notice_num > 0
+		]]>
+	</where>
+</select>
+<!-- 동적SQL (<sql>로 분리) 작성된 최종 SQL 끝-->
+
+<!-- 첨부파일 관련 SQL -->
+<insert id="addAttach">
+	INSERT INTO tbl_attach(fullname, notice_num) VALUES (#{fullName}, SEQ_BOARD.CURRVAL)
+</insert> 
+
+
+<select id="getAttach" resultType="string">
+	SELECT	fullname
+	FROM	tbl_attach
+	WHERE 	notice_num = #{notice_num}
+	ORDER BY notice_date
+</select> 
+
+ 
+<delete id="deleteAttach">
+	DELETE FROM te_notice WHERE notice_num = #{notice_num}
+</delete>
+
+<insert id="replaceAttach">
+	INSERT INTO tbl_attach(fullname, notice_num) VALUES (#{fullName}, #{notice_num})
+</insert>
+</mapper>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.ync.project.mapper.QnABoardMapper">
+
+<insert id="create">
+	INSERT INTO te_qna (qna_num, qna_title, qna_contents, admin_id, qna_division) 
+	VALUES(SEQ_BOARD.NEXTVAL, #{qna_title},#{qna_contents}, #{admin_id}, '1')
+</insert>
+
+<select id="read" resultType="QnAVO">
+	SELECT  qna_num,
+	 		qna_title,
+	 		qna_contents,
+	 		admin_id
+	FROM 	te_qna 
+	WHERE	qna_num = #{qna_num}
+</select>
+
+<update id="update">
+	UPDATE te_qna SET qna_title = #{qna_title},
+						 qna_contents = #{qna_contents},
+						 admin_id = #{admin_id}
+	WHERE qna_num = #{qna_num}
+</update>
+
+<!-- 댓글 count update -->
+
+<!-- 게시글 view count update -->
+
+<delete id="delete">
+	delete from te_qna where qna_num = #{qna_num}
+</delete>
+
+
+<select id="listPage"  resultType="QnAVO">
+	<![CDATA[
+	SELECT	qna_num,
+			qna_title,
+			qna_contents,
+			admin_id
+	FROM   (SELECT 	/*+INDEX_DESC(te_qna te_xpk_qna_pk)*/
+					rownum rn,
+					qna_num,
+					qna_title,
+					qna_contents,
+					admin_id
+	  		FROM	te_qna
+			WHERE	rownum <= #{page} * #{perPageNum}
+			AND		qna_num > 0;
+			)
+	WHERE 	rn > (#{page} -1) * #{perPageNum}
+	]]>
+</select>
+
+<select id="listCriteria" resultType="QnAVO">
+	<![CDATA[
+	SELECT	qna_num,
+			qna_title,
+			qna_contents,
+			admin_id
+	FROM   (SELECT 	/*+INDEX_DESC(te_qna te_xpk_qna_pk)*/
+					rownum rn,
+					qna_num,
+					qna_title,
+					qna_contents,
+					admin_id
+	  		FROM	te_qna
+			WHERE	rownum <= #{page} * #{perPageNum}
+			AND		qna_num > 0
+			AND 		qna_division = '1'
+			)
+	WHERE 	rn > (#{page} -1) * #{perPageNum}
+	]]>
+</select>
+
+<select id="countPaging" resultType="int">
+	<![CDATA[
+	SELECT	count(qna_num) 
+	FROM	te_qna 
+	WHERE	qna_num > 0 
+	]]>
+</select>
+
+<!-- 분리되기 전 listSearch 쿼리 시작 -->
+
+<!-- 동적SQL (<sql>로 분리) 작성된 최종 SQL 시작-->
+<sql id="search">
+	<if test="searchType != null" >
+		<if test="searchType == 't'.toString()">
+			AND qna_title LIKE '%'|| #{keyword}||'%'
+		</if>
+		<if test="searchType == 'c'.toString()">
+			AND qna_contents LIKE '%'|| #{keyword}||'%'
+		</if>
+		<if test="searchType == 'w'.toString()">
+			AND admin_id LIKE '%'|| #{keyword}||'%'
+		</if>    
+		<if test="searchType == 'tc'.toString()">
+			AND (qna_title LIKE '%'|| #{keyword}||'%' OR qna_contents LIKE '%'|| #{keyword}||'%')
+		</if>      
+	</if>
+</sql>
+
+<select id="listSearch"  resultType="QnAVO">
+	<![CDATA[
+		SELECT	qna_num,
+				qna_title,
+				qna_contents,
+				admin_id
+		FROM   (SELECT 	
+						rownum rn,
+						qna_num,
+						qna_title,
+						qna_contents,
+						admin_id
+		  		FROM	te_qna
+				where rownum <= #{page} * #{perPageNum}
+				AND qna_num > 0
+				AND qna_division like '1'
+				ORDER BY qna_num DESC
+		  		)
+				
+		WHERE rn > (#{page} -1) * #{perPageNum}
+	]]>
+</select>
+
+<select id="listSearchCount"  resultType="int">
+	<![CDATA[
+		SELECT	count(qna_num)
+		FROM	te_qna
+	]]>
+	
+	<where>
+		<include refid="search"></include>
+		<![CDATA[
+			AND qna_num > 0
+		]]>
+	</where>
+</select>
+<!-- 동적SQL (<sql>로 분리) 작성된 최종 SQL 끝-->
+
+
+</mapper>
