@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -32,6 +34,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link rel="stylesheet" href="resources/front/css/jquery.countdown.css" /> <!-- countdown --> 
 <!-- //js -->   
 <!-- start-smooth-scrolling -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $('.slider').bxSlider();
+    });
+  </script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event){		
@@ -40,6 +51,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		});
 	});
 </script>
+
+<script>
+$(document).ready(function(){
+	$("#modifyBtn").on("click", function(){
+		alert("회원 정보가 수정 되었습니다.");
+	});
+	
+	$("#logoutBtn").on("click", function(){
+		alert("로그아웃 되었습니다.");
+	});
+	
+	$("#registerbtn").on("click", function(){
+		alert("회원 가입 되었습니다. 로그인 해주세요");
+	});
+});
+</script>  
 <!-- //end-smooth-scrolling --> 
 </head> 
 <body>
@@ -62,6 +89,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="col-md-8 modal_body_left modal_body_left1">
 							<div class="sap_tabs">	
 								<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+							<c:choose>
+  								<c:when test="${empty login.user_id}">
 									<ul>
 										<li class="resp-tab-item" aria-controls="tab_item-0"><span>로그인</span></li>
 										<li class="resp-tab-item" aria-controls="tab_item-1"><span>회원가입</span></li>
@@ -73,28 +102,73 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 													<input name="user_id" placeholder="아이디" type="text" required="">						
 													<input name="user_password" placeholder="비밀번호" type="password" required="">										
 													<div class="sign-up">
-														<input type="submit" value="로그인"/>
+														<input type="submit" id="loginBtn" value="로그인"/>
 													</div>
 												</form>
 											</div>
 										</div> 
-									</div>	 
+									</div>
 									<div class="tab-2 resp-tab-content" aria-labelledby="tab_item-1">
 										<div class="facts">
 											<div class="register">
-												<form action="#" method="post">			
-													<input placeholder="Name" name="Name" type="text" required="">
-													<input placeholder="Email Address" name="Email" type="email" required="">	
-													<input placeholder="Password" name="Password" type="password" required="">	
-													<input placeholder="Confirm Password" name="Password" type="password" required="">
+												<form action="/front/user/register" method="post">			
+													<input placeholder="아이디" name="user_id" type="text" required="">			
+													<input placeholder="이름"  name="user_name" type="text" required="">
+													<input placeholder="생년월일" name="user_birthday" type="text" required="">
+													<input placeholder="비밀번호" name="user_password" type="password" required="">		
+													<input placeholder="주소" name="user_address" type="text" required="">
+													<input placeholder="이메일" name="user_email" type="email" required="">	
+													<input placeholder="휴대폰번호" name="user_phonenum" type="text" required="">
+													<input name="mile_price" type="text" value= "500" required="" readonly="readonly">	
 													<div class="sign-up">
-														<input type="submit" value="Create Account"/>
+														<input type="submit" id="registerbtn" value="회원가입"/>
 													</div>
 												</form>
 											</div>
 										</div>
-									</div> 			        					            	      
+									</div> 		
+									        					            	      
+							</c:when>
+								 <c:otherwise>
+								 <ul>
+										<li class="resp-tab-item" aria-controls="tab_item-0"><span>현재 회원 정보</span></li>
+										<li class="resp-tab-item" aria-controls="tab_item-1"><span>회원 정보 수정</span></li>
+								</ul> 
+								<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
+										<div class="facts">
+											<div class="register">
+												<form action="/front/user/logout" method="get">			
+													<p>${login.user_name} 님 환영합니다</p>
+													<p>내 마일리지 : ${login.mile_price}</p>								
+													<div class="sign-up">
+														<input type="submit" id="logoutBtn" value="로그아웃"/>
+													</div>
+												</form>
+										</div>
+									</div> 
 								</div>	
+								<div class="tab-2 resp-tab-content" aria-labelledby="tab_item-1">
+										<div class="facts">
+											<div class="register">
+												<form action="/front/user/modifyPage" method="post">
+													<input name="user_id" type="text" value="${login.user_id}" readonly="readonly">			
+													<input name="user_name" type="text" value="${login.user_name}" readonly="readonly">
+													<input name="user_birthday" type="text" value="${login.user_birthday}" readonly="readonly">
+													<input name="user_password" type="password" value="${login.user_password}" readonly="readonly">
+													<input name="mile_price" type="text" value="${login.mile_price}" readonly="readonly">		
+													<input placeholder="변경할 주소" name="user_address" type="text" value="${login.user_address}" required="">
+													<input placeholder="변경할 이메일" name="user_email" type="email" value="${login.user_email}" required="">	
+													<input placeholder="변경할 휴대폰번호" name="user_phonenum" type="text" value="${login.user_phonenum}"required="">	
+													<div class="sign-up">
+														<input type="submit" id="modifyBtn" value="정보수정" />
+													</div>
+												</form>
+											</div>
+										</div>
+									</div> 			
+								 </c:otherwise>
+							</c:choose>
+							 	</div>	
 							</div>
 							<script src="resources/front/js/easyResponsiveTabs.js" type="text/javascript"></script>
 							<script type="text/javascript">
@@ -181,11 +255,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<!-- //navigation -->
 	<!-- banner -->
-	<div class="banner">
-		<div class="container">
-			<h3>Electronic Store, <span>Special Offers</span></h3>
-		</div>
-	</div>
+	<div class="slider">
+    	<div><img src="resources/front/images/banner1.PNG" style="width:100%; height:100%"></div>
+    	<div><img src="resources/front/images/banner2.PNG" style="width:100%; height:100%"></div>
+   	 	<div><img src="resources/front/images/banner3.PNG" style="width:100%; height:100%"></div>
+    </div>
 	<!-- //banner --> 
 	<!-- banner-bottom -->
 	<div class="banner-bottom">
@@ -1505,6 +1579,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         	}
         });
     </script>  
-	<!-- //cart-js -->   
+	<!-- //cart-js --> 
+	
+
 </body>
 </html>

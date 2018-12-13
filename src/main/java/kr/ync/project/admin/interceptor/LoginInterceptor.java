@@ -28,7 +28,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 		// AdminVO가 null 이란 말은 DB에서 해당 user에 대한 data가 없다는 말이다.  
 		if (AdminVO != null) {
 
-			log.info("new login success");
+			log.info("admin login success");
 			session.setAttribute(LOGIN, AdminVO);
 
 			if (request.getParameter("useCookie") != null) {

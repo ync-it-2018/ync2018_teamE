@@ -4,6 +4,8 @@ import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
 
 import kr.ync.project.front.domain.UserLoginVO;
 import kr.ync.project.front.dto.UserLoginDTO;
@@ -32,5 +34,24 @@ public class UserLoginServiceImpl implements UserLoginService {
 	public UserLoginVO checkLoginBefore(String value) {
 
 		return dao.checkUserWithSessionKey(value);
+	}
+
+	@Transactional
+	@Override
+	public void register(UserLoginVO rg) throws Exception {
+		dao.create(rg);
+		
+	}
+
+	@Transactional
+	@Override
+	public void modify(UserLoginVO rg) throws Exception {
+		dao.update(rg);
+	}
+
+	@Transactional(isolation = Isolation.READ_COMMITTED)
+	@Override
+	public UserLoginVO read(String user_id) throws Exception {
+		return dao.read(user_id);
 	}
 }
