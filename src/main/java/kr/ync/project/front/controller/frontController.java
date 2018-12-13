@@ -117,10 +117,14 @@ public class frontController {
 	
 
 	@RequestMapping(value = "/standardPC", method = RequestMethod.GET)
-	public String standardPC(@RequestParam("CATEGORY1_NUM") int CATEGORY1_NUM , @RequestParam("CATEGORY2_NUM") int CATEGORY2_NUM ,Model model) throws Exception {
+	public String standardPC(@RequestParam("CATEGORY1_NUM") int CATEGORY1_NUM , @RequestParam("CATEGORY2_NUM") int CATEGORY2_NUM,
+			@RequestParam(value="CATEGORY3_NUM", required=false) String CATEGORY3_NUM,
+			@RequestParam(value="TAG_1", required=false) String TAG_1,
+			@RequestParam(value="TAG_2", required=false) String TAG_2,
+			@RequestParam(value="TAG_3", required=false) String TAG_3, Model model) throws Exception {
 		
 		
-		model.addAttribute("serverTime",service.StandardPC(CATEGORY1_NUM,CATEGORY2_NUM));
+		model.addAttribute("serverTime",service.StandardPC(CATEGORY1_NUM,CATEGORY2_NUM,CATEGORY3_NUM,TAG_1,TAG_2,TAG_3));
 		
 		String result = null;
 		if (CATEGORY2_NUM == 15 ) {
@@ -137,10 +141,14 @@ public class frontController {
 	}
 	
 	@RequestMapping(value = "/laptopPC", method = RequestMethod.GET)
-	public String laptopPC(@RequestParam("CATEGORY1_NUM") int CATEGORY1_NUM , @RequestParam("CATEGORY2_NUM") int CATEGORY2_NUM ,Model model) throws Exception {
+	public String laptopPC(@RequestParam("CATEGORY1_NUM") int CATEGORY1_NUM , @RequestParam("CATEGORY2_NUM") int CATEGORY2_NUM,
+			@RequestParam(value="CATEGORY3_NUM", required=false) String CATEGORY3_NUM,
+			@RequestParam(value="TAG_1", required=false) String TAG_1,
+			@RequestParam(value="TAG_2", required=false) String TAG_2,
+			@RequestParam(value="TAG_3", required=false) String TAG_3, Model model) throws Exception {
 		
 		
-		model.addAttribute("serverTime",service.LaptopPC(CATEGORY1_NUM,CATEGORY2_NUM));
+		model.addAttribute("serverTime",service.LaptopPC(CATEGORY1_NUM,CATEGORY2_NUM,CATEGORY3_NUM,TAG_1,TAG_2,TAG_3));
 		
 		String result = null;
 		if (CATEGORY2_NUM == 18 ) {
@@ -167,9 +175,9 @@ public class frontController {
 	}
 	
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
-	public String search(@RequestParam("keyword") String keyword, Model model) throws Exception {
+	public String search(@RequestParam("keyword") String keyword, @RequestParam(value="sort", required=false) int sort, Model model) throws Exception {
 		
-		model.addAttribute("serverTime",service.Search(keyword));
+		model.addAttribute("serverTime",service.Search(keyword, sort));
 				
 		return "front/search";
 	}

@@ -41,6 +41,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		});
 	}); 
 	
+	function search() {
+		var keyword = $('input[name=keyword]').val();
+		location.replace("/search?keyword="+keyword+"&sort=1");
+	}
+	
 </script>
 
 
@@ -144,10 +149,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<input class="search_box" type="checkbox" id="search_box">
 				<label class="icon-search" for="search_box"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></label>
 				<div class="search_form">
-					<form action="/search" method="get">
-						<input type="text" name="keyword" placeholder="Search...">
-						<input type="submit" value="Send">
-					</form>
+					<input type="text" name="keyword" placeholder="Search...">
+					<input type="submit" value="Send" onclick="search()">
 				</div>
 			</div>
 			<div class="cart cart box_1"> 

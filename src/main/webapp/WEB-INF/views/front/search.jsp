@@ -38,7 +38,26 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			event.preventDefault();
 			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 		});
+		<%
+		String keyword = null;
+		keyword =  request.getParameter("keyword");
+		%>
 	});
+	
+
+	function search() {
+		var keyword = $('input[name=keyword]').val();
+		location.replace("/search?keyword="+keyword+"&sort=1");
+	}
+	
+	function sort() {
+		var sort = document.getElementById("select_item");
+		var selectValue = sort.options[sort.selectedIndex].value;
+		
+		alert(selectValue, <%=keyword%>);
+
+		location.replace("/search?keyword="+<%=keyword%>+"&sort="+selectValue);
+	}
 </script>
 <!-- //end-smooth-scrolling --> 
 <style>
@@ -194,10 +213,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<input class="search_box" type="checkbox" id="search_box">
 				<label class="icon-search" for="search_box"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></label>
 				<div class="search_form">
-					<form action="/search" method="get">
-						<input type="text" name="keyword" placeholder="Search...">
-						<input type="submit" value="Send">
-					</form>
+					<input type="text" name="keyword" placeholder="Search...">
+					<input type="submit" value="Send" onclick="search()">
 				</div>
 			</div>
 			<div class="cart cart box_1"> 
@@ -272,7 +289,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<div class="panel-heading" role="tab" id="headingOne">
 								  <h4 class="panel-title asd">
 									<a class="pa_italic" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-									  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>PC 주요부품
+									  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>PC Categories
 									</a>
 								  </h4>
 								</div>
@@ -294,13 +311,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-md-9 w3ls_mobiles_grid_right">
 					<!--상품정렬 -->
 					<div class="w3ls_mobiles_grid_right_grid2_right">
-							<select name="select_item" class="select_item" style="margin-right:0em; margin-top: 10px;">
-								<option selected="selected">Default sorting</option>
-								<option>Sort by popularity</option>
-								<option>Sort by average rating</option>
-								<option>Sort by newness</option>
-								<option>Sort by price: low to high</option>
-								<option>Sort by price: high to low</option>
+							<select name="select_item" id="select_item" class="select_item" style="margin-right:0em; margin-top: 10px;" onchange="sort()">
+								<option selected="selected" value="1">Default sorting</option>
+								<option value="2">Sort by popularity</option>
+								<option value="3">Sort by newness</option>
+								<option value="4">Sort by price: low to high</option>
+								<option value="5">Sort by price: high to low</option>
 							</select>
 					</div>
 					<div class="clearfix"> </div>

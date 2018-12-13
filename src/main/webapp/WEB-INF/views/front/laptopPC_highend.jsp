@@ -39,6 +39,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 		});
 	});
+	
+	function search() {
+		var keyword = $('input[name=keyword]').val();
+		location.replace("/search?keyword="+keyword+"&sort=1");
+	}
+	
+	function Product_Search() {
+	    var CATEGORY3_NUM =  $("#CATEGORY3_NUM option:selected").val();
+	    var TAG_1 =  $("#TAG_1 option:selected").val();
+	    var TAG_2 =  $("#TAG_2 option:selected").val();
+	    var TAG_3 =  $("#TAG_3 option:selected").val();
+	    
+	    location.replace("/standardPC?CATEGORY1_NUM=3&CATEGORY2_NUM=20&CATEGORY3_NUM="+CATEGORY3_NUM+"&TAG_1="+TAG_1+"&TAG_2="+TAG_2+"&TAG_3="+TAG_3);
+		   
+	}
+	
 </script>
 <!-- //end-smooth-scrolling --> 
 <style>
@@ -194,10 +210,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<input class="search_box" type="checkbox" id="search_box">
 				<label class="icon-search" for="search_box"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></label>
 				<div class="search_form">
-					<form action="/search" method="get">
-						<input type="text" name="keyword" placeholder="Search...">
-						<input type="submit" value="Send">
-					</form>
+					<input type="text" name="keyword" placeholder="Search...">
+					<input type="submit" value="Send" onclick="search()">
 				</div>
 			</div>
 			<div class="cart cart box_1"> 
@@ -297,30 +311,34 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<H1 style="margin: 10px;"> HIGN-END </H1>
 						<div class="select_list">
 							<ul>
-								<select class="select" name="" title="브랜드 선택" style="width:96%;">
-									<option value='' selected> -- 브랜드 -- </option>
-									<option value='' >  인텔   </option>
-									<option value='' >  AMD  </option>
+								<select class="select" name="CATEGORY3_NUM" id="CATEGORY3_NUM" title="제조사 선택" style="width:89%;">
+									<option value='' selected> -- 제조사 -- </option>
+									<option value='삼성' >  삼성   </option>
+									<option value='LG' >  LG </option>
+									<option value='HP' >  HP </option>
 								</select>
+								<input type="button" value="검색" onClick="Product_Search()">
 							</ul>
 							<ul>
-								<select class="select" name="" title="메모리 선택">
+								<select class="select" name="TAG_1" id="TAG_1" title="메모리 선택">
 									<option value='' selected> -- 메모리 -- </option>
-									<option value='' >  인텔    </option>
-									<option value='' >  AMD  </option>
+									<option value='4GB' >  4GB  </option>
+									<option value='8GB' >  8GB  </option>
+									<option value='16GB' >  16GB  </option>
 								</select>
-								<select class="select" name="" title="ODD 선택">
-									<option value='' selected> -- ODD -- </option>
-									<option value='' >  20  </option>
-									<option value='' >  12  </option>
-									<option value='' >  8  </option>
-									<option value='' >  4  </option>
+								<select class="select" name="TAG_2" id="TAG_2" title="CPU 선택">
+									<option value='' selected> -- CPU -- </option>
+									<option value='i3' >  i3  </option>
+									<option value='i5' >  i5  </option>
+									<option value='i7' >  i7  </option>
+									<option value='펜티엄' >  펜티엄 </option>
 								</select>
-								<select class="select" name="srchMaker" title="저장장치 선택">
-									<option value='' selected> -- 저장장치 -- </option>
-									<option value='' >  4.5 ~ 4.99 GHz </option>
-									<option value='' >  4.0 ~ 4.49 GHz </option>
-									<option value='' >  3.5 ~ 3.99 GHz </option>
+								<select class="select" name="TAG_3" id="TAG_3" title="용량 선택">
+									<option value='' selected> -- 용량 -- </option>
+									<option value='128GB' >  128GB </option>
+									<option value='256GB' >  256GB </option>
+									<option value='512GB' >  512GB </option>
+									<option value='1TB' >  1TB </option>
 								</select>
 							</ul>
 						</div>

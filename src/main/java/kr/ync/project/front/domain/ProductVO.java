@@ -27,11 +27,17 @@ public class ProductVO {
 	 private String   CATEGORY2_NAME;
 	 private String   CATEGORY3_NAME;
 	 private String  TAG_1;
+	 private String  TAG_2;
+	 private String  TAG_3;
+	 private String  TAG_4;
+	 private String  TAG_5;
+	 private String  TAG_6;
 	 private int     PRODUCT_NUM;
 	 private int     CATEGORY1_NUM;
 	 private int     CATEGORY2_NUM;
 	 private String  CATEGORY3_NUM;
 	 private String  keyword;
+	 private int     sort;
 	 
 	 
 }

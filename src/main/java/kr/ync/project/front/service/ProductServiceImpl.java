@@ -52,13 +52,13 @@ public class ProductServiceImpl implements ProductService {
 	}
 	
 	@Override
-	public List<ProductVO> StandardPC(int CATEGORY1_NUM, int CATEGORY2_NUM) throws Exception {
-		return dao.StandardPC(CATEGORY1_NUM, CATEGORY2_NUM);
+	public List<ProductVO> StandardPC(int CATEGORY1_NUM, int CATEGORY2_NUM, String CATEGORY3_NUM, String TAG_1, String TAG_2, String TAG_3) throws Exception {
+		return dao.StandardPC(CATEGORY1_NUM, CATEGORY2_NUM, CATEGORY3_NUM, TAG_1, TAG_2, TAG_3);
 	}
 	
 	@Override
-	public List<ProductVO> LaptopPC(int CATEGORY1_NUM, int CATEGORY2_NUM) throws Exception {
-		return dao.LaptopPC(CATEGORY1_NUM, CATEGORY2_NUM);
+	public List<ProductVO> LaptopPC(int CATEGORY1_NUM, int CATEGORY2_NUM, String CATEGORY3_NUM, String TAG_1, String TAG_2, String TAG_3) throws Exception {
+		return dao.LaptopPC(CATEGORY1_NUM, CATEGORY2_NUM, CATEGORY3_NUM, TAG_1, TAG_2, TAG_3);
 	}
 	
 	// 글 내용보기 시 view count를 +1 증가시켜준다. 
@@ -75,8 +75,8 @@ public class ProductServiceImpl implements ProductService {
 	}
 	
 	@Override
-	public List<ProductVO> Search(String keyword) throws Exception {
-		return dao.Search(keyword);
+	public List<ProductVO> Search(String keyword, int sort) throws Exception {
+		return dao.Search(keyword, sort);
 	}
 
 	@Override

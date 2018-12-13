@@ -63,7 +63,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	AND	   PRO.CATEGORY3_NUM = CA3.CATEGORY3_NUM
  	AND	   PRO.CATEGORY1_NUM = #{CATEGORY1_NUM}
  	AND    PRO.CATEGORY2_NUM = #{CATEGORY2_NUM}
-		
+ 	<if test="CATEGORY3_NUM != null">
+ 			AND CATEGORY3_NAME = #{CATEGORY3_NUM}
+ 		</if>
+ 		<if test="TAG_1 != null">
+ 		    AND PRODUCT_TAG LIKE '%'|| #{TAG_1}||'%' -->
+ 		</if>
+ 		<if test="TAG_2 != null">
+ 		    AND PRODUCT_TAG LIKE '%'|| #{TAG_2}||'%' -->
+ 		 </if>
+ 		 <if test="TAG_3 != null">
+ 		    AND PRODUCT_TAG LIKE '%'|| #{TAG_3}||'%' -->
+ 		 </if>	
 </select>
 
 <select id="laptop" parameterType="map" resultType="ProductVO">
@@ -76,6 +87,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	AND	   PRO.CATEGORY3_NUM = CA3.CATEGORY3_NUM
  	AND	   PRO.CATEGORY1_NUM = #{CATEGORY1_NUM}
  	AND    PRO.CATEGORY2_NUM = #{CATEGORY2_NUM}
+ 	<if test="CATEGORY3_NUM != null">
+ 			AND CATEGORY3_NAME = #{CATEGORY3_NUM}
+ 		</if>
+ 		<if test="TAG_1 != null">
+ 		    AND PRODUCT_TAG LIKE '%'|| #{TAG_1}||'%' -->
+ 		</if>
+ 		<if test="TAG_2 != null">
+ 		    AND PRODUCT_TAG LIKE '%'|| #{TAG_2}||'%' -->
+ 		 </if>
+ 		 <if test="TAG_3 != null">
+ 		    AND PRODUCT_TAG LIKE '%'|| #{TAG_3}||'%' -->
+ 		 </if>
 		
 </select>
 
@@ -163,6 +186,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	AND	   PRO.CATEGORY1_NUM = CA1.CATEGORY1_NUM
 	AND	   PRO.CATEGORY2_NUM = CA2.CATEGORY2_NUM
 	AND    upper(PRO.PRODUCT_TAG) LIKE '%'|| upper(#{keyword})||'%'
+		<if test="sort == 1">
+			ORDER BY PRO.CATEGORY1_NUM ASC
+ 		</if>
+ 		<if test="sort == 2">
+ 		    ORDER BY PRO.COUNT DESC
+ 		 </if>
+ 		 <if test="sort == 3">
+ 		    ORDER BY PRO.PRODUCT_NUM DESC
+ 		 </if>
+ 		 <if test="sort == 4">
+ 		    ORDER BY PRO.PRODUCT_PRICE ASC
+ 		 </if>
+ 		 <if test="sort == 5">
+ 		    ORDER BY PRO.PRODUCT_PRICE DESC
+ 		 </if>
+
 </select>
 
 <!-- 
