@@ -6,9 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="kr.ync.project.mapper.UserLoginMapper">
 
 	<select id="login" resultType="UserLoginVO">
-		SELECT	user_id,
-				user_password,
-				user_name
+		SELECT	*
 		FROM	te_userinformation
 		WHERE	user_id = #{user_id}
 		AND		user_password = #{user_password}
@@ -25,7 +23,29 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM	te_userinformation
 		WHERE	sessionKey = #{value}
 		AND		sessionlimit > SYSDATE
-	</select>	
+	</select>
+	
+	<select id="read" resultType="UserLoginVO">
+	SELECT  *
+	FROM 	te_userinformation 
+	WHERE	user_id = #{user_id}
+	</select>
+	
+	<insert id="create">
+		INSERT INTO te_userinformation (user_id, user_password, user_name, user_birthday, user_phonenum, user_email, user_address, mile_price) 
+		VALUES(#{user_id}, #{user_password}, #{user_name}, #{user_birthday}, #{user_phonenum}, #{user_email}, #{user_address}, 500) 
+	</insert>	
+	<update id="update">
+	UPDATE te_userinformation SET user_phonenum = #{user_phonenum},
+						 		  user_email = #{user_email},
+						 		  user_address = #{user_address}
+	WHERE user_id = #{user_id}
+	</update>
+
+	<delete id="delete">
+		delete from te_userinformation where user_id = #{user_id}
+	</delete>	
+	
 
 </mapper>
 

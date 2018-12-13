@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kr.ync.project.admin.domain.AdminVO;
+import kr.ync.project.admin.domain.NoticeVO;
 import kr.ync.project.admin.dto.LoginDTO;
 import kr.ync.project.front.domain.UserLoginVO;
 import kr.ync.project.front.dto.UserLoginDTO;
@@ -43,5 +44,20 @@ public class UserLoginDAOImpl implements UserLoginDAO {
 	public UserLoginVO checkUserWithSessionKey(String value) {
 
 		return session.selectOne(namespace + ".checkUserWithSessionKey", value);
+	}
+
+	@Override
+	public void create(UserLoginVO vo) throws Exception {
+		session.insert(namespace + ".create", vo);
+	}
+
+	@Override
+	public void update(UserLoginVO vo) throws Exception {
+		session.update(namespace + ".update", vo);
+	}
+	
+	@Override
+	public UserLoginVO read(String user_id) throws Exception {
+		return session.selectOne(namespace + ".read", user_id);
 	}
 }

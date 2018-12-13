@@ -43,6 +43,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 		});
 	});
+	
+	function search() {
+		var keyword = $('input[name=keyword]').val();
+		location.replace("/search?keyword="+keyword+"&sort=1");
+	}
 </script>
 <style>
 
@@ -226,10 +231,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<input class="search_box" type="checkbox" id="search_box">
 				<label class="icon-search" for="search_box"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></label>
 				<div class="search_form">
-					<form action="/search" method="get">
-						<input type="text" name="keyword" placeholder="Search...">
-						<input type="submit" value="Send">
-					</form>
+					<input type="text" name="keyword" placeholder="Search...">
+					<input type="submit" value="Send" onclick="search()">
 				</div>
 			</div>
 			<div class="cart cart box_1"> 
@@ -342,48 +345,49 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<H1 style="margin: 10px;"> 마우스 </H1>
 						<div class="select_list">
 							<ul>
-								<select class="select" name="" title="제조사 선택" style="width:96%;">
+								<select class="select" name="CATEGORY3_NUM" id="CATEGORY3_NUM" title="제조사" style="width:89%;">
 									<option value='' selected> -- 제조사 -- </option>
-									<option value='' >  인텔   </option>
-									<option value='' >  AMD  </option>
+									<option value='ABKO' >  ABKO   </option>
+									<option value='COX' >  COX  </option>
+									<option value='CORSAIR' >  CORSAIR  </option>
+									<option value='Microsoft' >  Microsoft  </option>
+									<option value='MAXTILL' >  MAXTILL  </option>
+									<option value='Razer' >  Razer  </option>
+								</select>
+								<input type="button" value="검색" onClick="Product_Search()">
+							</ul>
+							<ul>
+								<select class="select" name="TAG_1" id="TAG_1" title="감음 방식">
+									<option value='' selected> -- 감응 방식 -- </option>
+									<option value='광' >  광   </option>
+									<option value='레이저' >  레이저  </option>
+									<option value='볼' >  볼  </option>
+									<option value='정전식' >  정전식  </option>
+									<option value='적외선' >  적외선  </option>
+									<option value='모션센서' >  모션센서  </option>
+								</select>
+								<select class="select" name="TAG_2" id="TAG_2" title="연결 방식">
+									<option value='' selected> -- 연결 방식 -- </option>
+									<option value='유선' >  유선    </option>
+									<option value='무선' >  무선  </option>
+									<option value='블루투스' >  블루투스  </option>
+								</select>
+								<select class="select" name="TAG_3" id="TAG_3" title="인터페이스">
+									<option value='' selected> -- 인터페이스 -- </option>
+									<option value='USB' >  USB  </option>
+									<option value='USB+PS2젠더' >  USB+PS2젠더  </option>
+									<option value='PS2' >  PS2  </option>
 								</select>
 							</ul>
 							<ul>
-								<select class="select" name="" title="브랜드 선택">
-									<option value='' selected> -- 브랜드 -- </option>
-									<option value='' >  인텔   </option>
-									<option value='' >  AMD  </option>
-								</select>
-								<select class="select" name="" title="소켓구분 선택">
-									<option value='' selected> -- 소켓구분 -- </option>
-									<option value='' >  인텔    </option>
-									<option value='' >  AMD  </option>
-								</select>
-								<select class="select" name="" title="쓰레드 선택">
-									<option value='' selected> -- 쓰레드 -- </option>
-									<option value='' >  20  </option>
-									<option value='' >  12  </option>
-									<option value='' >  8  </option>
-									<option value='' >  4  </option>
-								</select>
-							</ul>
-							<ul>
-								<select class="select" name="srchMaker" title="동작속도 선택">
-									<option value='' selected> -- 동작속도 -- </option>
-									<option value='' >  4.5 ~ 4.99 GHz </option>
-									<option value='' >  4.0 ~ 4.49 GHz </option>
-									<option value='' >  3.5 ~ 3.99 GHz </option>
-								</select>
-							
-								<select class="select" name="srchMaker" title="연산체제 선택">
-									<option value='' selected> -- 연산체제 -- </option>
-									<option value='' > 64비트  </option>
-									<option value='' > 32비트 </option>
-								</select>
-								<select class="select" name="srchMaker" title="GPU유무 선택">
-									<option value='' selected> -- GPU유무 -- </option>
-									<option value='' > GPU 내장 CPU</option>
-									<option value='' > GPU 비포함 CPU </option>
+								<select class="select" name="TAG_4" id="TAG_4" title="부가 기능">
+									<option value='' selected> -- 부가 기능 -- </option>
+									<option value='게이밍마우스' > 게이밍 마우스  </option>
+									<option value='무게추조절' > 무게추 조절 </option>
+									<option value='커스텀펌웨어' > 커스텀 펌웨어   </option>
+									<option value='파츠변경가능' > 파츠 변경 가능   </option>
+									<option value='DPIshift' > DPI shift   </option>
+									<option value='멀티페어링' > 멀티페어링   </option>
 								</select>
 							</ul>
 						</div>
@@ -1081,6 +1085,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         	}
         });
     </script>  
+    <script>
+    function Product_Search() {
+    var CATEGORY3_NUM =  $("#CATEGORY3_NUM option:selected").val();
+    var TAG_1 =  $("#TAG_1 option:selected").val();
+    var TAG_2 =  $("#TAG_2 option:selected").val();
+    var TAG_3 =  $("#TAG_3 option:selected").val();
+    var TAG_4 =  $("#TAG_4 option:selected").val();
+
+    
+    location.replace("/assemblyPC?CATEGORY1_NUM=1&CATEGORY2_NUM=11&CATEGORY3_NUM="+CATEGORY3_NUM+"&TAG_1="+TAG_1+"&TAG_2="+TAG_2+"&TAG_3="+TAG_3+"&TAG_4="+TAG_4);
+	   
+    }
+    </script>
+    
 	<!-- //cart-js --> 
 </body>
 </html>

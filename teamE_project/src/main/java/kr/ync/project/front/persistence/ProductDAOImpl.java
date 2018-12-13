@@ -69,6 +69,9 @@ public class ProductDAOImpl implements ProductDAO {
 	}
 
 	
+
+	
+	
 	public List<ProductVO> AssemblyPC(int CATEGORY1_NUM, int CATEGORY2_NUM, String CATEGORY3_NUM,String TAG_1, String TAG_2, String TAG_3, String TAG_4, String TAG_5, String TAG_6) throws Exception {
 		 Map<String, Object> parameters = new HashMap<String, Object>();
 		 parameters.put("CATEGORY1_NUM", CATEGORY1_NUM);
@@ -91,18 +94,26 @@ public class ProductDAOImpl implements ProductDAO {
 		return session.selectOne(namespace + ".event_img", event_num);
 	}
 	 
-	public List<ProductVO> StandardPC(int CATEGORY1_NUM, int CATEGORY2_NUM) throws Exception {
+	public List<ProductVO> StandardPC(int CATEGORY1_NUM, int CATEGORY2_NUM, String CATEGORY3_NUM, String TAG_1, String TAG_2, String TAG_3) throws Exception {
 		 Map<String, Object> parameters = new HashMap<String, Object>();
 		 parameters.put("CATEGORY1_NUM", CATEGORY1_NUM);
 		 parameters.put("CATEGORY2_NUM", CATEGORY2_NUM);
+		 parameters.put("CATEGORY3_NUM", CATEGORY3_NUM);
+		 parameters.put("TAG_1", TAG_1);
+		 parameters.put("TAG_2", TAG_2);
+		 parameters.put("TAG_3", TAG_3);
 		
 		 return session.selectList(namespace + ".standard", parameters);
 	}
 	
-	public List<ProductVO> LaptopPC(int CATEGORY1_NUM, int CATEGORY2_NUM) throws Exception {
+	public List<ProductVO> LaptopPC(int CATEGORY1_NUM, int CATEGORY2_NUM, String CATEGORY3_NUM, String TAG_1, String TAG_2, String TAG_3) throws Exception {
 		 Map<String, Object> parameters = new HashMap<String, Object>();
 		 parameters.put("CATEGORY1_NUM", CATEGORY1_NUM);
 		 parameters.put("CATEGORY2_NUM", CATEGORY2_NUM);
+		 parameters.put("CATEGORY3_NUM", CATEGORY3_NUM);
+		 parameters.put("TAG_1", TAG_1);
+		 parameters.put("TAG_2", TAG_2);
+		 parameters.put("TAG_3", TAG_3);
 		
 		 return session.selectList(namespace + ".laptop", parameters);
 	}
@@ -116,9 +127,13 @@ public class ProductDAOImpl implements ProductDAO {
 		 return session.selectList(namespace + ".review", PRODUCT_NUM);
 	}
 	
-	public List<ProductVO> Search(String keyword) throws Exception {
+	public List<ProductVO> Search(String keyword, int sort) throws Exception {
+		 
+		 Map<String, Object> parameters = new HashMap<String, Object>();
+		 parameters.put("keyword", keyword);
+		 parameters.put("sort", sort);
 		
-		 return session.selectList(namespace + ".search", keyword);
+		 return session.selectList(namespace + ".search", parameters);
 	}
 	
 	/*@Override

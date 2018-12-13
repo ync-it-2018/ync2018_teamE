@@ -25,10 +25,9 @@ public class UserLoginInterceptor extends HandlerInterceptorAdapter {
 		ModelMap modelMap = modelAndView.getModelMap();
 		Object UserLoginVO = modelMap.get("UserLoginVO");
 		
-		// AdminVO가 null 이란 말은 DB에서 해당 user에 대한 data가 없다는 말이다.  
 		if (UserLoginVO != null) {
 
-			log.info("new login success");
+			log.info("user login success");
 			session.setAttribute(LOGIN, UserLoginVO);
 
 			if (request.getParameter("useCookie") != null) {

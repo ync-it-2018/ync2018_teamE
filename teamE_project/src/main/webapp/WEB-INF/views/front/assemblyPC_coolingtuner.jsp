@@ -43,6 +43,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 		});
 	});
+	
+	function search() {
+		var keyword = $('input[name=keyword]').val();
+		location.replace("/search?keyword="+keyword+"&sort=1");
+	}
 </script>
 <style>
 
@@ -225,10 +230,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<input class="search_box" type="checkbox" id="search_box">
 				<label class="icon-search" for="search_box"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></label>
 				<div class="search_form">
-					<form action="/search" method="get">
-						<input type="text" name="keyword" placeholder="Search...">
-						<input type="submit" value="Send">
-					</form>
+					<input type="text" name="keyword" placeholder="Search...">
+					<input type="submit" value="Send" onclick="search()">
 				</div>
 			</div>
 			<div class="cart cart box_1"> 
@@ -343,48 +346,57 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<ul>
 								<select class="select" name="CATEGORY3_NUM" id="CATEGORY3_NUM" title="제조사" style="width:89%;">
 									<option value='' selected> -- 제조사 -- </option>
-									<option value='' >  인텔   </option>
-									<option value='' >  AMD  </option>
+									<option value='쿨러마스터 ' >  쿨러마스터   </option>
+									<option value='DEEPCOOL' >  DEEPCOOL  </option>
+									<option value='Antec' >  Antec   </option>
+									<option value='잘만' >  잘만  </option>
+									<option value='JONSBO ' >  JONSBO   </option>
+									<option value='써모랩' >  써모랩  </option>
+									<option value='CORSAIR' >  CORSAIR   </option>
+									<option value='NZXT' >  NZXT  </option>
+									<option value='BYKSKI' >  BYKSKI  </option>
+									<option value='NOCTUA' >  NOCTUA  </option>
+									<option value='EVGA' >  'EVGA'  </option>
 								</select>
 								<input type="button" value="검색" onClick="Product_Search()">
 							</ul>
 							<ul>
-								<select class="select" name="TAG_1" id="TAG_1" title="브랜드 선택">
-									<option value='' selected> -- 브랜드 -- </option>
-									<option value='' >  인텔   </option>
-									<option value='' >  AMD  </option>
+								<select class="select" name="TAG_1" id="TAG_1" title="제품 종류">
+									<option value='' selected> -- 제품 종류 -- </option>
+									<option value='CPU쿨러' >  CPU 쿨러   </option>
+									<option value='시스템쿨러' >  시스템 쿨러  </option>
+									<option value='써멀컴파운드' >  써멀 컴파운드  </option>
 								</select>
-								<select class="select" name="TAG_2" id="TAG_2" title="소켓구분 선택">
-									<option value='' selected> -- 소켓구분 -- </option>
-									<option value='' >  인텔    </option>
-									<option value='' >  AMD  </option>
+								<select class="select" name="TAG_2" id="TAG_2" title="냉각 방식">
+									<option value='' selected> -- 냉각 방식 -- </option>
+									<option value='공랭' >  공랭    </option>
+									<option value='수랭' >  수랭  </option>
 								</select>
-								<select class="select" name="TAG_3" id="TAG_3" title="쓰레드 선택">
-									<option value='' selected> -- 쓰레드 -- </option>
-									<option value='' >  20  </option>
-									<option value='' >  12  </option>
-									<option value='' >  8  </option>
-									<option value='' >  4  </option>
+								<select class="select" name="TAG_3" id="TAG_3" title="쿨링팬 크기">
+									<option value='' selected> -- 쿨링팬 크기 -- </option>
+									<option value='120mm' >  120mm  </option>
+									<option value='92mm' >  92mm  </option>
+									<option value='80mm' >  80mm  </option>
 								</select>
 							</ul>
 							<ul>
-								<select class="select" name="TAG_4" id="TAG_4" title="동작속도 선택">
-									<option value='' selected> -- 동작속도 -- </option>
-									<option value='' >  4.5 ~ 4.99 GHz </option>
-									<option value='' >  4.0 ~ 4.49 GHz </option>
-									<option value='' >  3.5 ~ 3.99 GHz </option>
+								<select class="select" name="TAG_4" id="TAG_4" title="인텔 소켓">
+									<option value='' selected> -- 인텔 소켓 -- </option>
+									<option value='LGA115x' >  LGA115x </option>
+									<option value='LGA2011-V3' >  LGA2011-V3 </option>
+									<option value='LGA2011' >  LGA2011 </option>
+									<option value='LGA775' >  LGA775 </option>
 								</select>
 							
-								<select class="select" name="TAG_5" id="TAG_5" title="연산체제 선택">
-									<option value='' selected> -- 연산체제 -- </option>
-									<option value='' > 64비트  </option>
-									<option value='' > 32비트 </option>
+								<select class="select" name="TAG_5" id="TAG_5" title="AMD 소켓">
+									<option value='' selected> -- AMD 소켓 -- </option>
+									<option value='AM4' > AM4  </option>
+									<option value='FMx/AMx(AM1/4별도)' > FMx/AMx (AM1/4별도) </option>
+									<option value='AM1' > AM1  </option>
+									<option value='소켓939' > 소켓939  </option>
+									<option value='소켓754' > 소켓754  </option>
 								</select>
-								<select class="select" name="TAG_6" id="TAG_6" title="GPU유무 선택">
-									<option value='' selected> -- GPU유무 -- </option>
-									<option value='' > GPU 내장 CPU</option>
-									<option value='' > GPU 비포함 CPU </option>
-								</select>
+								
 							</ul>
 						</div>
 					</div>
@@ -1089,9 +1101,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     var TAG_3 =  $("#TAG_3 option:selected").val();
     var TAG_4 =  $("#TAG_4 option:selected").val();
     var TAG_5 =  $("#TAG_5 option:selected").val();
-    var TAG_6 =  $("#TAG_6 option:selected").val();
+  
     
-    location.replace("/assemblyPC?CATEGORY1_NUM=1&CATEGORY2_NUM=1&CATEGORY3_NUM="+CATEGORY3_NUM+"&TAG_1="+TAG_1+"&TAG_2="+TAG_2+"&TAG_3="+TAG_3+"&TAG_4="+TAG_4);
+    location.replace("/assemblyPC?CATEGORY1_NUM=1&CATEGORY2_NUM=13&CATEGORY3_NUM="+CATEGORY3_NUM+"&TAG_1="+TAG_1+"&TAG_2="+TAG_2+"&TAG_3="+TAG_3+"&TAG_4="+TAG_4+"&TAG_5="+TAG_5);
 	   
     }
     </script>

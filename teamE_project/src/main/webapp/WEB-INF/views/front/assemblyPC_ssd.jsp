@@ -43,6 +43,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 		});
 	});
+	
+	function search() {
+		var keyword = $('input[name=keyword]').val();
+		location.replace("/search?keyword="+keyword+"&sort=1");
+	}
 </script>
 <style>
 
@@ -226,10 +231,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<input class="search_box" type="checkbox" id="search_box">
 				<label class="icon-search" for="search_box"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></label>
 				<div class="search_form">
-					<form action="/search" method="get">
-						<input type="text" name="keyword" placeholder="Search...">
-						<input type="submit" value="Send">
-					</form>
+					<input type="text" name="keyword" placeholder="Search...">
+					<input type="submit" value="Send" onclick="search()">
 				</div>
 			</div>
 			<div class="cart cart box_1"> 
@@ -342,82 +345,83 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<H1 style="margin: 10px;"> SSD </H1>
 						<div class="select_list">
 							<ul>
-								<select class="select" name="" title="제조사" style="width:96%;">
+								<select class="select" name="CATEGORY3_NUM" id="CATEGORY3_NUM" title="제조사" style="width:89%;">
 									<option value='' selected> -- 제조사 -- </option>
-									<option value='' >  삼성전자   </option>
-									<option value='' >  마이크론  </option>
-									<option value='' >  AD ATA </option>
-									<option value='' >  Sandisk  </option>
-									<option value='' >  ACPI  </option>
-									<option value='' >  Western Digital </option>
-									<option value='' >  Seagate  </option>
-									<option value='' >  킹스톤  </option>
-									<option value='' >  타무즈  </option>
-									<option value='' >  실리콘파워  </option>
+									<option value='삼성전자' >  삼성전자   </option>
+									<option value='마이크론' >  마이크론  </option>
+									<option value='ADATA' >  AD ATA </option>
+									<option value='Sandisk' >  Sandisk  </option>
+									<option value='ACPI' >  ACPI  </option>
+									<option value='WesternDigital' >  Western Digital </option>
+									<option value='Seagate' >  Seagate  </option>
+									<option value='킹스톤' >  킹스톤  </option>
+									<option value='타무즈' >  타무즈  </option>
+									<option value='실리콘파워' >  실리콘파워  </option>
 								</select>
+								<input type="button" value="검색" onClick="Product_Search()">
 							</ul>
 							<ul>
-								<select class="select" name="" title="제품 분류">
+								<select class="select" name="TAG_1" id="TAG_1" title="제품 분류">
 									<option value='' selected> -- 제품 분류 -- </option>
-									<option value='' >  내장형SSD   </option>
-									<option value='' >  SSD/HDD 주변기기  </option>
-									<option value='' >  산업용SSD  </option>
+									<option value='내장형SSD' >  내장형SSD   </option>
+									<option value='SSD/HDD주변기기' >  SSD/HDD 주변기기  </option>
+									<option value='산업용SSD' >  산업용SSD  </option>
 								</select>
-								<select class="select" name="" title="디스크 타입">
+								<select class="select" name="TAG_2" id="TAG_2" title="디스크 타입">
 									<option value='' selected> -- 디스크 타입 -- </option>
-									<option value='' >  2.5형(6.4cm)    </option>
-									<option value='' >  M.2 (2280)  </option>
-									<option value='' >  M.2 (2260)  </option>
-									<option value='' >  Mini SATA(mSATA)  </option>
-									<option value='' >  PCle 카드  </option>
+									<option value=' 2.5형(6.4cm)' >  2.5형(6.4cm)    </option>
+									<option value='M.2(2280)' >  M.2 (2280)  </option>
+									<option value='M.2(2260)' >  M.2 (2260)  </option>
+									<option value='MiniSATA(mSATA)' >  Mini SATA(mSATA)  </option>
+									<option value='PCle카드' >  PCle 카드  </option>
 								</select>
-								<select class="select" name="" title="인터페이스">
+								<select class="select" name="TAG_3" id="TAG_3" title="인터페이스">
 									<option value='' selected> -- 인터페이스 -- </option>
-									<option value='' >  SATA3 (6Gb/s)  </option>
-									<option value='' >  SATA2 (3Gb/s)  </option>
-									<option value='' >  SATA1 (1.5Gb/s)  </option>
-									<option value='' >  PCle3.0x8 (64GT/s)  </option>
-									<option value='' >  PCle3.0x4 (32GT/s)  </option>
-									<option value='' >  PCle3.0x2 (16GT/s)  </option>
-									<option value='' >  PCle2.0x16 (80GT/s)  </option>
-									<option value='' >  PCle2.0x8 (40GT/s)  </option>
-									<option value='' >  PCle2.0x4 (20GT/s)  </option>
-									<option value='' >  PCle2.0x2 (10GT/s)  </option>
-									<option value='' >  PCle1.0x8 (20GT/s)  </option>
-									<option value='' >  PCle1.0x4 (10GT/s)  </option>
-									<option value='' >  U.2 (PCle3.0x4)  </option>
-									<option value='' >  SAS (12GT/s)  </option>
-									<option value='' >  SAS (6GT/s)  </option>
-									<option value='' >  E-IDE  </option>
-									<option value='' >  ZIF  </option>
+									<option value='SATA3(6Gb/s)' >  SATA3 (6Gb/s)  </option>
+									<option value='SATA2(3Gb/s)' >  SATA2 (3Gb/s)  </option>
+									<option value='SATA1(1.5Gb/s)' >  SATA1 (1.5Gb/s)  </option>
+									<option value='PCle3.0x8(64GT/s)' >  PCle3.0x8 (64GT/s)  </option>
+									<option value='PCle3.0x4(32GT/s)' >  PCle3.0x4 (32GT/s)  </option>
+									<option value='PCle3.0x2(16GT/s)' >  PCle3.0x2 (16GT/s)  </option>
+									<option value='PCle2.0x16(80GT/s)' >  PCle2.0x16 (80GT/s)  </option>
+									<option value='PCle2.0x8(40GT/s)' >  PCle2.0x8 (40GT/s)  </option>
+									<option value='PCle2.0x4(20GT/s)' >  PCle2.0x4 (20GT/s)  </option>
+									<option value='PCle2.0x2(10GT/s)' >  PCle2.0x2 (10GT/s)  </option>
+									<option value='PCle1.0x8(20GT/s)' >  PCle1.0x8 (20GT/s)  </option>
+									<option value='PCle1.0x4(10GT/s)' >  PCle1.0x4 (10GT/s)  </option>
+									<option value='U.2(PCle3.0x4)' >  U.2 (PCle3.0x4)  </option>
+									<option value='SAS(12GT/s)' >  SAS (12GT/s)  </option>
+									<option value='SAS(6GT/s)' >  SAS (6GT/s)  </option>
+									<option value='E-IDE' >  E-IDE  </option>
+									<option value='ZIF' >  ZIF  </option>
 								</select>
 							</ul>
 							<ul>
-								<select class="select" name="" title="디스크 용량">
+								<select class="select" name="TAG_4" id="TAG_4" title="디스크 용량">
 									<option value='' selected> -- 디스크 용량 -- </option>
-									<option value='' >  512GB </option>
-									<option value='' >  256GB </option>
-									<option value='' >  128GB </option>
-									<option value='' >  120GB </option>
+									<option value='512GB' >  512GB </option>
+									<option value='256GB' >  256GB </option>
+									<option value='128GB' >  128GB </option>
+									<option value='120GB' >  120GB </option>
 								</select>
 							
-								<select class="select" name="" title="메모리 타입">
+								<select class="select" name="TAG_5" id="TAG_5" title="메모리 타입">
 									<option value='' selected> -- 메모리 타입 -- </option>
-									<option value='' > SLC  </option>
-									<option value='' > MLC(토글)  </option>
-									<option value='' > MLC(동기식) </option>
-									<option value='' > MLC(기타) </option>
-									<option value='' > TLC(토글) </option>
-									<option value='' > TLC(기타) </option>
-									<option value='' > QLC </option>
+									<option value='SLC' > SLC  </option>
+									<option value='MLC(토글)' > MLC(토글)  </option>
+									<option value='MLC(동기식)' > MLC(동기식) </option>
+									<option value='MLC(기타)' > MLC(기타) </option>
+									<option value='TLC(토글)' > TLC(토글) </option>
+									<option value='TLC(기타)' > TLC(기타) </option>
+									<option value='QLC' > QLC </option>
 								</select>
-								<select class="select" name="" title="컨트롤러">
+								<select class="select" name="TAG_6" id="TAG_6" title="컨트롤러">
 									<option value='' selected> -- 컨트롤러 -- </option>
-									<option value='' > 삼성   </option>
-									<option value='' > 마벨  </option>
-									<option value='' > 샌드포스  </option>
-									<option value='' > 인디링스  </option>
-									<option value='' > 인텔 </option>
+									<option value='삼성' > 삼성   </option>
+									<option value='마벨' > 마벨  </option>
+									<option value='샌드포스' > 샌드포스  </option>
+									<option value='인디링스' > 인디링스  </option>
+									<option value='인텔' > 인텔 </option>
 								</select>
 							</ul>
 						</div>
@@ -1115,6 +1119,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         	}
         });
     </script>  
+    <script>
+    function Product_Search() {
+    var CATEGORY3_NUM =  $("#CATEGORY3_NUM option:selected").val();
+    var TAG_1 =  $("#TAG_1 option:selected").val();
+    var TAG_2 =  $("#TAG_2 option:selected").val();
+    var TAG_3 =  $("#TAG_3 option:selected").val();
+    var TAG_4 =  $("#TAG_4 option:selected").val();
+    var TAG_5 =  $("#TAG_5 option:selected").val();
+    var TAG_6 =  $("#TAG_6 option:selected").val();
+    
+    location.replace("/assemblyPC?CATEGORY1_NUM=1&CATEGORY2_NUM=5&CATEGORY3_NUM="+CATEGORY3_NUM+"&TAG_1="+TAG_1+"&TAG_2="+TAG_2+"&TAG_3="+TAG_3+"&TAG_4="+TAG_4+"&TAG_5="+TAG_5+"&TAG_6="+TAG_6);
+	   
+    }
+    </script>
+    
 	<!-- //cart-js --> 
 </body>
 </html>

@@ -27,9 +27,9 @@ public interface ProductDAO {
 	
 	public ImageVO event_img(int event_num) throws Exception;
 
-	public List<ProductVO> StandardPC(int CATEGORY1_NUM, int CATEGORY2_NUM) throws Exception;
+	public List<ProductVO> StandardPC(int CATEGORY1_NUM, int CATEGORY2_NUM, String CATEGORY3_NUM, String TAG_1, String TAG_2, String TAG_3) throws Exception;
 	
-	public List<ProductVO> LaptopPC(int CATEGORY1_NUM, int CATEGORY2_NUM) throws Exception;
+	public List<ProductVO> LaptopPC(int CATEGORY1_NUM, int CATEGORY2_NUM, String CATEGORY3_NUM, String TAG_1, String TAG_2, String TAG_3) throws Exception;
 	
 	public ProductVO Detail(int PRODUCT_NUM) throws Exception;
 	
@@ -37,9 +37,9 @@ public interface ProductDAO {
 	
 	public List<ProductVO> Review(int PRODUCT_NUM) throws Exception;
 	
-	public List<ProductVO> Search(String keyword) throws Exception;
+	public List<ProductVO> Search(String keyword, int sort) throws Exception;
 	
-
+	
 //	public List<BoardVO> listCriteria(Criteria cri) throws Exception;
 //
 //	public int countPaging(Criteria cri) throws Exception;
