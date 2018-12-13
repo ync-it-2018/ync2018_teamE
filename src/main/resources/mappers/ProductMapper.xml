@@ -42,16 +42,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  		 <if test="TAG_6 != null">
  		    AND PRODUCT_TAG LIKE '%'|| #{TAG_6}||'%' -->
  		 </if>
-
- 	
- 	<!-- <if test="CATEGORY3_NUM != null" >
-	AND CATEGORY3_NAME = #{CATEGORY3_NUM}
-	</if>
-	<if test="TAG_1 != null" >
-	AND PRODUCT_TAG LIKE '%'|| #{TAG_1}||'%'
-	</if> -->
-	
-	<!-- AND CATEGORY3_NUM LIKE '%'|| #{CATEGORY3_NUM}||'%' -->
 </select>
 <select id="standard" parameterType="map" resultType="ProductVO">
 

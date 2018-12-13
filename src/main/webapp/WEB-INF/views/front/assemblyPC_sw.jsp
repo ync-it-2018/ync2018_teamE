@@ -343,49 +343,54 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<H1 style="margin: 10px;"> S/W </H1>
 						<div class="select_list">
 							<ul>
-								<select class="select" name="CATEGORY3_NUM" id="CATEGORY3_NUM" title="제조사" style="width:89%;">
+							<select class="select" name="CATEGORY3_NUM" id="CATEGORY3_NUM" title="제조사" style="width:89%;">
 									<option value='' selected> -- 제조사 -- </option>
-									<option value='인텔' >  인텔   </option>
-									<option value='AMD' >  AMD  </option>
+									<option value='Microsoft' >  Microsoft   </option>
+									<option value='한글과컴퓨터' >  한글과컴퓨터  </option>
+									<option value='맥아피' >  맥아피  </option>
+									<option value='오토데스크' >  오토데스크  </option>
+									<option value='Adobe' >  Adobe  </option>
 								</select>
 								<input type="button" value="검색" onClick="Product_Search()">
 							</ul>
 							<ul>
-								<select class="select" name="" title="브랜드 선택">
-									<option value='' selected> -- 브랜드 -- </option>
-									<option value='' >  인텔   </option>
-									<option value='' >  AMD  </option>
+								<select class="select" name="TAG_1" id="TAG_1" title="제품 분류">
+									<option value='' selected> -- 제품 분류 -- </option>
+									<option value='운영체제' >  운영체제   </option>
+									<option value='일반사무' > 일반 사무  </option>
+									<option value='그래픽/웹' > 그래픽/웹   </option>
+									<option value=백신/보안'' > 백신/보안   </option>
+									<option value='개발툴' > 개발툴   </option>
+									<option value='멀티미디어' > 멀티미디어  </option>
 								</select>
-								<select class="select" name="" title="소켓구분 선택">
-									<option value='' selected> -- 소켓구분 -- </option>
-									<option value='' >  인텔    </option>
-									<option value='' >  AMD  </option>
+								<select class="select" name="TAG_2" id="TAG_2" title="라이선스 종류">
+									<option value='' selected> -- 라이선스 종류 -- </option>
+									<option value='처음사용자용(FPP)' >  처음사용자용(FPP)    </option>
+									<option value='DSP(COEM)' >  DSP(COEM)  </option>
+									<option value='업그레이드' >  업그레이드  </option>
+									<option value='라이선스' >  라이선스  </option>
+									<option value='PKC(MLP)' >  PKC(MLP)  </option>
+									<option value='ESD' >  ESD  </option>
 								</select>
-								<select class="select" name="" title="쓰레드 선택">
-									<option value='' selected> -- 쓰레드 -- </option>
-									<option value='' >  20  </option>
-									<option value='' >  12  </option>
-									<option value='' >  8  </option>
-									<option value='' >  4  </option>
+								<select class="select" name="TAG_3" id="TAG_3" title="사용 장소(대상)">
+									<option value='' selected> -- 사용 장소(대상) -- </option>
+									<option value='제한없음' >  제한없음  </option>
+									<option value='사무(기업)용' >  사무(기업)용  </option>
+									<option value='가정용' >  가정용  </option>
+									<option value='행정기관용' >  행정기관용  </option>
+									<option value='교육기관용' >  교육기관용  </option>
+									<option value='학생,교사전용' >  학생,교사전용  </option>
 								</select>
 							</ul>
 							<ul>
-								<select class="select" name="srchMaker" title="동작속도 선택">
-									<option value='' selected> -- 동작속도 -- </option>
-									<option value='' >  4.5 ~ 4.99 GHz </option>
-									<option value='' >  4.0 ~ 4.49 GHz </option>
-									<option value='' >  3.5 ~ 3.99 GHz </option>
-								</select>
-							
-								<select class="select" name="srchMaker" title="연산체제 선택">
-									<option value='' selected> -- 연산체제 -- </option>
-									<option value='' > 64비트  </option>
-									<option value='' > 32비트 </option>
-								</select>
-								<select class="select" name="srchMaker" title="GPU유무 선택">
-									<option value='' selected> -- GPU유무 -- </option>
-									<option value='' > GPU 내장 CPU</option>
-									<option value='' > GPU 비포함 CPU </option>
+								<select class="select" name="TAG_4" id="TAG_4" title="사용 운영체제">
+									<option value='' selected> -- 사용 운영체제 -- </option>
+									<option value='윈도우용' > 윈도우용 </option>
+									<option value='Mac용' > Mac용 </option>
+									<option value='윈도우즈/Max겸용' > 윈도우즈/Max겸용 </option>
+									<option value='리눅스용' > 리눅스용 </option>
+									<option value='안드로이드' > 안드로이드  </option>
+									
 								</select>
 							</ul>
 						</div>
@@ -1069,6 +1074,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         	}
         });
     </script>  
+    <script>
+    function Product_Search() {
+    var CATEGORY3_NUM =  $("#CATEGORY3_NUM option:selected").val();
+    var TAG_1 =  $("#TAG_1 option:selected").val();
+    var TAG_2 =  $("#TAG_2 option:selected").val();
+    var TAG_3 =  $("#TAG_3 option:selected").val();
+    var TAG_4 =  $("#TAG_4 option:selected").val();
+
+    
+    location.replace("/assemblyPC?CATEGORY1_NUM=1&CATEGORY2_NUM=14&CATEGORY3_NUM="+CATEGORY3_NUM+"&TAG_1="+TAG_1+"&TAG_2="+TAG_2+"&TAG_3="+TAG_3+"&TAG_4="+TAG_4);
+	   
+    }
+    </script>
+    
 	<!-- //cart-js --> 
 </body>
 </html>

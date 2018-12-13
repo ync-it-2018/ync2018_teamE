@@ -344,48 +344,60 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<H1 style="margin: 10px;"> 키보드 </H1>
 						<div class="select_list">
 							<ul>
-								<select class="select" name="" title="제조사 선택" style="width:96%;">
+								<select class="select" name="CATEGORY3_NUM" id="CATEGORY3_NUM" title="제조사" style="width:89%;">
 									<option value='' selected> -- 제조사 -- </option>
-									<option value='' >  인텔   </option>
-									<option value='' >  AMD  </option>
+									<option value='AION' >  AION   </option>
+									<option value='APPLE' >  APPLE  </option>
+									<option value='ASUS' >  ASUS   </option>
+									<option value='BEFINE' >  BEFINE  </option>
+									<option value='BTC-Secu' >  BTC-Secu   </option>
+									<option value='Britz' >  Britz  </option>
+									<option value='COX' >  COX   </option>
+									<option value='CORSAIR' >  CORSAIR   </option>
+									<option value='Microsoft' >  Microsoft   </option>
+									<option value='마이크로닉스' >  마이크로닉스  </option>
+									<option value='로지텍' >  로지텍  </option>
+									<option value='제닉스' >  제닉스  </option>
+									<option value='스카이디지탈' >  스카이디지탈  </option>
+									
+								</select>
+								<input type="button" value="검색" onClick="Product_Search()">
+							</ul>
+							<ul>
+								<select class="select" name="TAG_1" id="TAG_1" title="제품 분류">
+									<option value='' selected> -- 제품 분류 -- </option>
+									<option value='키보드(일반)' >  키보드(일반)   </option>
+									<option value='키보드(일반)+마우스' >  키보드(일반)+마우스  </option>
+									<option value='키패드' >  키패드   </option>
+									<option value='키보드받침대' >  키보드 받침대  </option>
+									<option value='키캡' >  키캡   </option>
+								</select>
+								<select class="select" name="TAG_2" id="TAG_2" title="연결 방식">
+									<option value='' selected> -- 연결 방식 -- </option>
+									<option value='유선' >  유선    </option>
+									<option value='무산' >  무산  </option>
+									<option value='블루투스' >  블루투스    </option>
+									<option value='무선+블루투스' >  무선+블루투스  </option>>
+								</select>
+								<select class="select" name="TAG_3" id="TAG_3" title="인터페이스">
+									<option value='' selected> -- "인터페이스" -- </option>
+									<option value='USB' >  USB  </option>
+									<option value='USB+PS2젠더' >  USB+PS2젠더  </option>
+									<option value='PS2' >  PS2  </option>
+									<option value='키/PS2+마/USB' >  키/PS2+마/USB  </option>
 								</select>
 							</ul>
 							<ul>
-								<select class="select" name="" title="브랜드 선택">
-									<option value='' selected> -- 브랜드 -- </option>
-									<option value='' >  인텔   </option>
-									<option value='' >  AMD  </option>
-								</select>
-								<select class="select" name="" title="소켓구분 선택">
-									<option value='' selected> -- 소켓구분 -- </option>
-									<option value='' >  인텔    </option>
-									<option value='' >  AMD  </option>
-								</select>
-								<select class="select" name="" title="쓰레드 선택">
-									<option value='' selected> -- 쓰레드 -- </option>
-									<option value='' >  20  </option>
-									<option value='' >  12  </option>
-									<option value='' >  8  </option>
-									<option value='' >  4  </option>
-								</select>
-							</ul>
-							<ul>
-								<select class="select" name="srchMaker" title="동작속도 선택">
-									<option value='' selected> -- 동작속도 -- </option>
-									<option value='' >  4.5 ~ 4.99 GHz </option>
-									<option value='' >  4.0 ~ 4.49 GHz </option>
-									<option value='' >  3.5 ~ 3.99 GHz </option>
-								</select>
-							
-								<select class="select" name="srchMaker" title="연산체제 선택">
-									<option value='' selected> -- 연산체제 -- </option>
-									<option value='' > 64비트  </option>
-									<option value='' > 32비트 </option>
-								</select>
-								<select class="select" name="srchMaker" title="GPU유무 선택">
-									<option value='' selected> -- GPU유무 -- </option>
-									<option value='' > GPU 내장 CPU</option>
-									<option value='' > GPU 비포함 CPU </option>
+								<select class="select" name="TAG_4" id="TAG_4" title="접점 방식">
+									<option value='' selected> -- 접점 방식 -- </option>
+									<option value='멤브레인' >  멤브레인  </option>
+									<option value='펜타그래프' >  펜타그래프  </option>
+									<option value='기계식' >  기계식 </option>
+									<option value='무접점(광축)' >  무접점(광축)</option>
+									<option value='무접점(정전용량)' >  무접점(정전용량)  </option>
+									<option value='플린저' >  플린저 </option>
+									<option value='리버돔' >  플린저 </option>
+									
 								</select>
 							</ul>
 						</div>
@@ -1083,6 +1095,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         	}
         });
     </script>  
+    <script>
+    function Product_Search() {
+    var CATEGORY3_NUM =  $("#CATEGORY3_NUM option:selected").val();
+    var TAG_1 =  $("#TAG_1 option:selected").val();
+    var TAG_2 =  $("#TAG_2 option:selected").val();
+    var TAG_3 =  $("#TAG_3 option:selected").val();
+    var TAG_4 =  $("#TAG_4 option:selected").val();
+   
+    location.replace("/assemblyPC?CATEGORY1_NUM=1&CATEGORY2_NUM=10&CATEGORY3_NUM="+CATEGORY3_NUM+"&TAG_1="+TAG_1+"&TAG_2="+TAG_2+"&TAG_3="+TAG_3+"&TAG_4="+TAG_4);
+	   
+    }
+    </script>
+    
 	<!-- //cart-js --> 
 </body>
 </html>

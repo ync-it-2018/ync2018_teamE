@@ -345,48 +345,87 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<H1 style="margin: 10px;"> 모니터 </H1>
 						<div class="select_list">
 							<ul>
-								<select class="select" name="" title="제조사 선택" style="width:96%;">
+								<select class="select" name="CATEGORY3_NUM" id="CATEGORY3_NUM" title="제조사" style="width:89%;">
 									<option value='' selected> -- 제조사 -- </option>
-									<option value='' >  인텔   </option>
-									<option value='' >  AMD  </option>
+									<option value='래안텍' >  래안텍   </option>
+									<option value='한성컴퓨터' >  한성컴퓨터  </option>
+									<option value='뷰소닉' >  뷰소닉   </option>
+									<option value='LG전자' >  LG전자  </option>
+									<option value='알파스캔' >  알파스캔   </option>
+									<option value='제이씨현' >  제이씨현  </option>
+									<option value='필립스' >  필립스  </option>
+									<option value='BenQ' >  'BenQ'  </option>
+								</select>
+								<input type="button" value="검색" onClick="Product_Search()">
+							</ul>
+							<ul>
+								<select class="select" name="TAG_1" id="TAG_1" title="화면 크기">
+									<option value='' selected> -- 화면 크기 -- </option>
+									<option value='(40형)' >  (40형)   </option>
+									<option value='(34형)' >  (34형)   </option>
+									<option value='(32형)' >  (32형)   </option>
+									<option value='(29형)' >  (29형)   </option>
+									<option value='(27형)' >  (27형)   </option>
+									<option value='(24형)' >  (24형)   </option>
+									<option value='(23형)' >  (23형)   </option>
+									<option value='(22형)' >  (22형)   </option>
+								</select>
+								<select class="select" name="TAG_2" id="TAG_2" title="화면 비율">
+									<option value='' selected> -- 화면 비율 -- </option>
+									<option value='와이드(16:9)' >  와이드(16:9)  </option>
+									<option value='와이드(17:9)' >  와이드(17:9)  </option>
+									<option value='와이드(16:10)' >  와이드(16:10)  </option>
+									<option value='와이드(21:9)' >  와이드(21:9)  </option>
+									<option value='와이드(32:9)' >  와이드(32:9)  </option>
+									<option value='와이드(32:10)' >  와이드(32:10)  </option>
+									<option value='일반(4:3)' >  일반(4:3)  </option>
+									<option value='일반(5:4)' >  일반(5:4)  </option>
+									<option value='특수(32:10)' >  특수(32:10)  </option>
+									
+								</select>
+								<select class="select" name="TAG_3" id="TAG_3" title="패널 종류">
+									<option value='' selected> -- 패널 종류 -- </option>
+									<option value='IPS' >  IPS  </option>
+									<option value='VA' >  VA  </option>
+									<option value='TN' >  TN  </option>
+									<option value='PLS' >  PLS  </option>
+									<option value='AHVA' >  AHVA  </option>
+									<option value='AD-PLS(ADS)' >  AD-PLS(ADS)  </option>
 								</select>
 							</ul>
 							<ul>
-								<select class="select" name="" title="브랜드 선택">
-									<option value='' selected> -- 브랜드 -- </option>
-									<option value='' >  인텔   </option>
-									<option value='' >  AMD  </option>
-								</select>
-								<select class="select" name="" title="소켓구분 선택">
-									<option value='' selected> -- 소켓구분 -- </option>
-									<option value='' >  인텔    </option>
-									<option value='' >  AMD  </option>
-								</select>
-								<select class="select" name="" title="쓰레드 선택">
-									<option value='' selected> -- 쓰레드 -- </option>
-									<option value='' >  20  </option>
-									<option value='' >  12  </option>
-									<option value='' >  8  </option>
-									<option value='' >  4  </option>
-								</select>
-							</ul>
-							<ul>
-								<select class="select" name="srchMaker" title="동작속도 선택">
-									<option value='' selected> -- 동작속도 -- </option>
-									<option value='' >  4.5 ~ 4.99 GHz </option>
-									<option value='' >  4.0 ~ 4.49 GHz </option>
-									<option value='' >  3.5 ~ 3.99 GHz </option>
+								<select class="select" name="TAG_4" id="TAG_4" title="시야각">
+									<option value='' selected> -- 시야각 -- </option>
+									<option value='일반시야각'>  일반시야각  </option>
+									<option value='광시야각'>  광시야각  </option>
+									<option value='협시야각'>  협시야각  </option>
 								</select>
 							
-								<select class="select" name="srchMaker" title="연산체제 선택">
-									<option value='' selected> -- 연산체제 -- </option>
-									<option value='' > 64비트  </option>
-									<option value='' > 32비트 </option>
+								<select class="select" name="TAG_5" id="TAG_5" title="영상입력 단자">
+									<option value='' selected> -- 영상입력 단자 -- </option>
+									<option value='HDMI'> HDMI  </option>
+									<option value='HDMI2.0'> HDMI 2.0 </option>
+									<option value='MHL'>  MHL </option>
+									<option value='DP포트' > DP포트  </option>
+									<option value='miniDP' > miniDP  </option>
+									<option value='DVI' > DVI </option>
+									<option value='D-SUB' > D-SUB </option>
+									<option value='썬더볼트3' > 썬더볼트3 </option>
+									<option value='USBType-C' >  USB Type-C  </option>
+									<option value='USB입력' > USB입력 </option>
+									<option value='BNC' > BNC </option>
+									<option value='RF안테나' > RF안테나 </option>
+									<option value='컴포넌트' > 컴포넌트 </option>
+									<option value='컴포지트' > 컴포지트 </option>
+									<option value='S-VHS' > S-VHS </option>
 								</select>
-								<select class="select" name="srchMaker" title="GPU유무 선택">
-									<option value='' selected> -- GPU유무 -- </option>
-									<option value='' > GPU 내장 CPU</option>
-									<option value='' > GPU 비포함 CPU </option>
+								<select class="select" name="TAG_6" id="TAG_6" title="부가 기능">
+									<option value='' selected> -- 부가 기능 -- </option>
+									<option value='무결점정책' > 무결점 정책</option>
+									<option value='스피커' >  스피커 </option>
+								    <option value='USB허브' > USB허브  </option>
+									<option value='USB재생' >  USB재생 </option>
+									<option value='터치스크린' >  터치스크린 </option>
 								</select>
 							</ul>
 						</div>
@@ -1084,6 +1123,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         	}
         });
     </script>  
+     <script>
+    function Product_Search() {
+    var CATEGORY3_NUM =  $("#CATEGORY3_NUM option:selected").val();
+    var TAG_1 =  $("#TAG_1 option:selected").val();
+    var TAG_2 =  $("#TAG_2 option:selected").val();
+    var TAG_3 =  $("#TAG_3 option:selected").val();
+    var TAG_4 =  $("#TAG_4 option:selected").val();
+    var TAG_5 =  $("#TAG_5 option:selected").val();
+    var TAG_6 =  $("#TAG_6 option:selected").val();
+    
+    location.replace("/assemblyPC?CATEGORY1_NUM=1&CATEGORY2_NUM=12&CATEGORY3_NUM="+CATEGORY3_NUM+"&TAG_1="+TAG_1+"&TAG_2="+TAG_2+"&TAG_3="+TAG_3+"&TAG_4="+TAG_4+"&TAG_5="+TAG_5+"&TAG_6="+TAG_6);
+	   
+    }
+    </script>
+    
 	<!-- //cart-js --> 
 </body>
 </html>

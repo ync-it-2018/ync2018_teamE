@@ -344,100 +344,101 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<H1 style="margin: 10px;"> 파워 </H1>
 						<div class="select_list">
 							<ul>
-								<select class="select" name="" title="제조사 선택" style="width:96%;">
+								<select class="select" name="CATEGORY3_NUM" id="CATEGORY3_NUM" title="제조사" style="width:89%;">
 									<option value='' selected> -- 제조사 -- </option>
-									<option value='' >  쿨러마스터   </option>
-									<option value='' >  SuperFlower  </option>
-									<option value='' >  잘만   </option>
-									<option value='' >  스카이디지탈  </option>
-									<option value='' >  Antec   </option>
-									<option value='' >  FSP  </option>
-									<option value='' >  마이크로닉스   </option>
-									<option value='' >  topower  </option>
-									<option value='' >  +PLUS   </option>
-									<option value='' >  180도  </option>
-									<option value='' >  2MONS   </option>
-									<option value='' >  ABKO  </option>
-									<option value='' >  CORSAIR   </option>
-									<option value='' >  COUGAR  </option>
-									<option value='' >  CSB   </option>
-									<option value='' >  EATON  </option>
-									<option value='' >  EVGA   </option>
-									<option value='' >  Em erson  </option>
-									<option value='' >  Enerm ax   </option>
-									<option value='' >  Enhance  </option>
-									<option value='' >  GIGABYTE   </option>
-									<option value='' >  GMC  </option>
-									<option value='' >  GSI  </option>
-									<option value='' >  개풍전자  </option>
-									<option value='' >  뉴젠테크  </option>
-									<option value='' >  다오테크  </option>
-									<option value='' >  대양케이스  </option>
-									<option value='' >  대양코퍼레이션  </option>
-									<option value='' >  델타  </option>
-									<option value='' >  디지털하우스  </option>
-									<option value='' >  에이엠컴  </option>
-									<option value='' >  에즈원아이피씨  </option>
-									<option value='' >  에피테크  </option>
-									<option value='' >  엔비케이텍  </option>
-									<option value='' >  엔씨파워텍  </option>
-									<option value='' >  오존컴퍼니  </option>
+									<option value='쿨러마스터' >  쿨러마스터   </option>
+									<option value='SuperFlower' >  SuperFlower  </option>
+									<option value='잘만' >  잘만   </option>
+									<option value='스카이디지탈' >  스카이디지탈  </option>
+									<option value='Antec' >  Antec   </option>
+									<option value='FSP' >  FSP  </option>
+									<option value='마이크로닉스' >  마이크로닉스   </option>
+									<option value='topower' >  topower  </option>
+									<option value='PLUS' >  +PLUS   </option>
+									<option value='180도' >  180도  </option>
+									<option value='2MONS' >  2MONS   </option>
+									<option value='ABKO' >  ABKO  </option>
+									<option value='CORSAIR' >  CORSAIR   </option>
+									<option value='COUGAR' >  COUGAR  </option>
+									<option value='CSB' >  CSB   </option>
+									<option value='EATON' >  EATON  </option>
+									<option value='EVGA' >  EVGA   </option>
+									<option value='Emerson' >  Em erson  </option>
+									<option value='Enermax' >  Enerm ax   </option>
+									<option value='Enhance' >  Enhance  </option>
+									<option value='GIGABYTE' >  GIGABYTE   </option>
+									<option value='GMC' >  GMC  </option>
+									<option value='GSI' >  GSI  </option>
+									<option value='개풍전자' >  개풍전자  </option>
+									<option value='뉴젠테크' >  뉴젠테크  </option>
+									<option value='다오테크' >  다오테크  </option>
+									<option value='대양케이스' >  대양케이스  </option>
+									<option value='대양코퍼레이션' >  대양코퍼레이션  </option>
+									<option value='델타' >  델타  </option>
+									<option value='디지털하우스' >  디지털하우스  </option>
+									<option value='에이엠컴' >  에이엠컴  </option>
+									<option value='에즈원아이피씨' >  에즈원아이피씨  </option>
+									<option value='에피테크' >  에피테크  </option>
+									<option value='엔비케이텍' >  엔비케이텍  </option>
+									<option value='엔씨파워텍' >  엔씨파워텍  </option>
+									<option value='오존컴퍼니' >  오존컴퍼니  </option>
 								</select>
+								<input type="button" value="검색" onClick="Product_Search()">
 							</ul>
 							<ul>
-								<select class="select" name="" title="제품 분류">
+								<select class="select" name="TAG_1" id="TAG_1" title="제품 분류">
 									<option value='' selected> -- 제품 분류 -- </option>
-									<option value='' >  ATX 파워   </option>
-									<option value='' >  M-ATX(SFX) 파워  </option>
-									<option value='' >  XFX 파워  </option>
-									<option value='' >  CFX 파워  </option>
-									<option value='' >  서버용 파워  </option>
-									<option value='' >  AT 파워 파워  </option>
-									<option value='' >  UPS 파워  </option>
-									<option value='' >  리던던트 파워  </option>
-									<option value='' >  인버터 파워  </option>
-									<option value='' >  DC to DC  </option>
+									<option value='ATX파워' >  ATX 파워   </option>
+									<option value=' M-ATX(SFX)파워' >  M-ATX(SFX) 파워  </option>
+									<option value='XFX파워' >  XFX 파워  </option>
+									<option value='CFX파워' >  CFX 파워  </option>
+									<option value='서버용파워' >  서버용 파워  </option>
+									<option value='AT파워' >  AT 파워  </option>
+									<option value='UPS파워' >  UPS 파워  </option>
+									<option value='리던던트파워' >  리던던트 파워  </option>
+									<option value='인버터파워' >  인버터 파워  </option>
+									<option value='DCtoDC' >  DC to DC  </option>
 								</select>
-								<select class="select" name="" title="메인 전원커넥터">
+								<select class="select" name="TAG_2" id="TAG_2" title="메인 전원커넥터">
 									<option value='' selected> -- 메인 전원커넥터 -- </option>
-									<option value='' >  24핀 전용    </option>
-									<option value='' >  20핀+4핀  </option>
-									<option value='' >  20핀+컨버터  </option>
-									<option value='' >  20핀   </option>
+									<option value='24핀전용' >  24핀 전용    </option>
+									<option value='20핀+4핀' >  20핀+4핀  </option>
+									<option value='20핀+컨버터' >  20핀+컨버터  </option>
+									<option value='20핀' >  20핀   </option>
 								</select>
-								<select class="select" name="" title="쿨링팬 크기">
+								<select class="select" name="TAG_3" id="TAG_3" title="쿨링팬 크기">
 									<option value='' selected> -- 쿨링팬 크기 -- </option>
-									<option value='' >  140mm 팬  </option>
-									<option value='' >  135mm 팬  </option>
-									<option value='' >  130mm 팬  </option>
-									<option value='' >  120mm 팬  </option>
-									<option value='' >  90mm 팬  </option>
-									<option value='' >  80mm 팬  </option>
-									<option value='' >  75mm 팬  </option>
-									<option value='' >  60mm 팬  </option>
+									<option value='140mm팬' >  140mm 팬  </option>
+									<option value='135mm팬' >  135mm 팬  </option>
+									<option value='130mm팬' >  130mm 팬  </option>
+									<option value='120mm팬' >  120mm 팬  </option>
+									<option value='90mm팬' >  90mm 팬  </option>
+									<option value='80mm팬' >  80mm 팬  </option>
+									<option value='75mm팬' >  75mm 팬  </option>
+									<option value='60mm팬' >  60mm 팬  </option>
 								</select>
 							</ul>
 							<ul>
-								<select class="select" name="" title="보조 커넥터">
+								<select class="select" name="TAG_4" id="TAG_4" title="보조 커넥터">
 									<option value='' selected> -- 보조 커넥터 -- </option>
-									<option value='' >  보조8핀(4+4) 커넥터   </option>
-									<option value='' >  보조8핀 커넥터   </option>
-									<option value='' >  FDD 커넥터   </option>
-									<option value='' >  LED 커넥터   </option>
+									<option value='보조8핀(4+4)커넥터' >  보조8핀(4+4) 커넥터   </option>
+									<option value='보조8핀커넥터' >  보조8핀 커넥터   </option>
+									<option value='FDD커넥터' >  FDD 커넥터   </option>
+									<option value='LED커넥터' >  LED 커넥터   </option>
 								</select>
 							
-								<select class="select" name="" title="인증사항">
+								<select class="select" name="TAG_5" id="TAG_5" title="인증사항">
 									<option value='' selected> -- 인증사항 -- </option>
-									<option value='' > 80 PLUS  </option>
+									<option value='80PLUS' > 80 PLUS  </option>
 								</select>
-								<select class="select" name="" title="80PLUS인증">
+								<select class="select" name="TAG_6" id="TAG_6" title="80PLUS인증">
 									<option value='' selected> -- GPU유무 -- </option>
-									<option value='' >  티타늄   </option>
-									<option value='' >  플레티넘   </option>
-									<option value='' >  골드   </option>
-									<option value='' >  실버   </option>
-									<option value='' >  브론즈   </option>
-									<option value='' >  스탠다드   </option>
+									<option value='티타늄' >  티타늄   </option>
+									<option value='플레티넘' >  플레티넘   </option>
+									<option value='골드' >  골드   </option>
+									<option value='실버' >  실버   </option>
+									<option value='브론즈' >  브론즈   </option>
+									<option value='스탠다드' >  스탠다드   </option>
 								</select>
 							</ul>
 						</div>
@@ -1135,6 +1136,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         	}
         });
     </script>  
+     <script>
+    function Product_Search() {
+    var CATEGORY3_NUM =  $("#CATEGORY3_NUM option:selected").val();
+    var TAG_1 =  $("#TAG_1 option:selected").val();
+    var TAG_2 =  $("#TAG_2 option:selected").val();
+    var TAG_3 =  $("#TAG_3 option:selected").val();
+    var TAG_4 =  $("#TAG_4 option:selected").val();
+    var TAG_5 =  $("#TAG_5 option:selected").val();
+    var TAG_6 =  $("#TAG_6 option:selected").val();
+    
+    location.replace("/assemblyPC?CATEGORY1_NUM=1&CATEGORY2_NUM=8&CATEGORY3_NUM="+CATEGORY3_NUM+"&TAG_1="+TAG_1+"&TAG_2="+TAG_2+"&TAG_3="+TAG_3+"&TAG_4="+TAG_4+"&TAG_5="+TAG_5+"&TAG_6="+TAG_6);
+	   
+    }
+    </script>
+    
 	<!-- //cart-js --> 
 </body>
 </html>

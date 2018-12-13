@@ -344,61 +344,62 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<H1 style="margin: 10px;"> 메모리 </H1>
 						<div class="select_list">
 							<ul>
-								<select class="select" name="" title="제조사 선택" style="width:96%;">
+								<select class="select" name="CATEGORY3_NUM" id="CATEGORY3_NUM" title="제조사" style="width:89%;">
 									<option value='' selected> -- 제조사 -- </option>
-									<option value='' >  삼성전자   </option>
-									<option value='' >  G.SKILL  </option>
-									<option value='' >  실리콘파워  </option>
-									<option value='' >  GIGABYTE  </option>
-									<option value='' >  GelL  </option>
+									<option value='삼성전자' >  삼성전자   </option>
+									<option value='G.SKILL' >  G.SKILL  </option>
+									<option value='실리콘파워' >  실리콘파워  </option>
+									<option value='GIGABYTE' >  GIGABYTE  </option>
+									<option value='GelL' >  GelL  </option>
 								</select>
+								<input type="button" value="검색" onClick="Product_Search()">
 							</ul>
 							<ul>
-								<select class="select" name="" title="제품 분류">
+								<select class="select" name="TAG_1" id="TAG_1" title="제품 분류">
 									<option value='' selected> -- 제품 분류 -- </option>
-									<option value='' >  DDL4   </option>
-									<option value='' >  DDL3  </option>
+									<option value='DDL4' >  DDL4   </option>
+									<option value='DDL3' >  DDL3  </option>
 								</select>
-								<select class="select" name="" title="사용 장치">
+								<select class="select" name="TAG_2" id="TAG_2" title="사용 장치">
 									<option value='' selected> -- 사용 장치 -- </option>
-									<option value='' >  PC용    </option>
-									<option value='' >  노트북용  </option>
-									<option value='' >  서버용  </option>
-									<option value='' >  프린트용  </option>
-									<option value='' >  라우터용  </option>
+									<option value='PC' >  PC용    </option>
+									<option value='노트북용' >  노트북용  </option>
+									<option value='서버용' >  서버용  </option>
+									<option value='프린트용' >  프린트용  </option>
+									<option value='라우터용' >  라우터용  </option>
 								</select>
-								<select class="select" name="" title="패키지">
+								<select class="select" name="TAG_3" id="TAG_3" title="패키지">
 									<option value='' selected> -- 패키지 -- </option>
-									<option value='' >  1ea  </option>
-									<option value='' >  2ea  </option>
-									<option value='' >  3ea  </option>
-									<option value='' >  4ea  </option>
-									<option value='' >  6ea  </option>
-									<option value='' >  8ea  </option>
+									<option value='1ea' >  1ea  </option>
+									<option value='2ea' >  2ea  </option>
+									<option value='3ea' >  3ea  </option>
+									<option value='4ea' >  4ea  </option>
+									<option value='6ea' >  6ea  </option>
+									<option value='8ea' >  8ea  </option>
 								</select>
 							</ul>
 							<ul>
-								<select class="select" name="" title="방열판">
+								<select class="select" name="TAG_4" id="TAG_4" title="방열판">
 									<option value='' selected> -- 방열판 -- </option>
-									<option value='' >  포함 </option>
-									<option value='' >  미포함 </option>
+									<option value='포함' >  포함 </option>
+									<option value='미포함' >  미포함 </option>
 								</select>
 							
-								<select class="select" name="" title="메모리 용량">
+								<select class="select" name="TAG_5" id="TAG_5" title="메모리 용량">
 									<option value='' selected> -- 메모리 용량 -- </option>
-									<option value='' > 32GB  </option>
-									<option value='' > 16GB </option>
-									<option value='' > 8GB  </option>
-									<option value='' > 4GB </option>
-									<option value='' > 2GB  </option>
+									<option value='32GB' > 32GB  </option>
+									<option value='16GB' > 16GB </option>
+									<option value='8GB' > 8GB  </option>
+									<option value='4GB' > 4GB </option>
+									<option value='2GB' > 2GB  </option>
 								</select>
-								<select class="select" name="" title="동작 쿨럭">
+								<select class="select" name="TAG_6" id="TAG_6" title="동작 쿨럭">
 									<option value='' selected> -- 동작 쿨럭 -- </option>
-									<option value='' >  3,200MHz</option>
-									<option value='' >  3,000MHz</option>
-									<option value='' >  2,400MHz</option>
-									<option value='' >  2,133MHz</option>
-									<option value='' >  1,600MHz</option>
+									<option value='3,200MHz' >  3,200MHz</option>
+									<option value='3,000MHz' >  3,000MHz</option>
+									<option value='2,400MHz' >  2,400MHz</option>
+									<option value='2,133MHz' >  2,133MHz</option>
+									<option value='1,600MHz' >  1,600MHz</option>
 								</select>
 							</ul>
 						</div>
@@ -1096,6 +1097,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         	}
         });
     </script>  
+    
+    
+
+ <script>
+    function Product_Search() {
+    var CATEGORY3_NUM =  $("#CATEGORY3_NUM option:selected").val();
+    var TAG_1 =  $("#TAG_1 option:selected").val();
+    var TAG_2 =  $("#TAG_2 option:selected").val();
+    var TAG_3 =  $("#TAG_3 option:selected").val();
+    var TAG_4 =  $("#TAG_4 option:selected").val();
+    var TAG_5 =  $("#TAG_5 option:selected").val();
+    var TAG_6 =  $("#TAG_6 option:selected").val();
+    
+    location.replace("/assemblyPC?CATEGORY1_NUM=1&CATEGORY2_NUM=3&CATEGORY3_NUM="+CATEGORY3_NUM+"&TAG_1="+TAG_1+"&TAG_2="+TAG_2+"&TAG_3="+TAG_3+"&TAG_5="+TAG_5+"&TAG_6="+TAG_6);
+	   
+    }
+    </script>
+    
 	<!-- //cart-js --> 
 </body>
 </html>

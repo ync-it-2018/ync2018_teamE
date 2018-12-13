@@ -369,51 +369,50 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</select>
 								<select class="select" name="TAG_2" id="TAG_2" title="인터페이스">
 									<option value='' selected> -- "인터페이스" -- </option>
-									<option value='' >  PCle3.0x16  </option>
-									<option value='' >  PCle2.0x16  </option>
+									<option value='PCle3.0x16' >  PCle3.0x16  </option>
+									<option value='PCle2.0x16' >  PCle2.0x16  </option>
 								</select>
 								<select class="select" name="TAG_3" id="TAG_3" title="메모리 종류">
 									<option value='' selected> -- 메모리 종류 -- </option>
-									<option value='' >  HBM(1세대)  </option>
-									<option value='' >  GDDR5(DDR5)  </option>
-									<option value='' >  GDDR3(DDR3)  </option>
-									<option value='' >  GDDR2(DDR2)  </option>
+									<option value='HBM(1세대)' >  HBM(1세대)  </option>
+									<option value='GDDR5(DDR5)' >  GDDR5(DDR5)  </option>
+									<option value='GDDR3(DDR3)' >  GDDR3(DDR3)  </option>
+									<option value='GDDR2(DDR2)' >  GDDR2(DDR2)  </option>
 								</select>
 							</ul>
 							<ul>
 								<select class="select" name="TAG_4" id="TAG_4" title="메모리 용량">
 									<option value='' selected> -- 메모리 용량 -- </option>
-									<option value='' >  32GB </option>
-									<option value='' >  24GB </option>
-									<option value='' >  16GB </option>
-									<option value='' >  12GB </option>
-									<option value='' >  11GB </option>
-									<option value='' >  8GB </option>
-									<option value='' >  6GB </option>
-									<option value='' >  5GB </option>
-									<option value='' >  4GB </option>
-									<option value='' >  3GB </option>
-									<option value='' >  2GB </option>
-									<option value='' >  1GB </option>
+									<option value='32GB' >  32GB </option>
+									<option value='24GB' >  24GB </option>
+									<option value='16GB' >  16GB </option>
+									<option value='12GB' >  12GB </option>
+									<option value='11GB' >  11GB </option>
+									<option value='8GB' >  8GB </option>
+									<option value='6GB' >  6GB </option>
+									<option value='5GB' >  5GB </option>
+									<option value='4GB' >  4GB </option>
+									<option value='3GB' >  3GB </option>
+									<option value='2GB' >  2GB </option>
+									<option value='1GB' >  1GB </option>
 								</select>
 							
 								<select class="select" name="TAG_5" id="TAG_5" title="메모리 버스">
 									<option value='' selected> -- 메모리 버스 -- </option>
-									<option value='' > 8192-bit  </option>
-									<option value='' > 4096-bit  </option>
-									<option value='' > 3072-bit  </option>
-									<option value='' > 2048-bit  </option>
-									<option value='' > 512-bit  </option>
-									<option value='' > 488-bit  </option>
-									<option value='' > 448-bit  </option>
-									<option value='' > 384-bit  </option>
-									<option value='' > 352-bit  </option>
-									<option value='' > 320-bit  </option>
-									<option value='' > 256-bit  </option>
-									<option value='' > 192-bit  </option>
-									<option value='' > 160-bit  </option>
-									<option value='' > 128-bit  </option>
-									<option value='' > 96-bit  </option>
+									<option value='8192-bit' > 8192-bit  </option>
+									<option value='4096-bit' > 4096-bit  </option>
+									<option value='3072-bit' > 3072-bit  </option>
+									<option value='2048-bit' > 2048-bit  </option>
+									<option value='512-bit' > 512-bit  </option>
+									<option value='488-bit' > 488-bit  </option>
+									<option value='384-bit' > 384-bit  </option>
+									<option value='352-bit' > 352-bit  </option>
+									<option value='320-bit' > 320-bit  </option>
+									<option value='256-bit' > 256-bit  </option>
+									<option value='192-bit' > 192-bit  </option>
+									<option value='160-bit' > 160-bit  </option>
+									<option value='128-bit' > 128-bit  </option>
+									<option value='96-bit' > 96-bit  </option>
 								</select>
 							</ul>
 						</div>
@@ -1121,7 +1120,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     var TAG_5 =  $("#TAG_5 option:selected").val();
 
     
-    location.replace("/assemblyPC?CATEGORY1_NUM=1&CATEGORY2_NUM=1&CATEGORY3_NUM="+CATEGORY3_NUM+"&TAG_1="+TAG_1+"&TAG_2="+TAG_2+"&TAG_3="+TAG_3+"&TAG_4="+TAG_4+"&TAG_5="+TAG_5);
+    location.replace("/assemblyPC?CATEGORY1_NUM=1&CATEGORY2_NUM=4&CATEGORY3_NUM="+CATEGORY3_NUM+"&TAG_1="+TAG_1+"&TAG_2="+TAG_2+"&TAG_3="+TAG_3+"&TAG_4="+TAG_4+"&TAG_5="+TAG_5);
 	   
     }
     </script>

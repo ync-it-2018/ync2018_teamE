@@ -344,77 +344,78 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<H1 style="margin: 10px;"> 메인보드 </H1>
 						<div class="select_list">
 							<ul>
-								<select class="select" name="" title="제조사 선택" style="width:96%;">
+								<select class="select" name="CATEGORY3_NUM" id="CATEGORY3_NUM" title="제조사" style="width:89%;">
 									<option value='' selected> -- 제조사 -- </option>
-									<option value='' >  ASRock   </option>
-									<option value='' >  ASUS  </option>
-									<option value='' >  GIGABYTE  </option>
-									<option value='' >  ECS  </option>
-									<option value='' >  MSI  </option>
-									<option value='' >  AFOX  </option>
-									<option value='' >  NVIDA </option>
-									<option value='' >  Raspberry Pi </option>
-									<option value='' >  인텔  </option>
-									<option value='' >  온다  </option>
-								    <option value='' >  이엠텍  </option>
+									<option value='ASRock' >  ASRock   </option>
+									<option value='ASUS' >  ASUS  </option>
+									<option value='GIGABYTE' >  GIGABYTE  </option>
+									<option value='ECS' >  ECS  </option>
+									<option value='MSI' >  MSI  </option>
+									<option value='AFOX' >  AFOX  </option>
+									<option value='NVIDA' >  NVIDA </option>
+									<option value='Raspberry' >  Raspberry Pi </option>
+									<option value='인텔' >  인텔  </option>
+									<option value='온다' >  온다  </option>
+								    <option value='이엠텍' >  이엠텍  </option>
 								</select>
+								<input type="button" value="검색" onClick="Product_Search()">
 							</ul>
 							<ul>
-								<select class="select" name="" title="CPU 소켓">
+								<select class="select" name="TAG_1" id="TAG_1" title="CPU 소켓">
 									<option value='' selected> -- CPU 소켓 -- </option>
-									<option value='' >  인텔(소켓2066)   </option>
-									<option value='' >  인텔(소켓1151v2)   </option>
-									<option value='' >  인텔(소켓1151)   </option>
-									<option value='' >  AMD(소켓TR4)  </option>
-									<option value='' >  AMD(소켓AM4)  </option>
+									<option value='인텔(소켓2066)' >  인텔(소켓2066)   </option>
+									<option value='인텔(소켓1151v2)' >  인텔(소켓1151v2)   </option>
+									<option value='인텔(소켓1151)' >  인텔(소켓1151)   </option>
+									<option value='AMD(소켓TR4)' >  AMD(소켓TR4)  </option>
+									<option value='AMD(소켓AM4)' >  AMD(소켓AM4)  </option>
 								</select>
-								<select class="select" name="" title="세부 칩셋">
+								<select class="select" name="TAG_2" id="TAG_2" title="세부 칩셋">
 									<option value='' selected> -- 세부 칩셋 -- </option>
-									<option value='' >  (인텔) Z390  </option>
-									<option value='' >  (인텔) B360  </option>
-									<option value='' >  (인텔) H370  </option>
-									<option value='' >  (인텔) H310  </option>
-									<option value='' >  (AMD) B450  </option>
-									<option value='' >  (AMD) X350  </option>
-									<option value='' >  (AMD) A320  </option>
+									<option value='(인텔)Z390' >  (인텔) Z390  </option>
+									<option value='(인텔)B360' >  (인텔) B360  </option>
+									<option value='(인텔)H370' >  (인텔) H370  </option>
+									<option value='(인텔)H310' >  (인텔) H310  </option>
+									<option value='(AMD)B450' >  (AMD) B450  </option>
+									<option value='(AMD)X350' >  (AMD) X350  </option>
+									<option value='(AMD)A320' >  (AMD) A320  </option>
 								</select>
-								<select class="select" name="" title="폼팩터">
+								<select class="select" name="TAG_3" id="TAG_3" title="폼팩터">
 									<option value='' selected> -- 폼팩터 -- </option>
-									<option value='' >  ATX    </option>
-									<option value='' >  M-ATX </option>
-									<option value='' >  M-iTX   </option>
+									<option value='ATX' >  ATX    </option>
+									<option value='M-ATX' >  M-ATX </option>
+									<option value='M-iTX' >  M-iTX   </option>
 								</select>
 								
 							</ul>
 							<ul>
-								<select class="select" name="" title="메모리 종류">
+								<select class="select" name="TAG_4" id="TAG_4" title="메모리 종류">
 									<option value='' selected> -- 메모리 종류 -- </option>
-									<option value='' >  DDR4 </option>
-									<option value='' >  DDR3</option>
-									<option value='' >  DDR3/DDR3L </option>
+									<option value='DDR4' >  DDR4 </option>
+									<option value='DDR3' >  DDR3</option>
+									<option value='DDR3/DDR3L' >  DDR3/DDR3L </option>
 								</select>
 							
-								<select class="select" name="" title="메모리 용량">
+								<select class="select" name="TAG_5" id="TAG_5" title="메모리 용량">
 									<option value='' selected> -- 메모리 용량 -- </option>
-									<option value='' > 최대 128GB 이상</option>
-									<option value='' > 최대 64GB </option>
-									<option value='' > 최대 32GB </option>
-									<option value='' > 최대 16GB </option>
-									<option value='' > 최대 8GB </option>
-									<option value='' > 최대 4GB </option>
-									<option value='' > 최대 2GB </option>
-									<option value='' > 8GB 내장 </option>
-									<option value='' > 4GB 내장 </option>
-									<option value='' > 2GB 내장 </option>
+									<option value='최대128GB' > 최대 128GB </option>
+									<option value='최대 64GB' > 최대 64GB </option>
+									<option value='최대 32GB' > 최대 32GB </option>
+									<option value='최대 16GB' > 최대 16GB </option>
+									<option value='최대 8GB' > 최대 8GB </option>
+									<option value='최대 4GB' > 최대 4GB </option>
+									<option value='최대 2GB' > 최대 2GB </option>
+									<option value='8GB내장' > 8GB 내장 </option>
+									<option value='4GB내장' > 4GB 내장 </option>
+									<option value='2GB내장' > 2GB 내장 </option>
 									
 								</select>
-								<select class="select" name="" title="후면 단자">
+								<select class="select" name="TAG_6" id="TAG_6" title="후면 단자">
 									<option value='' selected> -- 후면 단자 -- </option>
-									<option value='' > USB 3.1 Gen 2  </option>
-									<option value='' > USB 3.1 Gen 1 </option>
-									<option value='' > 썬더볼트 </option>
-									<option value='' > e-SATA </option>
-									<option value='' > IEEE1394 </option>
+									<option value='USB3.1Gen 2' > USB 3.1 Gen 2  </option>
+									<option value='USB3.1Gen 1' > USB 3.1 Gen 1 </option>
+									<option value='썬더볼트' > 썬더볼트 </option>
+									<option value='SATA' > e-SATA </option>
+									<option value='IEEE1394' > IEEE1394 </option>
 								</select>
 							</ul>
 						</div>
@@ -1112,6 +1113,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         	}
         });
     </script>  
+    <script>
+    function Product_Search() {
+    var CATEGORY3_NUM =  $("#CATEGORY3_NUM option:selected").val();
+    var TAG_1 =  $("#TAG_1 option:selected").val();
+    var TAG_2 =  $("#TAG_2 option:selected").val();
+    var TAG_3 =  $("#TAG_3 option:selected").val();
+    var TAG_4 =  $("#TAG_4 option:selected").val();
+    var TAG_5 =  $("#TAG_5 option:selected").val();
+    var TAG_6 =  $("#TAG_6 option:selected").val();
+    
+    location.replace("/assemblyPC?CATEGORY1_NUM=1&CATEGORY2_NUM=2&CATEGORY3_NUM="+CATEGORY3_NUM+"&TAG_1="+TAG_1+"&TAG_2="+TAG_2+"&TAG_3="+TAG_3+"&TAG_4="+TAG_4+"&TAG_5="+TAG_5+"&TAG_6="+TAG_6);
+	   
+    }
+    </script>
+    
 	<!-- //cart-js --> 
 </body>
 </html>

@@ -1120,7 +1120,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     var TAG_2 =  $("#TAG_2 option:selected").val();
     var TAG_3 =  $("#TAG_3 option:selected").val();
  
-    location.replace("/assemblyPC?CATEGORY1_NUM=1&CATEGORY2_NUM=1&CATEGORY3_NUM="+CATEGORY3_NUM+"&TAG_1="+TAG_1+"&TAG_2="+TAG_2+"&TAG_3="+TAG_3);
+    location.replace("/assemblyPC?CATEGORY1_NUM=1&CATEGORY2_NUM=9&CATEGORY3_NUM="+CATEGORY3_NUM+"&TAG_1="+TAG_1+"&TAG_2="+TAG_2+"&TAG_3="+TAG_3);
 	   
     }
     </script>

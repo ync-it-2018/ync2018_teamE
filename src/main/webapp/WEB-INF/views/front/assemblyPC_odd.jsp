@@ -344,49 +344,50 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<H1 style="margin: 10px;"> ODD </H1>
 						<div class="select_list">
 							<ul>
-								<select class="select" name="" title="제조사 선택" style="width:96%;">
+								<select class="select" name="CATEGORY3_NUM" id="CATEGORY3_NUM" title="제조사" style="width:89%;">
 									<option value='' selected> -- 제조사 -- </option>
-									<option value='' >  삼성전자   </option>
-									<option value='' >  LG전자  </option>
-									<option value='' >  ASUS  </option>
-									<option value='' >  노트킹  </option>
-									<option value='' >  Life-On  </option>
-									<option value='' >  APPLE  </option>
-									<option value='' >  AVEC  </option>
-									<option value='' >  Actto  </option>
-									<option value='' >  Aidata  </option>
-									<option value='' >  BUFFALO  </option>
-									<option value='' >  EFM  </option>
-									<option value='' >  HLDS  </option>
-									<option value='' >  HP  </option>
-									<option value='' >  KIMO  </option>
-									<option value='' >  타무즈  </option>
-									<option value='' >  코닥  </option>
-									<option value='' >  퓨전  </option>
+									<option value='삼성전자' >  삼성전자   </option>
+									<option value='LG전자' >  LG전자  </option>
+									<option value='ASUS' >  ASUS  </option>
+									<option value='노트킹' >  노트킹  </option>
+									<option value='Life-On' >  Life-On  </option>
+									<option value='APPLE' >  APPLE  </option>
+									<option value='AVEC' >  AVEC  </option>
+									<option value='Actto' >  Actto  </option>
+									<option value='Aidata' >  Aidata  </option>
+									<option value='BUFFALO' >  BUFFALO  </option>
+									<option value='EFM' >  EFM  </option>
+									<option value='HLDS' >  HLDS  </option>
+									<option value='HP' >  HP  </option>
+									<option value='KIMO' >  KIMO  </option>
+									<option value='타무즈' >  타무즈  </option>
+									<option value='코닥' >  코닥  </option>
+									<option value='퓨전' >  퓨전  </option>
 								</select>
+								<input type="button" value="검색" onClick="Product_Search()">
 							</ul>
 							<ul>
-								<select class="select" name="" title="제품 분류">
+								<select class="select" name="TAG_1" id="TAG_1" title="제품 분류">
 									<option value='' selected> -- 제품 분류 -- </option>
-									<option value='' >  DVD레코더   </option>
-									<option value='' >  블루레이레코더   </option>
-									<option value='' >  블루레이콤보   </option>
-									<option value='' >  CD/DVD콤보   </option>
-									<option value='' >  DVD-ROM   </option>
+									<option value='DVD레코더' >  DVD레코더   </option>
+									<option value='블루레이레코더' >  블루레이레코더   </option>
+									<option value='블루레이콤보' >  블루레이콤보   </option>
+									<option value='CD/DVD콤보' >  CD/DVD콤보   </option>
+									<option value='DVD-ROM' >  DVD-ROM   </option>
 								</select>
-								<select class="select" name="" title="인테페이스">
+								<select class="select" name="TAG_2" id="TAG_2" title="인테페이스">
 									<option value='' selected> -- 인터페이스 -- </option>
-									<option value='' >  USB3.0  </option>
-									<option value='' >  USB2.0  </option>
-									<option value='' >  USB  </option>
-									<option value='' >  SATA  </option>
-									<option value='' >  E-IDE  </option>
+									<option value='USB3.0' >  USB3.0  </option>
+									<option value='USB2.0' >  USB2.0  </option>
+									<option value='USB' >  USB  </option>
+									<option value='SATA' >  SATA  </option>
+									<option value='E-IDE' >  E-IDE  </option>
 								</select>
-								<select class="select" name="" title="색상">
+								<select class="select" name="TAG_3" id="TAG_3" title="색상">
 									<option value='' selected> -- 색상 -- </option>
-									<option value='' >  화이트   </option>
-									<option value='' >  블랙  </option>
-									<option value='' >  실버  </option>
+									<option value='화이트' >  화이트   </option>
+									<option value='블랙' >  블랙  </option>
+									<option value='실버' >  실버  </option>
 							    </select>
 							</ul>
 						</div>
@@ -1084,6 +1085,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         	}
         });
     </script>  
+    
+    
+ <script>
+    function Product_Search() {
+    var CATEGORY3_NUM =  $("#CATEGORY3_NUM option:selected").val();
+    var TAG_1 =  $("#TAG_1 option:selected").val();
+    var TAG_2 =  $("#TAG_2 option:selected").val();
+    var TAG_3 =  $("#TAG_3 option:selected").val();
+      
+    location.replace("/assemblyPC?CATEGORY1_NUM=1&CATEGORY2_NUM=7&CATEGORY3_NUM="+CATEGORY3_NUM+"&TAG_1="+TAG_1+"&TAG_2="+TAG_2+"&TAG_3="+TAG_3);
+	   
+    }
+    </script>
+    
 	<!-- //cart-js --> 
 </body>
 </html>

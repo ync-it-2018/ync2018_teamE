@@ -30,7 +30,7 @@ public class frontController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
+	public String home(Locale locale,Model model) throws Exception {
 
 		// 가나다
 		logger.info("컴퓨터 조립 사이트", locale);
@@ -40,8 +40,8 @@ public class frontController {
 		
 		String formattedDate = dateFormat.format(date);
 		
-		model.addAttribute("serverTime", formattedDate );
-		
+		model.addAttribute("serverTime", formattedDate);
+			
 		return "front/index";
 	}
 	
@@ -163,6 +163,8 @@ public class frontController {
 		System.out.println(result);
 		return result;
 	}
+	
+	
 	
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
 	public String detail(@RequestParam("PRODUCT_NUM") int PRODUCT_NUM , Model model) throws Exception {

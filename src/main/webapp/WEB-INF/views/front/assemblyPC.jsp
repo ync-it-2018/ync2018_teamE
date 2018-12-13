@@ -396,12 +396,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<!--상품정렬 -->
 					<div class="w3ls_mobiles_grid_right_grid2_right">
 							<select name="select_item" class="select_item" style="margin-right:0em; margin-top: 10px;">
-								<option selected="selected">Default sorting</option>
-								<option>Sort by popularity</option>
+								<option selected="selected"> -- 정렬 --</option>
+								<option value=>Sort by popularity</option>
 								<option>Sort by average rating</option>
-								<option>Sort by newness</option>
-								<option>Sort by price: low to high</option>
-								<option>Sort by price: high to low</option>
 							</select>
 						</div>
 					<div class="clearfix"> </div>
@@ -1095,7 +1092,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     var TAG_4 =  $("#TAG_4 option:selected").val();
     var TAG_5 =  $("#TAG_5 option:selected").val();
     var TAG_6 =  $("#TAG_6 option:selected").val();
-    
+
     location.replace("/assemblyPC?CATEGORY1_NUM=1&CATEGORY2_NUM=1&CATEGORY3_NUM="+CATEGORY3_NUM+"&TAG_1="+TAG_1+"&TAG_2="+TAG_2+"&TAG_3="+TAG_3+"&TAG_4="+TAG_4);
 	   
     }

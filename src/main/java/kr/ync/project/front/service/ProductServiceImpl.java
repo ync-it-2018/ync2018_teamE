@@ -46,6 +46,7 @@ public class ProductServiceImpl implements ProductService {
 		return dao.listAll();
 	}
 	
+	
 	@Override
 	public List<ProductVO> AssemblyPC(int CATEGORY1_NUM, int CATEGORY2_NUM, String CATEGORY3_NUM, String TAG_1, String TAG_2, String TAG_3, String TAG_4, String TAG_5, String TAG_6) throws Exception {
 		return dao.AssemblyPC(CATEGORY1_NUM , CATEGORY2_NUM, CATEGORY3_NUM, TAG_1, TAG_2, TAG_3, TAG_4, TAG_5, TAG_6 );

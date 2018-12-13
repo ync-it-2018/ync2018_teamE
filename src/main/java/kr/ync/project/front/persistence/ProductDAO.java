@@ -39,7 +39,7 @@ public interface ProductDAO {
 	
 	public List<ProductVO> Search(String keyword, int sort) throws Exception;
 	
-
+	
 //	public List<BoardVO> listCriteria(Criteria cri) throws Exception;
 //
 //	public int countPaging(Criteria cri) throws Exception;
