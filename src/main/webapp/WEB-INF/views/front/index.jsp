@@ -21,7 +21,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="banner-bottom">
 		<div class="container">
 			<div class="col-md-5 wthree_banner_bottom_left">
-				<h1 style="align:center">HOT EVENT</h1><br />
+				<h3>HOT EVENT</h3><br />
 				<div style="width:400px;height:500px;">
 					
 					<a href="/MSI?event_num=1"><img src="resources/front/images/MSI.jpg" style="width:100%;height:100%;"></a>
@@ -953,7 +953,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- banner-bottom1 -->
 	<div class="banner-bottom1">
 		<div class="agileinfo_banner_bottom1_grids">
-			<div class="col-md-7 agileinfo_banner_bottom1_grid_left">
+			<div class="col-md-7 agileinfo_banner_bottom1_grid_left" style="margin-left:0px;">
 				
 			</div>
 			<div class="col-md-5 agileinfo_banner_bottom1_grid_right">
@@ -969,71 +969,152 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<!-- //banner-bottom1 --> 
 	<!-- special-deals -->
-	<div class="special-deals">
+	<div class="special-deals" style="margin-left:-60px;">
 		<div class="container">
-			<h2>Special Deals</h2>
-			<div class="w3agile_special_deals_grids">
-				<div class="col-md-7 w3agile_special_deals_grid_left">
-					<div class="w3agile_special_deals_grid_left_grid">
-						<img src="resources/front/images/21.jpg" alt=" " class="img-responsive" />
-						<div class="w3agile_special_deals_grid_left_grid_pos1">
-							<h5>30%<span>Off/-</span></h5>
-						</div>
-						<div class="w3agile_special_deals_grid_left_grid_pos">
-							<h4>We Offer <span>Best Products</span></h4>
-						</div>
-					</div>
-					<div class="wmuSlider example1">
-						<div class="wmuSliderWrapper">
-							<article style="position: absolute; width: 100%; opacity: 0;"> 
-								<div class="banner-wrap">
-									<div class="w3agile_special_deals_grid_left_grid1">
-										<img src="resources/front/images/t1.png" alt=" " class="img-responsive" />
-										<p>Quis autem vel eum iure reprehenderit qui in ea voluptate 
-											velit esse quam nihil molestiae consequatur, vel illum qui dolorem 
-											eum fugiat quo voluptas nulla pariatur</p>
-										<h4>Laura</h4>
-									</div>
-								</div>
-							</article>
-							<article style="position: absolute; width: 100%; opacity: 0;"> 
-								<div class="banner-wrap">
-									<div class="w3agile_special_deals_grid_left_grid1">
-										<img src="resources/front/images/t2.png" alt=" " class="img-responsive" />
-										<p>Quis autem vel eum iure reprehenderit qui in ea voluptate 
-											velit esse quam nihil molestiae consequatur, vel illum qui dolorem 
-											eum fugiat quo voluptas nulla pariatur</p>
-										<h4>Michael</h4>
-									</div>
-								</div>
-							</article>
-							<article style="position: absolute; width: 100%; opacity: 0;"> 
-								<div class="banner-wrap">
-									<div class="w3agile_special_deals_grid_left_grid1">
-										<img src="resources/front/images/t3.png" alt=" " class="img-responsive" />
-										<p>Quis autem vel eum iure reprehenderit qui in ea voluptate 
-											velit esse quam nihil molestiae consequatur, vel illum qui dolorem 
-											eum fugiat quo voluptas nulla pariatur</p>
-										<h4>Rosy</h4>
-									</div>
-								</div>
-							</article>
-						</div>
-					</div>
-						<script src="resources/front/js/jquery.wmuSlider.js"></script> 
-						<script>
-							$('.example1').wmuSlider();         
-						</script> 
-				</div>
-				<div class="col-md-5 w3agile_special_deals_grid_right">
-					<img src="resources/front/images/20.jpg" alt=" " class="img-responsive" />
-					<div class="w3agile_special_deals_grid_right_pos">
-						<h4>Women's <span>Special</span></h4>
-						<h5>save up <span>to</span> 30%</h5>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
+			<h2>Game Product</h2>
+			<script>
+
+			var countnoAll = 6;
+			function selblockA(selNo) {
+				for(i=1; i<=countnoAll; i++){document.getElementById("blockA_"+i).style.display="none";}
+				for(i=1; i<=countnoAll; i++){if(selNo==i) {document.getElementById("blockA_"+i).style.display="block";}}
+			}
+
+			function seltabA(selNo) {
+				for(i=1; i<=countnoAll; i++){
+					document.getElementById("tabA_"+i).style.backgroundColor="#fafafa";
+					document.getElementById("tabA_"+i).style.color="#666666";
+					document.getElementById("tabA_"+i).style.fontWeight="normal";
+					document.getElementById("tabA_"+i).style.borderBottom ="1px solid #e1e1e1";
+					if(selNo==i) {
+						document.getElementById("tabA_"+i).style.backgroundColor="#717b86";
+						document.getElementById("tabA_"+i).style.color="#FFFFFF";
+						document.getElementById("tabA_"+i).style.fontWeight="bold";
+						document.getElementById("tabA_"+i).style.borderBottom="1px solid #717b86";
+					}					
+				}
+			}
+
+			</script>
+			<script>
+
+			$(function(){
+				$(".tabTd").mouseover(function(){
+					var index = $(this).index();
+					$(".tabTd").css({"background":"#fafafa","color":"#717b86","font-weight":"normal"})
+					$(this).css({"background":"#717b86","color":"#fff","font-weight":"bold"})
+					$(".block").hide();
+					$(".block").eq(index).show();
+				})
+				$(".tabTd").eq(0).trigger("mouseover");
+			})
+			
+			</script>
+			
+			<table width="1200" border="0" align="center" cellpadding="0" cellspacing="0" style="border-top:1px solid #e1e1e1; border-collapse: collapse;">
+		<tbody><tr> 
+			<!-- 마우스오버시 색상 #717b86 / 아닐시 #fafafa -->
+										<td class="tabTd" width="10%" height="30" align="center" style="background: rgb(250, 250, 250); font-size: 14px; border-right: 1px solid rgb(225, 225, 225); border-left: 1px solid rgb(225, 225, 225); cursor: pointer; color: rgb(113, 123, 134); font-weight: normal;">배틀그라운드</td>
+							<td class="tabTd" width="10%" height="30" align="center" style="background: rgb(113, 123, 134); font-size: 14px; border-right: 1px solid rgb(225, 225, 225); border-left: 1px solid rgb(225, 225, 225); cursor: pointer; color: rgb(255, 255, 255); font-weight: bold;">리그 오브 레전드</td>
+							<td class="tabTd" width="10%" height="30" align="center" style="background: rgb(250, 250, 250); font-size: 14px; border-right: 1px solid rgb(225, 225, 225); border-left: 1px solid rgb(225, 225, 225); cursor: pointer; color: rgb(113, 123, 134); font-weight: normal;">피파 온라인4</td>
+							<td class="tabTd" width="10%" height="30" align="center" style="background: rgb(250, 250, 250); font-size: 14px; border-right: 1px solid rgb(225, 225, 225); border-left: 1px solid rgb(225, 225, 225); cursor: pointer; color: rgb(113, 123, 134); font-weight: normal;">서든어택</td>
+							<td class="tabTd" width="10%" height="30" align="center" style="background: rgb(250, 250, 250); font-size: 14px; border-right: 1px solid rgb(225, 225, 225); border-left: 1px solid rgb(225, 225, 225); cursor: pointer; color: rgb(113, 123, 134); font-weight: normal;">로스트아크</td>
+							<td class="tabTd" width="10%" height="30" align="center" style="background: rgb(250, 250, 250); font-size: 14px; border-right: 1px solid rgb(225, 225, 225); border-left: 1px solid rgb(225, 225, 225); cursor: pointer; color: rgb(113, 123, 134); font-weight: normal;">검은사막</td>
+							<td class="tabTd" width="10%" height="30" align="center" style="background: rgb(250, 250, 250); font-size: 14px; border-right: 1px solid rgb(225, 225, 225); border-left: 1px solid rgb(225, 225, 225); cursor: pointer; color: rgb(113, 123, 134); font-weight: normal;">스팀게임</td>
+							<td class="tabTd" width="10%" height="30" align="center" style="background: rgb(250, 250, 250); font-size: 14px; border-right: 1px solid rgb(225, 225, 225); border-left: 1px solid rgb(225, 225, 225); cursor: pointer; color: rgb(113, 123, 134); font-weight: normal;">오버워치</td>
+					
+		</tr>
+	</tbody></table>
+	<!-- 수정할부분  -->
+	<div class="block" style="display: none;"> 
+			<table width="1200" border="0" align="center" cellpadding="0" cellspacing="0" style="border-left:1px solid #e1e1e1; border-right:1px solid #e1e1e1; border-bottom:1px solid #e1e1e1">
+				
+								<tbody><tr> 
+					<td valign="top" bgcolor="f3f3f4" width="700"><img src="resources/front/images/chuchyn_412_1.png"></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=1"><img src="resources/front/images/chuchyn_422_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=119921"><img src="resources/front/images/chuchyn_423_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=119923"><img src="resources/front/images/chuchyn_424_1.png"></a></td>
+				</tr>
+			</tbody></table>
+		</div>
+		<div class="block" style="display: block;"> 
+			<table width="1200" border="0" align="center" cellpadding="0" cellspacing="0" style="border-left:1px solid #e1e1e1; border-right:1px solid #e1e1e1; border-bottom:1px solid #e1e1e1">
+				
+								<tbody><tr> 
+					<td valign="top" bgcolor="f3f3f4" width="700"><img src="resources/front/images/chuchyn_413_1.png"></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=118467"><img src="resources/front/images/chuchyn_425_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=119040"><img src="resources/front/images/chuchyn_426_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4"><a href="http://www.pc-factory.co.kr/shop/system_detail.html?pd_no=119039"><img src="resources/front/images/chuchyn_427_1.png"></a></td>
+				</tr>
+			</tbody></table>
+		</div>
+		<div class="block" style="display: none;"> 
+			<table width="1200" border="0" align="center" cellpadding="0" cellspacing="0" style="border-left:1px solid #e1e1e1; border-right:1px solid #e1e1e1; border-bottom:1px solid #e1e1e1">
+				
+								<tbody><tr> 
+					<td valign="top" bgcolor="f3f3f4" width="700"><img src="resources/front/images/chuchyn_414_1.png"></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=118467"><img src="resources/front/images/chuchyn_428_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://www.pc-factory.co.kr/shop/system_detail.html?pd_no=119039"><img src="resources/front/images/chuchyn_429_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=107952"><img src="resources/front/images/chuchyn_430_1.png"></a></td>
+				</tr>
+			</tbody></table>
+		</div>
+		<div class="block" style="display: none;"> 
+			<table width="1200" border="0" align="center" cellpadding="0" cellspacing="0" style="border-left:1px solid #e1e1e1; border-right:1px solid #e1e1e1; border-bottom:1px solid #e1e1e1">
+				
+								<tbody><tr> 
+					<td valign="top" bgcolor="f3f3f4" width="700"><img src="resources/front/images/chuchyn_415_1.png"></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=119040"><img src="resources/front/images/chuchyn_431_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://www.pc-factory.co.kr/shop/system_detail.html?pd_no=119039"><img src="resources/front/images/chuchyn_432_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4"><a href="http://www.pc-factory.co.kr/shop/system_detail.html?pd_no=107952"><img src="resources/front/images/chuchyn_433_1.png"></a></td>
+				</tr>
+			</tbody></table>
+		</div>
+		<div class="block" style="display: none;"> 
+			<table width="1200" border="0" align="center" cellpadding="0" cellspacing="0" style="border-left:1px solid #e1e1e1; border-right:1px solid #e1e1e1; border-bottom:1px solid #e1e1e1">
+				
+								<tbody><tr> 
+					<td valign="top" bgcolor="f3f3f4" width="700"><img src="resources/front/images/chuchyn_416_1.png"></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=119039"><img src="resources/front/images/chuchyn_434_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=109065"><img src="resources/front/images/chuchyn_435_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=107874"><img src="resources/front/images/chuchyn_436_1.png"></a></td>
+				</tr>
+			</tbody></table>
+		</div>
+		<div class="block" style="display: none;"> 
+			<table width="1200" border="0" align="center" cellpadding="0" cellspacing="0" style="border-left:1px solid #e1e1e1; border-right:1px solid #e1e1e1; border-bottom:1px solid #e1e1e1">
+				
+								<tbody><tr> 
+					<td valign="top" bgcolor="f3f3f4" width="700"><img src="resources/front/images/chuchyn_417_1.png"></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://pc-factory.co.kr/shop/product_detail.html?pd_no=108927"><img src="resources/front/images/chuchyn_437_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=119921"><img src="resources/front/images/chuchyn_438_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4"><a href="http://pc-factory.co.kr/shop/product_detail.html?pd_no=107874"><img src="resources/front/images/chuchyn_439_1.png"></a></td>
+				</tr>
+			</tbody></table>
+		</div>
+		<div class="block" style="display: none;"> 
+			<table width="1200" border="0" align="center" cellpadding="0" cellspacing="0" style="border-left:1px solid #e1e1e1; border-right:1px solid #e1e1e1; border-bottom:1px solid #e1e1e1">
+				
+								<tbody><tr> 
+					<td valign="top" bgcolor="f3f3f4" width="700"><img src="resources/front/images/chuchyn_418_1.png"></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=108927"><img src="resources/front/images/chuchyn_440_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=119921"><img src="resources/front/images/chuchyn_441_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=110577"><img src="resources/front/images/chuchyn_442_1.png"></a></td>
+				</tr>
+			</tbody></table>
+		</div>
+		<div class="block" style="display: none;"> 
+			<table width="1200" border="0" align="center" cellpadding="0" cellspacing="0" style="border-left:1px solid #e1e1e1; border-right:1px solid #e1e1e1; border-bottom:1px solid #e1e1e1">
+				
+								<tbody><tr> 
+					<td valign="top" bgcolor="f3f3f4" width="700"><img src="resources/front/images/chuchyn_461_1.png"></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=118467"><img src="resources/front/images/chuchyn_462_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://www.pc-factory.co.kr/shop/system_detail.html?pd_no=119039"><img src="resources/front/images/chuchyn_463_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=119956"><img src="resources/front/images/chuchyn_464_1.png"></a></td>
+				</tr>
+			</tbody></table>
+		</div>
+			
 		</div>
 	</div>
 	<!-- //special-deals -->
