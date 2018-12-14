@@ -28,7 +28,7 @@ public class UserLoginAuthInterceptor extends HandlerInterceptorAdapter {
 
 		HttpSession session = request.getSession();
 
-		if (session.getAttribute("login") == null) {
+		if (session.getAttribute("ulogin") == null) {
 
 			log.info("current user is not logined");
 
@@ -43,7 +43,7 @@ public class UserLoginAuthInterceptor extends HandlerInterceptorAdapter {
 				log.info("USERLOGINVO: " + userLoginVO);
 
 				if (userLoginVO != null) {
-					session.setAttribute("login", userLoginVO);
+					session.setAttribute("ulogin", userLoginVO);
 					return true;
 				}
 

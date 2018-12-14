@@ -51,7 +51,6 @@ public class adminHomeController {
 	
 	@GetMapping(value = "/admin")
 	public void adminGET(@ModelAttribute("dto") LoginDTO dto) {
-
 	}
 	
 }

@@ -13,7 +13,7 @@ public class UserInfoVO {
 	private String user_email;
 	private String user_address;
 	private String user_phonenum;
-	private Date user_birthday;
+	private String user_birthday;
 	private int mile_price;
 	
 	public String getUser_id() {
@@ -52,10 +52,10 @@ public class UserInfoVO {
 	public void setUser_phonenum(String user_phonenum) {
 		this.user_phonenum = user_phonenum;
 	}
-	public Date getUser_birthday() {
+	public String getUser_birthday() {
 		return user_birthday;
 	}
-	public void setUser_birthday(Date user_birthday) {
+	public void setUser_birthday(String user_birthday) {
 		this.user_birthday = user_birthday;
 	}
 	public int getMile_price() {

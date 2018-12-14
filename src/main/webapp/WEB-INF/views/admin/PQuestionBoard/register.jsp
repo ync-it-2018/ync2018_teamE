@@ -44,7 +44,7 @@
 						</div>
 						<div class="form-group">
 							<label for="exampleInputEmail1">Writer</label>
-							<input type="text" name="admin_id" class="form-control"  value="user00" readonly>
+							<input type="text" name="admin_id" class="form-control"  value="${login.admin_id}" readonly="readonly">
 						</div>
 						
 					</div>

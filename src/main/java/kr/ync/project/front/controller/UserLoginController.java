@@ -62,9 +62,9 @@ public class UserLoginController {
 
 			int amount = 60 * 60 * 24 * 7;
 
-			Date sessionLimit = new Date(System.currentTimeMillis() + (1000 * amount));
+			Date usessionLimit = new Date(System.currentTimeMillis() + (1000 * amount));
 
-			service.keepLogin(vo.getUser_id(), session.getId(), sessionLimit);
+			service.keepLogin(vo.getUser_id(), session.getId(), usessionLimit);
 		}
 
 	}
@@ -75,12 +75,12 @@ public class UserLoginController {
 
 		log.info("logout.................................1");
 
-		Object obj = session.getAttribute("login");
+		Object obj = session.getAttribute("ulogin");
 
 		if (obj != null) {
 			UserLoginVO vo = (UserLoginVO) obj;
 			log.info("logout.................................2");
-			session.removeAttribute("login");
+			session.removeAttribute("ulogin");
 			session.invalidate();
 
 			log.info("logout.................................3");

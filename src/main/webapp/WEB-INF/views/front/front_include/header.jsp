@@ -89,7 +89,7 @@ $(document).ready(function(){
 							<div class="sap_tabs">	
 								<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
 							<c:choose>
-  								<c:when test="${empty login.user_id}">
+  								<c:when test="${empty ulogin.user_id}">
 									<ul>
 										<li class="resp-tab-item" aria-controls="tab_item-0"><span>로그인</span></li>
 										<li class="resp-tab-item" aria-controls="tab_item-1"><span>회원가입</span></li>
@@ -137,8 +137,8 @@ $(document).ready(function(){
 										<div class="facts">
 											<div class="register">
 												<form action="/front/user/logout" method="get">			
-													<p>${login.user_name} 님 환영합니다</p>
-													<p>내 마일리지 : ${login.mile_price}</p>								
+													<p>${ulogin.user_name} 님 환영합니다</p>
+													<p>내 마일리지 : ${ulogin.mile_price}</p>								
 													<div class="sign-up">
 														<input type="submit" id="logoutBtn" value="로그아웃"/>
 													</div>
@@ -150,14 +150,14 @@ $(document).ready(function(){
 										<div class="facts">
 											<div class="register">
 												<form action="/front/user/modifyPage" method="post">
-													<input name="user_id" type="text" value="${login.user_id}" readonly="readonly">			
-													<input name="user_name" type="text" value="${login.user_name}" readonly="readonly">
-													<input name="user_birthday" type="text" value="${login.user_birthday}" readonly="readonly">
-													<input name="user_password" type="password" value="${login.user_password}" readonly="readonly">
-													<input name="mile_price" type="text" value="${login.mile_price}" readonly="readonly">		
-													<input placeholder="변경할 주소" name="user_address" type="text" value="${login.user_address}" required="">
-													<input placeholder="변경할 이메일" name="user_email" type="email" value="${login.user_email}" required="">	
-													<input placeholder="변경할 휴대폰번호" name="user_phonenum" type="text" value="${login.user_phonenum}"required="">	
+													<input name="user_id" type="text" value="${ulogin.user_id}" readonly="readonly">			
+													<input name="user_name" type="text" value="${ulogin.user_name}" readonly="readonly">
+													<input name="user_birthday" type="text" value="${ulogin.user_birthday}" readonly="readonly">
+													<input name="user_password" type="password" value="${ulogin.user_password}" readonly="readonly">
+													<input name="mile_price" type="text" value="${ulogin.mile_price}" readonly="readonly">		
+													<input placeholder="변경할 주소" name="user_address" type="text" value="${ulogin.user_address}" required="">
+													<input placeholder="변경할 이메일" name="user_email" type="email" value="${ulogin.user_email}" required="">	
+													<input placeholder="변경할 휴대폰번호" name="user_phonenum" type="text" value="${ulogin.user_phonenum}"required="">	
 													<div class="sign-up">
 														<input type="submit" id="modifyBtn" value="정보수정" />
 													</div>
