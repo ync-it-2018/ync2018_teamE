@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!--
@@ -21,7 +22,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="banner-bottom">
 		<div class="container">
 			<div class="col-md-5 wthree_banner_bottom_left">
-				<h3>HOT EVENT</h3><br />
+			<h3>HOT EVENT</h3><br />
 				<div style="width:400px;height:500px;">
 					
 					<a href="/MSI?event_num=1"><img src="resources/front/images/MSI.jpg" style="width:100%;height:100%;"></a>
@@ -32,7 +33,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="col-md-7 wthree_banner_bottom_right">
 				<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 					<ul id="myTab" class="nav nav-tabs" role="tablist">
-						<li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home">Mobiles</a></li>
+						<li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home">NoteBook</a></li>
 						<li role="presentation"><a href="#audio" role="tab" id="audio-tab" data-toggle="tab" aria-controls="audio">Audio</a></li>
 						<li role="presentation"><a href="#video" role="tab" id="video-tab" data-toggle="tab" aria-controls="video">Computer</a></li>
 						<li role="presentation"><a href="#tv" role="tab" id="tv-tab" data-toggle="tab" aria-controls="tv">Household</a></li>
@@ -43,14 +44,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="agile_ecommerce_tabs">
 								<div class="col-md-4 agile_ecommerce_tab_left">
 									<div class="hs-wrapper">
-										<img src="resources/front/images/3.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/4.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/5.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/6.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/7.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/3.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/4.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/5.jpg" alt=" " class="img-responsive" />
+											
+										<img src="resources/front/images/lgame1_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/lgame2_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/lgame1_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/lgame2_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/lgame1_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/lgame2_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/lgame1_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/lgame2_S.jpg" alt=" " class="img-responsive" />
+										
 										<div class="w3_hs_bottom">
 											<ul>
 												<li>
@@ -59,7 +62,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											</ul>
 										</div>
 									</div> 
-									<h5><a href="/single">Mobile Phone1</a></h5>
+									<h5><a href="/single">NT850XAC-X176</a></h5>
 									<div class="simpleCart_shelfItem">
 										<p><span>$380</span> <i class="item_price">$350</i></p>
 										<form action="#" method="post">
@@ -73,14 +76,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</div>
 								<div class="col-md-4 agile_ecommerce_tab_left">
 									<div class="hs-wrapper">
-										<img src="resources/front/images/4.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/5.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/6.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/7.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/3.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/4.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/5.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/6.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/lgame2_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/lgame1_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/lgame2_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/lgame1_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/lgame2_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/lgame1_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/lgame2_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/lgame1_S.jpg" alt=" " class="img-responsive" />
 										<div class="w3_hs_bottom">
 											<ul>
 												<li>
@@ -89,7 +92,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											</ul>
 										</div>
 									</div>
-									<h5><a href="/single">Mobile Phone2</a></h5>
+									<h5><a href="/single">NT500R5W-LD34A</a></h5>
 									<div class="simpleCart_shelfItem">
 										<p><span>$330</span> <i class="item_price">$302</i></p>
 										<form action="#" method="post">
@@ -103,14 +106,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</div>
 								<div class="col-md-4 agile_ecommerce_tab_left">
 									<div class="hs-wrapper">
-										<img src="resources/front/images/7.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/6.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/4.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/3.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/5.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/7.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/4.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/6.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/lhighend1_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/lhighend2_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/lhighend1_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/lhighend2_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/lhighend1_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/lhighend2_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/lhighend1_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/lhighend2_S.jpg" alt=" " class="img-responsive" />
 										<div class="w3_hs_bottom">
 											<ul>
 												<li>
@@ -119,7 +122,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											</ul>
 										</div>
 									</div>
-									<h5><a href="/single">Mobile Phone3</a></h5>
+									<h5><a href="/single">HP15-DA0073TU</a></h5>
 									<div class="simpleCart_shelfItem">
 										<p><span>$250</span> <i class="item_price">$245</i></p>
 										<form action="#" method="post">
@@ -138,14 +141,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="agile_ecommerce_tabs">
 								<div class="col-md-4 agile_ecommerce_tab_left">
 									<div class="hs-wrapper">
-										<img src="resources/front/images/8.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/9.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/10.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/8.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/9.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/10.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/8.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/9.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/sgame1_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/sgame2_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/shighend1_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/shighend2_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/soffice1_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/sgame1_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/sgame2_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/shighend1_S.jpg" alt=" " class="img-responsive" />
 										<div class="w3_hs_bottom">
 											<ul>
 												<li>
@@ -168,14 +171,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</div>
 								<div class="col-md-4 agile_ecommerce_tab_left">
 									<div class="hs-wrapper">
-										<img src="resources/front/images/9.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/8.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/10.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/8.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/9.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/10.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/8.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/9.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/shighend1_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/shighend2_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/soffice1_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/sgame1_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/sgame2_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/shighend1_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/sgame1_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/sgame2_S.jpg" alt=" " class="img-responsive" />
 										<div class="w3_hs_bottom">
 											<ul>
 												<li>
@@ -198,14 +201,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</div>
 								<div class="col-md-4 agile_ecommerce_tab_left">
 									<div class="hs-wrapper">
-										<img src="resources/front/images/10.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/8.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/9.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/8.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/9.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/10.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/8.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/9.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/soffice1_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/sgame1_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/sgame2_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/shighend1_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/sgame1_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/sgame2_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/shighend1_S.jpg" alt=" " class="img-responsive" />
+										<img src="resources/front/images/shighend2_S.jpg" alt=" " class="img-responsive" />
 										<div class="w3_hs_bottom">
 											<ul>
 												<li>
@@ -953,7 +956,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- banner-bottom1 -->
 	<div class="banner-bottom1">
 		<div class="agileinfo_banner_bottom1_grids">
-			<div class="col-md-7 agileinfo_banner_bottom1_grid_left" style="margin-left:0px;">
+			<div class="col-md-7 agileinfo_banner_bottom1_grid_left">
 				
 			</div>
 			<div class="col-md-5 agileinfo_banner_bottom1_grid_right">
@@ -971,7 +974,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- special-deals -->
 	<div class="special-deals" style="margin-left:-60px;">
 		<div class="container">
-			<h2>Game Product</h2>
+			<h2 style="margin-left:-600px;">Game Product</h2>
+			<br>			
 			<script>
 
 			var countnoAll = 6;
