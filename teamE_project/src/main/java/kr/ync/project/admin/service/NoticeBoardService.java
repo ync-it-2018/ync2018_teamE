@@ -6,6 +6,15 @@ import kr.ync.project.admin.domain.NoticeVO;
 import kr.ync.project.admin.domain.Criteria;
 import kr.ync.project.admin.domain.SearchCriteria;
 
+/**
+ * NoticeBoardService.java
+ *
+ * @Autors : 이용희
+ * @Date : 2018. 12. 14.
+ * @Description
+ * 공지사항 게시판 서비스 인터페이스
+ * 
+ */
 public interface NoticeBoardService {
 
 	public void regist(NoticeVO board) throws Exception;

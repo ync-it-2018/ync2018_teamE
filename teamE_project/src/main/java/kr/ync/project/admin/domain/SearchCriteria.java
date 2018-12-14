@@ -1,5 +1,14 @@
 package kr.ync.project.admin.domain;
 
+/**
+ * SearchCriteria.java
+ *
+ * @Autors : 이용희
+ * @Date : 2018. 12. 14.
+ * @Description
+ * 
+ * 
+ */
 public class SearchCriteria extends Criteria {
 
 	private String searchType;

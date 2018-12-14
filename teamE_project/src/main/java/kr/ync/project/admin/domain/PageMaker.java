@@ -3,6 +3,15 @@ package kr.ync.project.admin.domain;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
+/**
+ * PageMaker.java
+ *
+ * @Autors : 이용희
+ * @Date : 2018. 12. 14.
+ * @Description
+ * 페이지 이동 영역 메이커
+ * 
+ */
 public class PageMaker {
 
 	private int totalCount;

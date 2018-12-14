@@ -18,8 +18,16 @@ import kr.ync.project.admin.dto.LoginDTO;
 import kr.ync.project.admin.service.NoticeBoardService;
 import lombok.extern.slf4j.Slf4j;
 
+
 /**
- * Handles requests for the application home page.
+ * adminHomeController.java
+ *
+ * @Author : 노현호
+ * @Date   : 2018. 12. 14.
+ * @Description
+ * 어드민 메인페이지 및 로그인 연결 Controller
+ * 
+ *
  */
 @Controller
 @Slf4j
@@ -33,6 +41,15 @@ public class adminHomeController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 	
+	/**
+	 * @Description
+	 * 어드민 메인 화면 Controller
+	 * @Method Name : home
+	 * @param locale 현재 위치 경로
+	 * @param model	 받아올 모델 객체
+	 * @return
+	 * 어드민 메인페이지 경로로 이동
+	 */
 	@RequestMapping(value = "admin/user/index", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 
@@ -49,18 +66,19 @@ public class adminHomeController {
 		return "admin/user/index";
 	}
 	
+	/**
+	 * @Description
+	 * 어드민 페이지 접근시 로그인인터셉터를 통해 로그인 화면 또는 메인화면 으로 이동하기 위한 메소드
+	 * @Method Name : adminGET
+	 * @param dto	로그인 정보 객체
+	 * 
+	 */
 	@GetMapping(value = "/admin")
 	public void adminGET(@ModelAttribute("dto") LoginDTO dto) {
-
+	
 	}
 	
 }
-	/*@RequestMapping(value = "/about", method = RequestMethod.GET)
-	public String about() {
-		
-		return "front/about";
-	}
-	*/
 
 	
 

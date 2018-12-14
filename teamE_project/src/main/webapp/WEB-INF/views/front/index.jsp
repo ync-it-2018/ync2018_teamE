@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+    
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -21,7 +22,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="banner-bottom">
 		<div class="container">
 			<div class="col-md-5 wthree_banner_bottom_left">
-				<h1 style="align:center">HOT EVENT</h1><br />
+				<h3>HOT EVENT</h3><br />
 				<div style="width:400px;height:500px;">
 					
 					<a href="/MSI?event_num=1"><img src="resources/front/images/MSI.jpg" style="width:100%;height:100%;"></a>
@@ -32,487 +33,32 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="col-md-7 wthree_banner_bottom_right">
 				<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 					<ul id="myTab" class="nav nav-tabs" role="tablist">
-						<li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home">Mobiles</a></li>
-						<li role="presentation"><a href="#audio" role="tab" id="audio-tab" data-toggle="tab" aria-controls="audio">Audio</a></li>
-						<li role="presentation"><a href="#video" role="tab" id="video-tab" data-toggle="tab" aria-controls="video">Computer</a></li>
-						<li role="presentation"><a href="#tv" role="tab" id="tv-tab" data-toggle="tab" aria-controls="tv">Household</a></li>
-						<li role="presentation"><a href="#kitchen" role="tab" id="kitchen-tab" data-toggle="tab" aria-controls="kitchen">Kitchen</a></li>
+						<li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home">Best_item</a></li>
 					</ul>
+						<hr style="border-top: 1px solid black;  margin-top:-15px;">
 					<div id="myTabContent" class="tab-content">
 						<div role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="home-tab">
 							<div class="agile_ecommerce_tabs">
-								<div class="col-md-4 agile_ecommerce_tab_left">
-									<div class="hs-wrapper">
-										<img src="resources/front/images/3.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/4.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/5.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/6.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/7.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/3.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/4.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/5.jpg" alt=" " class="img-responsive" />
-										<div class="w3_hs_bottom">
-											<ul>
-												<li>
-													<a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-												</li>
-											</ul>
-										</div>
+									<c:forEach items="${listAll}" var="listAll">	
+									<div class="col-md-4 agile_ecommerce_tab_left">
+									<div style="width: 100%; height: 100%;">
+										<img src="resources/front/images/${listAll.PRODUCTIMG_S}" alt=" " class="img-responsive" />
 									</div> 
-									<h5><a href="/single">Mobile Phone1</a></h5>
+									
+									<a href="/detail?PRODUCT_NUM=${listAll.PRODUCT_NUM}" style="font-size:15px;">${listAll.PRODUCT_NAME}</a>
 									<div class="simpleCart_shelfItem">
-										<p><span>$380</span> <i class="item_price">$350</i></p>
+										<p>$ <i class="item_price">${listAll.PRODUCT_PRICE}</i></p>
 										<form action="#" method="post">
 											<input type="hidden" name="cmd" value="_cart" />
 											<input type="hidden" name="add" value="1" /> 
-											<input type="hidden" name="w3ls_item" value="Mobile Phone1" /> 
-											<input type="hidden" name="amount" value="350.00" />   
+											<input type="hidden" name="w3ls_item" value="${listAll.PRODUCT_NAME}" /> 
+											<input type="hidden" name="amount" value="${listAll.PRODUCT_PRICE}" />   
 											<button type="submit" class="w3ls-cart">Add to cart</button>
 										</form>  
 									</div>
-								</div>
-								<div class="col-md-4 agile_ecommerce_tab_left">
-									<div class="hs-wrapper">
-										<img src="resources/front/images/4.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/5.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/6.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/7.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/3.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/4.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/5.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/6.jpg" alt=" " class="img-responsive" />
-										<div class="w3_hs_bottom">
-											<ul>
-												<li>
-													<a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-												</li>
-											</ul>
-										</div>
-									</div>
-									<h5><a href="/single">Mobile Phone2</a></h5>
-									<div class="simpleCart_shelfItem">
-										<p><span>$330</span> <i class="item_price">$302</i></p>
-										<form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart" />
-											<input type="hidden" name="add" value="1" /> 
-											<input type="hidden" name="w3ls_item" value="Mobile Phone2" /> 
-											<input type="hidden" name="amount" value="302.00" />   
-											<button type="submit" class="w3ls-cart">Add to cart</button>
-										</form>
-									</div>
-								</div>
-								<div class="col-md-4 agile_ecommerce_tab_left">
-									<div class="hs-wrapper">
-										<img src="resources/front/images/7.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/6.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/4.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/3.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/5.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/7.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/4.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/6.jpg" alt=" " class="img-responsive" />
-										<div class="w3_hs_bottom">
-											<ul>
-												<li>
-													<a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-												</li>
-											</ul>
-										</div>
-									</div>
-									<h5><a href="/single">Mobile Phone3</a></h5>
-									<div class="simpleCart_shelfItem">
-										<p><span>$250</span> <i class="item_price">$245</i></p>
-										<form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart" />
-											<input type="hidden" name="add" value="1" /> 
-											<input type="hidden" name="w3ls_item" value="Mobile Phone3" /> 
-											<input type="hidden" name="amount" value="245.00"/>   
-											<button type="submit" class="w3ls-cart">Add to cart</button>
-										</form>
-									</div>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-						</div>
-						<div role="tabpanel" class="tab-pane fade" id="audio" aria-labelledby="audio-tab">
-							<div class="agile_ecommerce_tabs">
-								<div class="col-md-4 agile_ecommerce_tab_left">
-									<div class="hs-wrapper">
-										<img src="resources/front/images/8.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/9.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/10.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/8.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/9.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/10.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/8.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/9.jpg" alt=" " class="img-responsive" />
-										<div class="w3_hs_bottom">
-											<ul>
-												<li>
-													<a href="#" data-toggle="modal" data-target="#myModal1"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-												</li>
-											</ul>
-										</div>
-									</div>
-									<h5><a href="/single">Speakers</a></h5>
-										<p><span>$320</span> <i class="item_price">$250</i></p>
-									<div class="simpleCart_shelfItem">
-										<form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart" />
-											<input type="hidden" name="add" value="1" /> 
-											<input type="hidden" name="w3ls_item" value="Speakers" /> 
-											<input type="hidden" name="amount" value="250.00" />   
-											<button type="submit" class="w3ls-cart">Add to cart</button>
-										</form>
-									</div>
-								</div>
-								<div class="col-md-4 agile_ecommerce_tab_left">
-									<div class="hs-wrapper">
-										<img src="resources/front/images/9.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/8.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/10.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/8.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/9.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/10.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/8.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/9.jpg" alt=" " class="img-responsive" />
-										<div class="w3_hs_bottom">
-											<ul>
-												<li>
-													<a href="#" data-toggle="modal" data-target="#myModal1"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-												</li>
-											</ul>
-										</div>
-									</div>
-									<h5><a href="/single">Headphones</a></h5>
-									<div class="simpleCart_shelfItem">
-										<p><span>$180</span> <i class="item_price">$150</i></p>
-										<form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart" />
-											<input type="hidden" name="add" value="1" /> 
-											<input type="hidden" name="w3ls_item" value="Headphones" /> 
-											<input type="hidden" name="amount" value="150.00" />   
-											<button type="submit" class="w3ls-cart">Add to cart</button>
-										</form>
-									</div>
-								</div>
-								<div class="col-md-4 agile_ecommerce_tab_left">
-									<div class="hs-wrapper">
-										<img src="resources/front/images/10.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/8.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/9.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/8.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/9.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/10.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/8.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/9.jpg" alt=" " class="img-responsive" />
-										<div class="w3_hs_bottom">
-											<ul>
-												<li>
-													<a href="#" data-toggle="modal" data-target="#myModal1"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-												</li>
-											</ul>
-										</div>
-									</div>
-									<h5><a href="/single">Audio Player</a></h5>
-									<div class="simpleCart_shelfItem">
-										<p><span>$220</span> <i class="item_price">$180</i></p>
-										<form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart" />
-											<input type="hidden" name="add" value="1" /> 
-											<input type="hidden" name="w3ls_item" value="Audio Player" /> 
-											<input type="hidden" name="amount" value="180.00"/>   
-											<button type="submit" class="w3ls-cart">Add to cart</button>
-										</form>
-									</div>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-						</div>
-						<div role="tabpanel" class="tab-pane fade" id="video" aria-labelledby="video-tab">
-							<div class="agile_ecommerce_tabs">
-								<div class="col-md-4 agile_ecommerce_tab_left">
-									<div class="hs-wrapper">
-										<img src="resources/front/images/11.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/12.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/13.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/11.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/12.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/13.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/11.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/12.jpg" alt=" " class="img-responsive" />
-										<div class="w3_hs_bottom">
-											<ul>
-												<li>
-													<a href="#" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-												</li>
-											</ul>
-										</div>
-									</div>
-									<h5><a href="/single">Laptop</a></h5>
-									<div class="simpleCart_shelfItem">
-										<p><span>$880</span> <i class="item_price">$850</i></p>
-										<form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart" />
-											<input type="hidden" name="add" value="1" /> 
-											<input type="hidden" name="w3ls_item" value="Laptop" /> 
-											<input type="hidden" name="amount" value="850.00" />   
-											<button type="submit" class="w3ls-cart">Add to cart</button>
-										</form>
-									</div>
-								</div>
-								<div class="col-md-4 agile_ecommerce_tab_left">
-									<div class="hs-wrapper">
-										<img src="resources/front/images/12.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/11.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/13.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/11.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/12.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/13.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/11.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/12.jpg" alt=" " class="img-responsive" />
-										<div class="w3_hs_bottom">
-											<ul>
-												<li>
-													<a href="#" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-												</li>
-											</ul>
-										</div>
-									</div>
-									<h5><a href="/single">Notebook</a></h5>
-									<div class="simpleCart_shelfItem">
-										<p><span>$290</span> <i class="item_price">$280</i></p>
-										<form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart" />
-											<input type="hidden" name="add" value="1" /> 
-											<input type="hidden" name="w3ls_item" value="Notebook" /> 
-											<input type="hidden" name="amount" value="280.00" />   
-											<button type="submit" class="w3ls-cart">Add to cart</button>
-										</form>
-									</div>
-								</div>
-								<div class="col-md-4 agile_ecommerce_tab_left">
-									<div class="hs-wrapper">
-										<img src="resources/front/images/13.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/11.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/12.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/11.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/12.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/13.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/11.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/12.jpg" alt=" " class="img-responsive" />
-										<div class="w3_hs_bottom">
-											<ul>
-												<li>
-													<a href="#" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-												</li>
-											</ul>
-										</div>
-									</div>
-									<h5><a href="/single">Kid's Toy</a></h5>
-									<div class="simpleCart_shelfItem">
-										<p><span>$120</span> <i class="item_price">$80</i></p>
-										<form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart" />
-											<input type="hidden" name="add" value="1" /> 
-											<input type="hidden" name="w3ls_item" value="Kid's Toy" /> 
-											<input type="hidden" name="amount" value="80.00" />   
-											<button type="submit" class="w3ls-cart">Add to cart</button>
-										</form>
-									</div>
-								</div>
-								
-								<div class="clearfix"> </div>
-							</div>
-						</div>
-						<div role="tabpanel" class="tab-pane fade" id="tv" aria-labelledby="tv-tab">
-							<div class="agile_ecommerce_tabs">
-								<div class="col-md-4 agile_ecommerce_tab_left">
-									<div class="hs-wrapper">
-										<img src="resources/front/images/14.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/15.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/16.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/14.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/15.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/16.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/14.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/15.jpg" alt=" " class="img-responsive" />
-										<div class="w3_hs_bottom">
-											<ul>
-												<li>
-													<a href="#" data-toggle="modal" data-target="#myModal3"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-												</li>
-											</ul>
-										</div>
-									</div>
-									<h5><a href="/single">Refrigerator</a></h5>
-									<div class="simpleCart_shelfItem">
-										<p><span>$950</span> <i class="item_price">$820</i></p>
-										<form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart" />
-											<input type="hidden" name="add" value="1" /> 
-											<input type="hidden" name="w3ls_item" value="Refrigerator" /> 
-											<input type="hidden" name="amount" value="820.00" />   
-											<button type="submit" class="w3ls-cart">Add to cart</button>
-										</form>
-									</div>
-								</div>
-								<div class="col-md-4 agile_ecommerce_tab_left">
-									<div class="hs-wrapper">
-										<img src="resources/front/images/15.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/14.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/16.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/14.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/15.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/16.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/14.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/15.jpg" alt=" " class="img-responsive" />
-										<div class="w3_hs_bottom">
-											<ul>
-												<li>
-													<a href="#" data-toggle="modal" data-target="#myModal3"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-												</li>
-											</ul>
-										</div>
-									</div>
-									<h5><a href="/single">LED Tv</a></h5>
-									<div class="simpleCart_shelfItem">
-										<p><span>$700</span> <i class="item_price">$680</i></p>
-										<form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart" />
-											<input type="hidden" name="add" value="1" /> 
-											<input type="hidden" name="w3ls_item" value="LED Tv"/> 
-											<input type="hidden" name="amount" value="680.00"/>   
-											<button type="submit" class="w3ls-cart">Add to cart</button>
-										</form>
-									</div>
-								</div>
-								<div class="col-md-4 agile_ecommerce_tab_left">
-									<div class="hs-wrapper">
-										<img src="resources/front/images/16.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/14.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/15.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/14.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/15.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/16.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/14.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/15.jpg" alt=" " class="img-responsive" />
-										<div class="w3_hs_bottom">
-											<ul>
-												<li>
-													<a href="#" data-toggle="modal" data-target="#myModal3"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-												</li>
-											</ul>
-										</div>
-									</div>
-									<h5><a href="/single">Washing Machine</a></h5>
-									<div class="simpleCart_shelfItem">
-										<p><span>$520</span> <i class="item_price">$510</i></p>
-										<form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart" />
-											<input type="hidden" name="add" value="1" /> 
-											<input type="hidden" name="w3ls_item" value="Washing Machine" /> 
-											<input type="hidden" name="amount" value="510.00" />   
-											<button type="submit" class="w3ls-cart">Add to cart</button>
-										</form>
-									</div>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-						</div>
-						<div role="tabpanel" class="tab-pane fade" id="kitchen" aria-labelledby="kitchen-tab">
-							<div class="agile_ecommerce_tabs">
-								<div class="col-md-4 agile_ecommerce_tab_left">
-									<div class="hs-wrapper">
-										<img src="resources/front/images/17.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/18.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/19.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/17.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/18.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/19.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/17.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/18.jpg" alt=" " class="img-responsive" />
-										<div class="w3_hs_bottom">
-											<ul>
-												<li>
-													<a href="#" data-toggle="modal" data-target="#myModal4"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-												</li>
-											</ul>
-										</div>
-									</div>
-									<h5><a href="/single">Grinder</a></h5>
-									<div class="simpleCart_shelfItem">
-										<p><span>$460</span> <i class="item_price">$450</i></p>
-										<form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart" />
-											<input type="hidden" name="add" value="1" /> 
-											<input type="hidden" name="w3ls_item" value="Grinder" /> 
-											<input type="hidden" name="amount" value="450.00" />   
-											<button type="submit" class="w3ls-cart">Add to cart</button>
-										</form>
-									</div>
-								</div>
-								<div class="col-md-4 agile_ecommerce_tab_left">
-									<div class="hs-wrapper">
-										<img src="resources/front/images/18.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/17.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/19.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/17.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/18.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/19.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/17.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/18.jpg" alt=" " class="img-responsive" />
-										<div class="w3_hs_bottom">
-											<ul>
-												<li>
-													<a href="#" data-toggle="modal" data-target="#myModal4"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-												</li>
-											</ul>
-										</div>
-									</div>
-									<h5><a href="/single">Water Purifier</a></h5>
-									<div class="simpleCart_shelfItem">
-										<p><span>$390</span> <i class="item_price">$350</i></p>
-										<form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart" />
-											<input type="hidden" name="add" value="1" /> 
-											<input type="hidden" name="w3ls_item" value="Water Purifier" /> 
-											<input type="hidden" name="amount" value="350.00" />   
-											<button type="submit" class="w3ls-cart">Add to cart</button>
-										</form>
-									</div>
-								</div>
-								<div class="col-md-4 agile_ecommerce_tab_left">
-									<div class="hs-wrapper">
-										<img src="resources/front/images/19.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/17.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/18.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/17.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/18.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/19.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/17.jpg" alt=" " class="img-responsive" />
-										<img src="resources/front/images/18.jpg" alt=" " class="img-responsive" />
-										<div class="w3_hs_bottom">
-											<ul>
-												<li>
-													<a href="#" data-toggle="modal" data-target="#myModal4"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-												</li>
-											</ul>
-										</div>
-									</div>
-									<h5><a href="/single">Coffee Maker</a></h5>
-									<div class="simpleCart_shelfItem">
-										<p><span>$250</span> <i class="item_price">$220</i></p>
-										<form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart" />
-											<input type="hidden" name="add" value="1" /> 
-											<input type="hidden" name="w3ls_item" value="Coffee Maker" /> 
-											<input type="hidden" name="amount" value="220.00" />   
-											<button type="submit" class="w3ls-cart">Add to cart</button>
-										</form>
-									</div>
-								</div>
-								<div class="clearfix"> </div>
+								 </div>
+								 </c:forEach>
+							   <div class="clearfix"> </div>
 							</div>
 						</div>
 					</div>
@@ -953,7 +499,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- banner-bottom1 -->
 	<div class="banner-bottom1">
 		<div class="agileinfo_banner_bottom1_grids">
-			<div class="col-md-7 agileinfo_banner_bottom1_grid_left">
+			<div class="col-md-7 agileinfo_banner_bottom1_grid_left" style="margin-left:0px;">
 				
 			</div>
 			<div class="col-md-5 agileinfo_banner_bottom1_grid_right">
@@ -969,71 +515,152 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<!-- //banner-bottom1 --> 
 	<!-- special-deals -->
-	<div class="special-deals">
+	<div class="special-deals" style="margin-left:-60px;">
 		<div class="container">
-			<h2>Special Deals</h2>
-			<div class="w3agile_special_deals_grids">
-				<div class="col-md-7 w3agile_special_deals_grid_left">
-					<div class="w3agile_special_deals_grid_left_grid">
-						<img src="resources/front/images/21.jpg" alt=" " class="img-responsive" />
-						<div class="w3agile_special_deals_grid_left_grid_pos1">
-							<h5>30%<span>Off/-</span></h5>
-						</div>
-						<div class="w3agile_special_deals_grid_left_grid_pos">
-							<h4>We Offer <span>Best Products</span></h4>
-						</div>
-					</div>
-					<div class="wmuSlider example1">
-						<div class="wmuSliderWrapper">
-							<article style="position: absolute; width: 100%; opacity: 0;"> 
-								<div class="banner-wrap">
-									<div class="w3agile_special_deals_grid_left_grid1">
-										<img src="resources/front/images/t1.png" alt=" " class="img-responsive" />
-										<p>Quis autem vel eum iure reprehenderit qui in ea voluptate 
-											velit esse quam nihil molestiae consequatur, vel illum qui dolorem 
-											eum fugiat quo voluptas nulla pariatur</p>
-										<h4>Laura</h4>
-									</div>
-								</div>
-							</article>
-							<article style="position: absolute; width: 100%; opacity: 0;"> 
-								<div class="banner-wrap">
-									<div class="w3agile_special_deals_grid_left_grid1">
-										<img src="resources/front/images/t2.png" alt=" " class="img-responsive" />
-										<p>Quis autem vel eum iure reprehenderit qui in ea voluptate 
-											velit esse quam nihil molestiae consequatur, vel illum qui dolorem 
-											eum fugiat quo voluptas nulla pariatur</p>
-										<h4>Michael</h4>
-									</div>
-								</div>
-							</article>
-							<article style="position: absolute; width: 100%; opacity: 0;"> 
-								<div class="banner-wrap">
-									<div class="w3agile_special_deals_grid_left_grid1">
-										<img src="resources/front/images/t3.png" alt=" " class="img-responsive" />
-										<p>Quis autem vel eum iure reprehenderit qui in ea voluptate 
-											velit esse quam nihil molestiae consequatur, vel illum qui dolorem 
-											eum fugiat quo voluptas nulla pariatur</p>
-										<h4>Rosy</h4>
-									</div>
-								</div>
-							</article>
-						</div>
-					</div>
-						<script src="resources/front/js/jquery.wmuSlider.js"></script> 
-						<script>
-							$('.example1').wmuSlider();         
-						</script> 
-				</div>
-				<div class="col-md-5 w3agile_special_deals_grid_right">
-					<img src="resources/front/images/20.jpg" alt=" " class="img-responsive" />
-					<div class="w3agile_special_deals_grid_right_pos">
-						<h4>Women's <span>Special</span></h4>
-						<h5>save up <span>to</span> 30%</h5>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
+			<h2>Game Product</h2>
+			<script>
+
+			var countnoAll = 6;
+			function selblockA(selNo) {
+				for(i=1; i<=countnoAll; i++){document.getElementById("blockA_"+i).style.display="none";}
+				for(i=1; i<=countnoAll; i++){if(selNo==i) {document.getElementById("blockA_"+i).style.display="block";}}
+			}
+
+			function seltabA(selNo) {
+				for(i=1; i<=countnoAll; i++){
+					document.getElementById("tabA_"+i).style.backgroundColor="#fafafa";
+					document.getElementById("tabA_"+i).style.color="#666666";
+					document.getElementById("tabA_"+i).style.fontWeight="normal";
+					document.getElementById("tabA_"+i).style.borderBottom ="1px solid #e1e1e1";
+					if(selNo==i) {
+						document.getElementById("tabA_"+i).style.backgroundColor="#717b86";
+						document.getElementById("tabA_"+i).style.color="#FFFFFF";
+						document.getElementById("tabA_"+i).style.fontWeight="bold";
+						document.getElementById("tabA_"+i).style.borderBottom="1px solid #717b86";
+					}					
+				}
+			}
+
+			</script>
+			<script>
+
+			$(function(){
+				$(".tabTd").mouseover(function(){
+					var index = $(this).index();
+					$(".tabTd").css({"background":"#fafafa","color":"#717b86","font-weight":"normal"})
+					$(this).css({"background":"#717b86","color":"#fff","font-weight":"bold"})
+					$(".block").hide();
+					$(".block").eq(index).show();
+				})
+				$(".tabTd").eq(0).trigger("mouseover");
+			})
+			
+			</script>
+			
+			<table width="1200" border="0" align="center" cellpadding="0" cellspacing="0" style="border-top:1px solid #e1e1e1; border-collapse: collapse;">
+		<tbody><tr> 
+			<!-- 마우스오버시 색상 #717b86 / 아닐시 #fafafa -->
+										<td class="tabTd" width="10%" height="30" align="center" style="background: rgb(250, 250, 250); font-size: 14px; border-right: 1px solid rgb(225, 225, 225); border-left: 1px solid rgb(225, 225, 225); cursor: pointer; color: rgb(113, 123, 134); font-weight: normal;">배틀그라운드</td>
+							<td class="tabTd" width="10%" height="30" align="center" style="background: rgb(113, 123, 134); font-size: 14px; border-right: 1px solid rgb(225, 225, 225); border-left: 1px solid rgb(225, 225, 225); cursor: pointer; color: rgb(255, 255, 255); font-weight: bold;">리그 오브 레전드</td>
+							<td class="tabTd" width="10%" height="30" align="center" style="background: rgb(250, 250, 250); font-size: 14px; border-right: 1px solid rgb(225, 225, 225); border-left: 1px solid rgb(225, 225, 225); cursor: pointer; color: rgb(113, 123, 134); font-weight: normal;">피파 온라인4</td>
+							<td class="tabTd" width="10%" height="30" align="center" style="background: rgb(250, 250, 250); font-size: 14px; border-right: 1px solid rgb(225, 225, 225); border-left: 1px solid rgb(225, 225, 225); cursor: pointer; color: rgb(113, 123, 134); font-weight: normal;">서든어택</td>
+							<td class="tabTd" width="10%" height="30" align="center" style="background: rgb(250, 250, 250); font-size: 14px; border-right: 1px solid rgb(225, 225, 225); border-left: 1px solid rgb(225, 225, 225); cursor: pointer; color: rgb(113, 123, 134); font-weight: normal;">로스트아크</td>
+							<td class="tabTd" width="10%" height="30" align="center" style="background: rgb(250, 250, 250); font-size: 14px; border-right: 1px solid rgb(225, 225, 225); border-left: 1px solid rgb(225, 225, 225); cursor: pointer; color: rgb(113, 123, 134); font-weight: normal;">검은사막</td>
+							<td class="tabTd" width="10%" height="30" align="center" style="background: rgb(250, 250, 250); font-size: 14px; border-right: 1px solid rgb(225, 225, 225); border-left: 1px solid rgb(225, 225, 225); cursor: pointer; color: rgb(113, 123, 134); font-weight: normal;">스팀게임</td>
+							<td class="tabTd" width="10%" height="30" align="center" style="background: rgb(250, 250, 250); font-size: 14px; border-right: 1px solid rgb(225, 225, 225); border-left: 1px solid rgb(225, 225, 225); cursor: pointer; color: rgb(113, 123, 134); font-weight: normal;">오버워치</td>
+					
+		</tr>
+	</tbody></table>
+	<!-- 수정할부분  -->
+	<div class="block" style="display: none;"> 
+			<table width="1200" border="0" align="center" cellpadding="0" cellspacing="0" style="border-left:1px solid #e1e1e1; border-right:1px solid #e1e1e1; border-bottom:1px solid #e1e1e1">
+				
+								<tbody><tr> 
+					<td valign="top" bgcolor="f3f3f4" width="700"><img src="resources/front/images/chuchyn_412_1.png"></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=7"><img src="resources/front/images/chuchyn_422_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=8"><img src="resources/front/images/chuchyn_423_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4"><a href="detail?PRODUCT_NUM=9"><img src="resources/front/images/chuchyn_424_1.png"></a></td>
+				</tr>
+			</tbody></table>
+		</div>
+		<div class="block" style="display: block;"> 
+			<table width="1200" border="0" align="center" cellpadding="0" cellspacing="0" style="border-left:1px solid #e1e1e1; border-right:1px solid #e1e1e1; border-bottom:1px solid #e1e1e1">
+				
+								<tbody><tr> 
+					<td valign="top" bgcolor="f3f3f4" width="700"><img src="resources/front/images/chuchyn_413_1.png"></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=10"><img src="resources/front/images/chuchyn_425_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=11"><img src="resources/front/images/chuchyn_426_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4"><a href="detail?PRODUCT_NUM=12"><img src="resources/front/images/chuchyn_427_1.png"></a></td>
+				</tr>
+			</tbody></table>
+		</div>
+		<div class="block" style="display: none;"> 
+			<table width="1200" border="0" align="center" cellpadding="0" cellspacing="0" style="border-left:1px solid #e1e1e1; border-right:1px solid #e1e1e1; border-bottom:1px solid #e1e1e1">
+				
+								<tbody><tr> 
+					<td valign="top" bgcolor="f3f3f4" width="700"><img src="resources/front/images/chuchyn_414_1.png"></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=20"><img src="resources/front/images/chuchyn_428_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=21"><img src="resources/front/images/chuchyn_429_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4"><a href="detail?PRODUCT_NUM=22"><img src="resources/front/images/chuchyn_430_1.png"></a></td>
+				</tr>
+			</tbody></table>
+		</div>
+		<div class="block" style="display: none;"> 
+			<table width="1200" border="0" align="center" cellpadding="0" cellspacing="0" style="border-left:1px solid #e1e1e1; border-right:1px solid #e1e1e1; border-bottom:1px solid #e1e1e1">
+				
+								<tbody><tr> 
+					<td valign="top" bgcolor="f3f3f4" width="700"><img src="resources/front/images/chuchyn_415_1.png"></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=23"><img src="resources/front/images/chuchyn_431_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=24"><img src="resources/front/images/chuchyn_432_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4"><a href="detail?PRODUCT_NUM=25"><img src="resources/front/images/chuchyn_433_1.png"></a></td>
+				</tr>
+			</tbody></table>
+		</div>
+		<div class="block" style="display: none;"> 
+			<table width="1200" border="0" align="center" cellpadding="0" cellspacing="0" style="border-left:1px solid #e1e1e1; border-right:1px solid #e1e1e1; border-bottom:1px solid #e1e1e1">
+				
+								<tbody><tr> 
+					<td valign="top" bgcolor="f3f3f4" width="700"><img src="resources/front/images/chuchyn_416_1.png"></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=26"><img src="resources/front/images/chuchyn_434_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=27"><img src="resources/front/images/chuchyn_435_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4"><a href="detail?PRODUCT_NUM=28"><img src="resources/front/images/chuchyn_436_1.png"></a></td>
+				</tr>
+			</tbody></table>
+		</div>
+		<div class="block" style="display: none;"> 
+			<table width="1200" border="0" align="center" cellpadding="0" cellspacing="0" style="border-left:1px solid #e1e1e1; border-right:1px solid #e1e1e1; border-bottom:1px solid #e1e1e1">
+				
+								<tbody><tr> 
+					<td valign="top" bgcolor="f3f3f4" width="700"><img src="resources/front/images/chuchyn_417_1.png"></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=29"><img src="resources/front/images/chuchyn_437_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=30"><img src="resources/front/images/chuchyn_438_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4"><a href="detail?PRODUCT_NUM=31"><img src="resources/front/images/chuchyn_439_1.png"></a></td>
+				</tr>
+			</tbody></table>
+		</div>
+		<div class="block" style="display: none;"> 
+			<table width="1200" border="0" align="center" cellpadding="0" cellspacing="0" style="border-left:1px solid #e1e1e1; border-right:1px solid #e1e1e1; border-bottom:1px solid #e1e1e1">
+				
+								<tbody><tr> 
+					<td valign="top" bgcolor="f3f3f4" width="700"><img src="resources/front/images/chuchyn_418_1.png"></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=15"><img src="resources/front/images/chuchyn_440_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=16"><img src="resources/front/images/chuchyn_441_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4"><a href="detail?PRODUCT_NUM=17"><img src="resources/front/images/chuchyn_442_1.png"></a></td>
+				</tr>
+			</tbody></table>
+		</div>
+		<div class="block" style="display: none;"> 
+			<table width="1200" border="0" align="center" cellpadding="0" cellspacing="0" style="border-left:1px solid #e1e1e1; border-right:1px solid #e1e1e1; border-bottom:1px solid #e1e1e1">
+				
+								<tbody><tr> 
+					<td valign="top" bgcolor="f3f3f4" width="700"><img src="resources/front/images/chuchyn_461_1.png"></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=18"><img src="resources/front/images/chuchyn_462_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=13"><img src="resources/front/images/chuchyn_463_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4"><a href="detail?PRODUCT_NUM=14"><img src="resources/front/images/chuchyn_464_1.png"></a></td>
+				</tr>
+			</tbody></table>
+		</div>
+			
 		</div>
 	</div>
 	<!-- //special-deals -->

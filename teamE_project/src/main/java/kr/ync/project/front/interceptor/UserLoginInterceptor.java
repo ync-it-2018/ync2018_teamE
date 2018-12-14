@@ -14,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class UserLoginInterceptor extends HandlerInterceptorAdapter {
 
-	private static final String LOGIN = "login";
+	private static final String LOGIN = "ulogin";
 
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,

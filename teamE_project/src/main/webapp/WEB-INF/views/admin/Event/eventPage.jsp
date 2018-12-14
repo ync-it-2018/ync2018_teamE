@@ -18,7 +18,7 @@
 					<div class="box">
             <div class="box-header with-border">
              	<section id="new">
-						<h3 class="page-header page-header icon-subheading">EVENT</h3>		 
+						<h3 class="page-header page-header icon-subheading">EVENT (이미지 클릭시 수정 가능)</h3>		 
 						<div class="row fontawesome-icon-list" style="margin-left:5%;"> 
 						</br>
 						<%int i = 1; %>

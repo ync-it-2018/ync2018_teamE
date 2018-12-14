@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
    
 <!DOCTYPE html>
 <html>
@@ -36,11 +37,12 @@
       
       <header class="main-header">
         <!-- Logo -->
-        <a href="/resources/index2.html" class="logo">
+        <a href="/admin/user/index" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>A</b>LT</span>
           <!-- logo for regular state and mobile devices -->
           <span class="logo-lg"><b> 관리자 </b> 페이지 </span>
+          
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
@@ -57,44 +59,28 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="/resources/dist/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
-                  <span class="hidden-xs">Alexander Pierce</span>
+                  <span class="hidden-xs"> ${login.admin_name} 관리자님 </span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
                     <img src="/resources/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
                     <p>
-                      Alexander Pierce - Web Developer
-                      <small>Member since Nov. 2012</small>
+                      ${login.admin_name} 관리자님
+                      <small>Team_E Member</small>
                     </p>
                   </li>
-                  <!-- Menu Body -->
-                  <li class="user-body">
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Followers</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Sales</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Friends</a>
-                    </div>
-                  </li>
+           		
                   <!-- Menu Footer-->
                   <li class="user-footer">
-                    <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Profile</a>
-                    </div>
                     <div class="pull-right">
-                      <a href="../user/logout" class="btn btn-default btn-flat">Sign out</a>
+                      <a href="../user/logout" class="btn btn-default btn-flat">로그아웃</a>
                     </div>
                   </li>
                 </ul>
               </li>
               <!-- Control Sidebar Toggle Button -->
-              <li>
-                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-              </li>
+             
             </ul>
           </div>
         </nav>
@@ -109,27 +95,19 @@
               <img src="/resources/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-              <p>Alexander Pierce</p>
-
-              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+              <p>${login.admin_name} 관리자</p>
+              <a href="#"><i class="fa fa-circle text-success"></i>Online</a>
             </div>
           </div>
           <!-- search form -->
-          <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-              <input type="text" name="q" class="form-control" placeholder="Search..."/>
-              <span class="input-group-btn">
-                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-              </span>
-            </div>
-          </form>
+    
           <!-- /.search form -->
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">관리자 메뉴</li>
             <li class="treeview">
               <a href="../Event/eventPage">
-                <i class="fa fa-dashboard"></i> <span>이벤트/기획전</span> <i class="fa fa-angle-left pull-right"></i>
+                <i class="fa fa-dashboard"></i> <span>이벤트/기획전</span>
               </a>
               
             </li>
@@ -141,10 +119,9 @@
               <ul class="treeview-menu">
               <li><a href="../noticeBoard/noticeList"><i class="fa fa-circle-o"></i> 공지사항 </a></li>
                 <li><a href="../CServiceBoard/CServiceList"><i class="fa fa-circle-o"></i> 고객센터 </a></li>
-                <li><a href="../layout/boxed.html"><i class="fa fa-circle-o"></i> PC견적 상담 게시판</a></li>
               </ul>
             </li>
-            <li><a href="/resources/documentation/index.html"><i class="fa fa-book"></i> <span>통계관리</span></a></li>
+            
         </section>
         <!-- /.sidebar -->
       </aside>
@@ -154,12 +131,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Board Management
-            <small>Preview</small>
+            	PowerAde 관리자 페이지
           </h1>
-          <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Forms</a></li>
-            <li class="active">General Elements</li>
-          </ol>
+       
         </section>

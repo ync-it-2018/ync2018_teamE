@@ -26,7 +26,7 @@
 	<!-- banner -->
 	<div class="banner banner10">
 		<div class="container">
-			<h2>About Us</h2>
+			<h2>Team Introduce</h2>
 		</div>
 	</div>
 	<!-- //banner -->   

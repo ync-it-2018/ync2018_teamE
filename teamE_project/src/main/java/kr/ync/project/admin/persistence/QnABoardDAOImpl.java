@@ -12,6 +12,15 @@ import kr.ync.project.admin.domain.Criteria;
 import kr.ync.project.admin.domain.QnAVO;
 import kr.ync.project.admin.domain.SearchCriteria;
 
+/**
+ * QnABoardDAOImpl.java
+ *
+ * @Autors : 이용희
+ * @Date : 2018. 12. 14.
+ * @Description
+ * QnA Mapper 연동을 위한 DAO 구현 소스
+ * 
+ */
 @Repository
 public class QnABoardDAOImpl implements QnABoardDAO {
 

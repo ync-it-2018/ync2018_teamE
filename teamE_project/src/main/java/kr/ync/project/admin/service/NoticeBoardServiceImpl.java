@@ -13,6 +13,15 @@ import kr.ync.project.admin.domain.SearchCriteria;
 import kr.ync.project.admin.persistence.NoticeBoardDAO;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * NoticeBoardServiceImpl.java
+ *
+ * @Autors : 이용희
+ * @Date : 2018. 12. 14.
+ * @Description
+ * 공지사항 게시판 서비스 구현 소스
+ * 
+ */
 @Service
 @Slf4j
 public class NoticeBoardServiceImpl implements NoticeBoardService {

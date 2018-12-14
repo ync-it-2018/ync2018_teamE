@@ -52,17 +52,48 @@
 	<interceptors>
 			  
 		<interceptor>
-			<mapping path="/admin"/>	
-			<mapping path="/admin/register"/>
-			<mapping path="/admin/modifyPage"/>
-			<mapping path="/admin/removePage"/>
-			<mapping path="/admin/readPage"/>
+			<mapping path="/admin"/>
+			<mapping path="/admin/noticeBoard/register"/>
+			<mapping path="/admin/noticeBoard/noticeReadPage"/>
+			<mapping path="/admin/noticeBoard/modifyPage"/>
+			<mapping path="/admin/noticeBoard/removePage"/>
+
+			<mapping path="/admin/CServiceBoard/CServiceList"/>
+			<mapping path="/admin/CServiceBoard/register"/>
+			<mapping path="/admin/CServiceBoard/CServiceReadPage"/>
+			<mapping path="/admin/CServiceBoard/askReadPage"/>
+			<mapping path="/admin/CServiceBoard/modifyPage"/>
+			<mapping path="/admin/CServiceBoard/removePage"/>
+
+			<mapping path="/admin/DQuestionBoard/list"/>
+			<mapping path="/admin/DQuestionBoard/register"/>
+			<mapping path="/admin/DQuestionBoard/readPage"/>
+			<mapping path="/admin/DQuestionBoard/modifyPage"/>
+			<mapping path="/admin/DQuestionBoard/removePage"/>
+			
+			<mapping path="/admin/PQuestionBoard/list"/>
+			<mapping path="/admin/PQuestionBoard/register"/>
+			<mapping path="/admin/PQuestionBoard/readPage"/>
+			<mapping path="/admin/PQuestionBoard/modifyPage"/>
+			<mapping path="/admin/PQuestionBoard/removePage"/>
+			
+			<mapping path="/admin/QnABoard/list"/>
+			<mapping path="/admin/QnABoard/register"/>
+			<mapping path="/admin/QnABoard/readPage"/>
+			<mapping path="/admin/QnABoard/modifyPage"/>
+			<mapping path="/admin/QnABoard/removePage"/>
+			
+			<mapping path="/admin/UserInfo/list"/>
+			<mapping path="/admin/UserInfo/readPage"/>
+			<mapping path="/admin/UserInfo/removePage"/>
+			
+			<mapping path="/admin/Event/eventPage"/>
 			<beans:ref bean="authInterceptor"/>
 		</interceptor>
 		 	
 		 	<interceptor>
-			<mapping path="/admin/user/loginPost" />
-			<beans:ref bean="loginInterceptor" />
+			<mapping path="/admin/user/loginPost"/>
+			<beans:ref bean="loginInterceptor"/>
 		</interceptor>
 		
 		<interceptor>
@@ -74,7 +105,7 @@
 			<beans:ref bean="userLoginauthInterceptor"/>
 		</interceptor>
 		 	
-		 	<interceptor>
+		<interceptor>
 			<mapping path="/front/user/loginPost" />
 			<beans:ref bean="userloginInterceptor" />
 		</interceptor>

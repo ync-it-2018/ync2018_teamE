@@ -14,6 +14,15 @@ import kr.ync.project.admin.domain.AdminVO;
 import kr.ync.project.admin.service.AdminService;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * AuthInterceptor.java
+ *
+ * @Author : 노현호
+ * @Date   : 2018. 12. 14.
+ * @Description
+ * 현재 로그인 여부를 처리하기 위한 클래스
+ *
+ */
 @Slf4j
 public class AuthInterceptor extends HandlerInterceptorAdapter {
 
@@ -46,8 +55,8 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 				}
 
 			}
-
-			response.sendRedirect("admin/user/login");
+			
+			response.sendRedirect("../../admin/user/login");
 			return false;
 		}
 		return true;

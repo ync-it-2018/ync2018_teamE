@@ -6,6 +6,15 @@ import kr.ync.project.admin.domain.CServiceVO;
 import kr.ync.project.admin.domain.Criteria;
 import kr.ync.project.admin.domain.SearchCriteria;
 
+/**
+ * CServiceBoardDAO.java
+ *
+ * @Autors : 이용희
+ * @Date : 2018. 12. 14.
+ * @Description
+ * 1:1문의 Mapper 연동을 위한 DAO 인터페이스
+ * 
+ */
 public interface CServiceBoardDAO {
 
 	public void create(CServiceVO vo) throws Exception;

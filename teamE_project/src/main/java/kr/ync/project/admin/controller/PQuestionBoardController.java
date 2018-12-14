@@ -16,6 +16,15 @@ import kr.ync.project.admin.domain.SearchCriteria;
 import kr.ync.project.admin.service.PQuestionBoardService;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * PQuestionBoardController.java
+ *
+ * @Author : 노현호
+ * @Date   : 2018. 12. 14.
+ * @Description
+ * 상품문의 게시판을 위한  Controller
+ *
+ */
 @Controller
 @RequestMapping("/admin/PQuestionBoard/*")
 @Slf4j

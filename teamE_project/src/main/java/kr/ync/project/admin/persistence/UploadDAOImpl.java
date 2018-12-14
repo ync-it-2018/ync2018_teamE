@@ -12,6 +12,15 @@ import kr.ync.project.admin.domain.UploadVO;
 
 
 
+/**
+ * UploadDAOImpl.java
+ *
+ * @Autors : 이용희
+ * @Date : 2018. 12. 14.
+ * @Description
+ * Upload Mapper 연동을 위한 DAO 구현소스
+ * 
+ */
 @Repository
 public class UploadDAOImpl implements UploadDAO {
 

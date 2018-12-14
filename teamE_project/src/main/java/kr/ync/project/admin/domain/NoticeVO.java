@@ -4,6 +4,15 @@ import java.util.Arrays;
 import java.util.Date;
 
 
+/**
+ * NoticeVO.java
+ *
+ * @Autors : 이용희
+ * @Date : 2018. 12. 14.
+ * @Description
+ * 공지사항 VO 객체
+ * 
+ */
 public class NoticeVO {
 	private Integer notice_num;
 	private String notice_title;

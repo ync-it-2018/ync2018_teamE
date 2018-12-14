@@ -16,6 +16,15 @@ import kr.ync.project.admin.domain.SearchCriteria;
 import kr.ync.project.admin.service.QnABoardService;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * QnABoardController.java
+ *
+ * @Author : 노현호
+ * @Date   : 2018. 12. 14.
+ * @Description
+ * 사용자 QnA 게시판을 위한  Controller
+ *
+ */
 @Controller
 @RequestMapping("/admin/QnABoard/*")
 @Slf4j
