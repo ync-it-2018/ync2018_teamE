@@ -5,6 +5,15 @@ import java.util.Map;
 
 import org.springframework.http.MediaType;
 
+/**
+ * MediaUtils.java
+ *
+ * @Author : 노현호
+ * @Date   : 2018. 12. 14.
+ * @Description
+ * 이미지 확장자 삽입을 위한 Utils
+ *
+ */
 public class MediaUtils {
 
 	private static Map<String, MediaType> mediaMap;

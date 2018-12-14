@@ -20,6 +20,15 @@ import kr.ync.project.admin.service.NoticeBoardService;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * NoticeBoardController.java
+ *
+ * @Author : 노현호
+ * @Date   : 2018. 12. 14.
+ * @Description
+ * 공지사항 게시판을 위한 Controller
+ *
+ */
 @Controller
 @RequestMapping("/admin/noticeBoard/*")
 @Slf4j

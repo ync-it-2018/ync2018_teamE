@@ -19,6 +19,15 @@ import kr.ync.project.admin.domain.UserInfoVO;
 import kr.ync.project.admin.service.UserInfoService;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * UserInfoController.java
+ *
+ * @Author : 노현호
+ * @Date   : 2018. 12. 14.
+ * @Description
+ * 회원관리 게시판을 위한  Controller
+ *
+ */
 @Controller
 @RequestMapping("/admin/UserInfo/*")
 @Slf4j

@@ -25,6 +25,15 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import kr.ync.project.admin.service.UploadService;
 import kr.ync.project.admin.util.UploadFileUtils;
 import lombok.extern.slf4j.Slf4j;
+/**
+ * UploadController.java
+ *
+ * @Author : 노현호
+ * @Date   : 2018. 12. 14.
+ * @Description
+ * 이벤트 배너 업로드를 위한  Controller
+ *
+ */
 @RequestMapping("/admin/Event/*")
 @Controller
 @Slf4j

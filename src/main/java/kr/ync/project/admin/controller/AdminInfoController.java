@@ -21,6 +21,14 @@ import kr.ync.project.admin.domain.AdminVO;
 import kr.ync.project.admin.dto.LoginDTO;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * AdminInfoController.java
+ * @Author : 노현호
+ * @Date   : 2018. 12. 14.
+ * @Description
+ * 어드민 로그인 Controller
+ *
+ */
 @Controller
 @RequestMapping("/admin/user/*")
 @Slf4j
@@ -29,16 +37,39 @@ public class AdminInfoController {
 	@Autowired
 	private AdminService service;
 
+	/**
+	 * @Description
+	 * 어드민 로그인화면으로 이동하기 위한 경로 매핑
+	 * @Method Name : loginGET
+	 * @param dto	로그인 정보 객체 
+	 */
 	@GetMapping(value = "/login")
 	public void loginGET(@ModelAttribute("dto") LoginDTO dto) {
 
 	}
 	
+	/**
+	 * @Description
+	 * 어드민 로그인시 아이디 또는 비밀번호가 틀렸을 경우 에러페이지로 이동
+	 * @Method Name : loginError
+	 * @param dto	로그인 정보 객체
+	 * @return
+	 * 어드민 로그인에러 페이지로 이동
+	 */
 	@GetMapping(value = "/loginError")
 	public String loginError(@ModelAttribute("dto") LoginDTO dto) {
 		return "admin/user/loginError";
 	}	
 	
+	/**
+	 * @Description
+	 * 어드민 로그인 성공시 넘어가게 하기위한 메소드
+	 * @Method Name : loginPOST  
+	 * @param dto	로그인 정보 객체
+	 * @param session	현재 세션
+	 * @param model		모델 객체
+	 * @throws Exception 예외 처리
+	 */
 	@PostMapping(value = "/loginPost")
 	public void loginPOST(LoginDTO dto, HttpSession session, Model model) throws Exception {
 
@@ -61,6 +92,15 @@ public class AdminInfoController {
 
 	}
 
+	/**
+	 * @Description
+	 * 로그아웃을 위한 메소드
+	 * @Method Name : logout
+	 * @param request	요청 파라미터
+	 * @param response	반응 파라미터
+	 * @param session	현재 세션
+	 * @throws Exception	예외처리
+	 */
 	@GetMapping(value = "/logout")
 	public void logout(HttpServletRequest request, HttpServletResponse response, HttpSession session)
 			throws Exception {

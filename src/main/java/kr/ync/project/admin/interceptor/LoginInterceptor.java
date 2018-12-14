@@ -11,6 +11,15 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * LoginInterceptor.java
+ *
+ * @Author : 노현호
+ * @Date   : 2018. 12. 14.
+ * @Description
+ * 로그인시 성공여부를 처리하기 위한 클래스
+ *
+ */
 @Slf4j
 public class LoginInterceptor extends HandlerInterceptorAdapter {
 

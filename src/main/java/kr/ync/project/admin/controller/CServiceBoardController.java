@@ -15,6 +15,15 @@ import kr.ync.project.admin.domain.SearchCriteria;
 import kr.ync.project.admin.service.CServiceBoardService;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * CServiceBoardController.java
+ *
+ * @Author : 노현호
+ * @Date   : 2018. 12. 14.
+ * @Description
+ * 1대1 문의 게시판을 위한 Controller
+ *
+ */
 @Controller
 @RequestMapping("/admin/CServiceBoard/*")
 @Slf4j
@@ -105,8 +114,4 @@ public class CServiceBoardController {
 
 		model.addAttribute(service.read(ask_num));
 	}
-	
-
-
-	
 }

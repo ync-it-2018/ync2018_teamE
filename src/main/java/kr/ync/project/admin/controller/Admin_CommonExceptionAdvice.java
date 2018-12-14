@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 /**
  * CommonExceptionAdvice.java
  *
- * @Author : 노현호1111  
+ * @Author : 노현호  
  * @Date   : 2018. 10. 15.
  * @Description
  * 공통 error 처리용 controller
@@ -21,9 +21,9 @@ public class Admin_CommonExceptionAdvice {
 	 * @Description
 	 * 
 	 * @Method Name : errorModelAndView
-	 * @param ex
+	 * @param ex	에러 변수
 	 * @return
-	 * 
+	 * 에러 메세지 반환
 	 */
 	@ExceptionHandler(Exception.class)
 	private ModelAndView errorModelAndView(Exception ex) {

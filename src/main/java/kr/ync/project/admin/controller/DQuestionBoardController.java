@@ -16,6 +16,15 @@ import kr.ync.project.admin.domain.SearchCriteria;
 import kr.ync.project.admin.service.DQuestionBoardService;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * DQuestionBoardController.java
+ *
+ * @Author : 노현호
+ * @Date   : 2018. 12. 14.
+ * @Description
+ * 배송문의 게시판을 위한 Controller
+ *
+ */
 @Controller
 @RequestMapping("/admin/DQuestionBoard/*")
 @Slf4j
