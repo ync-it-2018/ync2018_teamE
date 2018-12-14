@@ -69,9 +69,6 @@ public class ProductDAOImpl implements ProductDAO {
 	}
 
 	
-
-	
-	
 	public List<ProductVO> AssemblyPC(int CATEGORY1_NUM, int CATEGORY2_NUM, String CATEGORY3_NUM,String TAG_1, String TAG_2, String TAG_3, String TAG_4, String TAG_5, String TAG_6) throws Exception {
 		 Map<String, Object> parameters = new HashMap<String, Object>();
 		 parameters.put("CATEGORY1_NUM", CATEGORY1_NUM);

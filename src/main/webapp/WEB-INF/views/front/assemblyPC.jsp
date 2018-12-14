@@ -113,8 +113,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	</div>
 	<!-- //breadcrumbs --> 
-	<!-- mobiles -->             
-		<!-- //breadcrumbs --> 
 	<!-- mobiles -->
 	<div class="mobiles">
 		<div class="container" style="padding-left: 0px;">

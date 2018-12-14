@@ -20,7 +20,7 @@ public interface ProductDAO {
 	public void updateReplyCnt(Integer bno, int amount) throws Exception;
 	
 	public List<ProductVO> listAll() throws Exception;
-
+	
 	public List<ProductVO> listPage(int page) throws Exception;
 	
 	public List<ProductVO> AssemblyPC(int CATEGORY1_NUM, int CATEGORY2_NUM, String CATEGORY3_NUM, String TAG_1, String TAG_2, String TAG_3, String TAG_4, String TAG_5, String TAG_6) throws Exception;

@@ -173,7 +173,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<option value='NZXT' >  NZXT  </option>
 									<option value='BYKSKI' >  BYKSKI  </option>
 									<option value='NOCTUA' >  NOCTUA  </option>
-									<option value='EVGA' >  'EVGA'  </option>
+									<option value='EVGA' >  EVGA  </option>
 								</select>
 								<input type="button" value="검색" onClick="Product_Search()">
 							</ul>

@@ -41,6 +41,8 @@ public class frontController {
 		String formattedDate = dateFormat.format(date);
 		
 		model.addAttribute("serverTime", formattedDate);
+		
+		model.addAttribute("listAll", service.listAll());
 			
 		return "front/index";
 	}

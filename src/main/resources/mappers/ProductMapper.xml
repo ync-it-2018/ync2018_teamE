@@ -10,6 +10,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	VALUES(SEQ_BOARD.NEXTVAL, #{title},#{content}, #{writer})
 </insert> -->
 
+<select id="listAll" resultType="ProductVO">
+	
+	  select * FROM  TE_PRODUCTIMG a, (SELECT PRO.PRODUCT_NUM, PRO.PRODUCT_NAME, PRO.PRODUCT_PRICE
+									    FROM TE_PRODUCT PRO, TE_PRODUCTIMG IMG
+		        						WHERE  PRO.PRODUCT_NUM = IMG.PRODUCT_NUM
+ 							    		ORDER BY COUNT DESC ) b
+								   	   WHERE a.PRODUCT_NUM = b.PRODUCT_NUM
+	<![CDATA[
+	 	   AND rownum <= 3 
+	]]>  
+
+</select>
 
 <select id="read" parameterType="map" resultType="ProductVO">
 
@@ -128,6 +140,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	   	   IMG.PRODUCTIMG_L,
 	   	   PRO.PRODUCT_CONTENT,
 	   	   PRO.PRODUCT_NUM,
+	   	   PRO.PRODUCT_MILE,
 	   	   CA1.CATEGORY1_NAME,
 	   	   CA2.CATEGORY2_NAME,
 	   	   CA3.CATEGORY3_NAME

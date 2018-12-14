@@ -172,7 +172,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<option value='알파스캔' >  알파스캔   </option>
 									<option value='제이씨현' >  제이씨현  </option>
 									<option value='필립스' >  필립스  </option>
-									<option value='BenQ' >  'BenQ'  </option>
+									<option value='BenQ' >  BenQ  </option>
 								</select>
 								<input type="button" value="검색" onClick="Product_Search()">
 							</ul>
