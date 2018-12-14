@@ -1035,9 +1035,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				
 								<tbody><tr> 
 					<td valign="top" bgcolor="f3f3f4" width="700"><img src="resources/front/images/chuchyn_412_1.png"></td>
-					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=1"><img src="resources/front/images/chuchyn_422_1.png"></a></td>
-					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=119921"><img src="resources/front/images/chuchyn_423_1.png"></a></td>
-					<td valign="top" bgcolor="f3f3f4"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=119923"><img src="resources/front/images/chuchyn_424_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=7"><img src="resources/front/images/chuchyn_422_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=7"><img src="resources/front/images/chuchyn_423_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4"><a href="detail?PRODUCT_NUM=7"><img src="resources/front/images/chuchyn_424_1.png"></a></td>
 				</tr>
 			</tbody></table>
 		</div>
@@ -1046,9 +1046,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				
 								<tbody><tr> 
 					<td valign="top" bgcolor="f3f3f4" width="700"><img src="resources/front/images/chuchyn_413_1.png"></td>
-					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=118467"><img src="resources/front/images/chuchyn_425_1.png"></a></td>
-					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=119040"><img src="resources/front/images/chuchyn_426_1.png"></a></td>
-					<td valign="top" bgcolor="f3f3f4"><a href="http://www.pc-factory.co.kr/shop/system_detail.html?pd_no=119039"><img src="resources/front/images/chuchyn_427_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=7"><img src="resources/front/images/chuchyn_425_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=7"><img src="resources/front/images/chuchyn_426_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4"><a href="detail?PRODUCT_NUM=7"><img src="resources/front/images/chuchyn_427_1.png"></a></td>
 				</tr>
 			</tbody></table>
 		</div>
@@ -1057,9 +1057,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				
 								<tbody><tr> 
 					<td valign="top" bgcolor="f3f3f4" width="700"><img src="resources/front/images/chuchyn_414_1.png"></td>
-					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=118467"><img src="resources/front/images/chuchyn_428_1.png"></a></td>
-					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://www.pc-factory.co.kr/shop/system_detail.html?pd_no=119039"><img src="resources/front/images/chuchyn_429_1.png"></a></td>
-					<td valign="top" bgcolor="f3f3f4"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=107952"><img src="resources/front/images/chuchyn_430_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=7"><img src="resources/front/images/chuchyn_428_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=7"><img src="resources/front/images/chuchyn_429_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4"><a href="detail?PRODUCT_NUM=7"><img src="resources/front/images/chuchyn_430_1.png"></a></td>
 				</tr>
 			</tbody></table>
 		</div>
@@ -1068,9 +1068,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				
 								<tbody><tr> 
 					<td valign="top" bgcolor="f3f3f4" width="700"><img src="resources/front/images/chuchyn_415_1.png"></td>
-					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=119040"><img src="resources/front/images/chuchyn_431_1.png"></a></td>
-					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://www.pc-factory.co.kr/shop/system_detail.html?pd_no=119039"><img src="resources/front/images/chuchyn_432_1.png"></a></td>
-					<td valign="top" bgcolor="f3f3f4"><a href="http://www.pc-factory.co.kr/shop/system_detail.html?pd_no=107952"><img src="resources/front/images/chuchyn_433_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=7"><img src="resources/front/images/chuchyn_431_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=7"><img src="resources/front/images/chuchyn_432_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4"><a href="detail?PRODUCT_NUM=7"><img src="resources/front/images/chuchyn_433_1.png"></a></td>
 				</tr>
 			</tbody></table>
 		</div>
@@ -1079,9 +1079,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				
 								<tbody><tr> 
 					<td valign="top" bgcolor="f3f3f4" width="700"><img src="resources/front/images/chuchyn_416_1.png"></td>
-					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=119039"><img src="resources/front/images/chuchyn_434_1.png"></a></td>
-					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=109065"><img src="resources/front/images/chuchyn_435_1.png"></a></td>
-					<td valign="top" bgcolor="f3f3f4"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=107874"><img src="resources/front/images/chuchyn_436_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=7"><img src="resources/front/images/chuchyn_434_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=7"><img src="resources/front/images/chuchyn_435_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4"><a href="detail?PRODUCT_NUM=7"><img src="resources/front/images/chuchyn_436_1.png"></a></td>
 				</tr>
 			</tbody></table>
 		</div>
@@ -1090,9 +1090,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				
 								<tbody><tr> 
 					<td valign="top" bgcolor="f3f3f4" width="700"><img src="resources/front/images/chuchyn_417_1.png"></td>
-					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://pc-factory.co.kr/shop/product_detail.html?pd_no=108927"><img src="resources/front/images/chuchyn_437_1.png"></a></td>
-					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=119921"><img src="resources/front/images/chuchyn_438_1.png"></a></td>
-					<td valign="top" bgcolor="f3f3f4"><a href="http://pc-factory.co.kr/shop/product_detail.html?pd_no=107874"><img src="resources/front/images/chuchyn_439_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=7"><img src="resources/front/images/chuchyn_437_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=7"><img src="resources/front/images/chuchyn_438_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4"><a href="detail?PRODUCT_NUM=7"><img src="resources/front/images/chuchyn_439_1.png"></a></td>
 				</tr>
 			</tbody></table>
 		</div>
@@ -1101,9 +1101,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				
 								<tbody><tr> 
 					<td valign="top" bgcolor="f3f3f4" width="700"><img src="resources/front/images/chuchyn_418_1.png"></td>
-					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=108927"><img src="resources/front/images/chuchyn_440_1.png"></a></td>
-					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=119921"><img src="resources/front/images/chuchyn_441_1.png"></a></td>
-					<td valign="top" bgcolor="f3f3f4"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=110577"><img src="resources/front/images/chuchyn_442_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=7"><img src="resources/front/images/chuchyn_440_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=7"><img src="resources/front/images/chuchyn_441_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4"><a href="detail?PRODUCT_NUM=7"><img src="resources/front/images/chuchyn_442_1.png"></a></td>
 				</tr>
 			</tbody></table>
 		</div>
@@ -1112,9 +1112,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				
 								<tbody><tr> 
 					<td valign="top" bgcolor="f3f3f4" width="700"><img src="resources/front/images/chuchyn_461_1.png"></td>
-					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=118467"><img src="resources/front/images/chuchyn_462_1.png"></a></td>
-					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="http://www.pc-factory.co.kr/shop/system_detail.html?pd_no=119039"><img src="resources/front/images/chuchyn_463_1.png"></a></td>
-					<td valign="top" bgcolor="f3f3f4"><a href="http://pc-factory.co.kr/shop/system_detail.html?pd_no=119956"><img src="resources/front/images/chuchyn_464_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=7"><img src="resources/front/images/chuchyn_462_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4" style="border-right:1px solid #e1e1e1"><a href="detail?PRODUCT_NUM=7"><img src="resources/front/images/chuchyn_463_1.png"></a></td>
+					<td valign="top" bgcolor="f3f3f4"><a href="detail?PRODUCT_NUM=7"><img src="resources/front/images/chuchyn_464_1.png"></a></td>
 				</tr>
 			</tbody></table>
 		</div>
