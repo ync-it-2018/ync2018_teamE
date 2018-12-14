@@ -10,6 +10,15 @@ import kr.ync.project.admin.persistence.UploadDAO;
 
 
 
+/**
+ * UploadServiceImpl.java
+ *
+ * @Autors : 이용희
+ * @Date : 2018. 12. 14.
+ * @Description
+ * Upload 서비스 구현소스
+ * 
+ */
 @Service
 public class UploadServiceImpl implements UploadService {
 

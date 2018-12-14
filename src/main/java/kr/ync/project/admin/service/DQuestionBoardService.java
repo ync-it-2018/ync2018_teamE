@@ -6,6 +6,15 @@ import kr.ync.project.admin.domain.QnAVO;
 import kr.ync.project.admin.domain.Criteria;
 import kr.ync.project.admin.domain.SearchCriteria;
 
+/**
+ * DQuestionBoardService.java
+ *
+ * @Autors : 이용희
+ * @Date : 2018. 12. 14.
+ * @Description
+ * 배송문의 서비스 인터페이스
+ * 
+ */
 public interface DQuestionBoardService {
 
 	public void regist(QnAVO board) throws Exception;

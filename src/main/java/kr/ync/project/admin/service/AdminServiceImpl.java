@@ -9,6 +9,15 @@ import kr.ync.project.admin.domain.AdminVO;
 import kr.ync.project.admin.dto.LoginDTO;
 import kr.ync.project.admin.persistence.AdminDAO;
 
+/**
+ * AdminServiceImpl.java
+ *
+ * @Autors : 이용희
+ * @Date : 2018. 12. 14.
+ * @Description
+ * 로그인 서비스 구현 소스
+ * 
+ */
 @Service
 public class AdminServiceImpl implements AdminService {
 

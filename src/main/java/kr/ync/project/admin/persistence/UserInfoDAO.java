@@ -6,6 +6,14 @@ import kr.ync.project.admin.domain.UserInfoVO;
 import kr.ync.project.admin.domain.Criteria;
 import kr.ync.project.admin.domain.SearchCriteria;
 
+/**
+ * UserInfoDAO.java
+ *
+ * @Autors : 이용희
+ * @Date : 2018. 12. 14.
+ * @Description
+ * 회원관리 Mapper 연동을 위한 DAO 인터페이스
+ */
 public interface UserInfoDAO {
 
 	public UserInfoVO read(String user_id) throws Exception;

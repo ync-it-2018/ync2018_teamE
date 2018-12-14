@@ -4,6 +4,15 @@ import java.util.Arrays;
 import java.util.Date;
 
 
+/**
+ * CServiceVO.java
+ *
+ * @Autors : 이용희
+ * @Date : 2018. 12. 14.
+ * @Description
+ * 어드민 1:1 문의 VO 객체
+ * 
+ */
 public class CServiceVO {
 	private Integer ask_num;
 	private String ask_title;

@@ -6,6 +6,15 @@ import kr.ync.project.admin.domain.CServiceVO;
 import kr.ync.project.admin.domain.Criteria;
 import kr.ync.project.admin.domain.SearchCriteria;
 
+/**
+ * CServiceBoardService.java
+ *
+ * @Autors : 이용희
+ * @Date : 2018. 12. 14.
+ * @Description
+ * 1:1문의 서비스 인터페이스
+ * 
+ */
 public interface CServiceBoardService {
 
 	public void regist(CServiceVO board) throws Exception;

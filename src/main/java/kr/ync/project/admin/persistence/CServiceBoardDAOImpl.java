@@ -12,6 +12,15 @@ import kr.ync.project.admin.domain.CServiceVO;
 import kr.ync.project.admin.domain.Criteria;
 import kr.ync.project.admin.domain.SearchCriteria;
 
+/**
+ * CServiceBoardDAOImpl.java
+ *
+ * @Autors : 이용희
+ * @Date : 2018. 12. 14.
+ * @Description
+ * 1:1문의 Mapper 연동을 위한 DAO 구현 소스
+ * 
+ */
 @Repository
 public class CServiceBoardDAOImpl implements CServiceBoardDAO {
 

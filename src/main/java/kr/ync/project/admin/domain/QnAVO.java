@@ -4,6 +4,15 @@ import java.util.Arrays;
 import java.util.Date;
 
 
+/**
+ * QnAVO.java
+ *
+ * @Autors : 이용희
+ * @Date : 2018. 12. 14.
+ * @Description
+ * QnA VO 객체
+ * 
+ */
 public class QnAVO {
 	private Integer qna_num;
 	private String qna_title;

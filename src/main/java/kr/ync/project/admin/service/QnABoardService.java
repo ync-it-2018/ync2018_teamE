@@ -6,6 +6,15 @@ import kr.ync.project.admin.domain.QnAVO;
 import kr.ync.project.admin.domain.Criteria;
 import kr.ync.project.admin.domain.SearchCriteria;
 
+/**
+ * QnABoardService.java
+ *
+ * @Autors : 이용희
+ * @Date : 2018. 12. 14.
+ * @Description
+ * QnA 서비스 인터페이스
+ * 
+ */
 public interface QnABoardService {
 
 	public void regist(QnAVO board) throws Exception;

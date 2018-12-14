@@ -13,6 +13,15 @@ import kr.ync.project.admin.domain.SearchCriteria;
 import kr.ync.project.admin.persistence.DQuestionBoardDAO;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * DQuestionBoardServiceImpl.java
+ *
+ * @Autors : 이용희
+ * @Date : 2018. 12. 14.
+ * @Description
+ * 배송문의 서비스 구현소스
+ * 
+ */
 @Service
 @Slf4j
 public class DQuestionBoardServiceImpl implements DQuestionBoardService {

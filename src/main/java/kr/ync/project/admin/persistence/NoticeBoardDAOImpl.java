@@ -12,6 +12,15 @@ import kr.ync.project.admin.domain.NoticeVO;
 import kr.ync.project.admin.domain.Criteria;
 import kr.ync.project.admin.domain.SearchCriteria;
 
+/**
+ * NoticeBoardDAOImpl.java
+ *
+ * @Autors : 이용희
+ * @Date : 2018. 12. 14.
+ * @Description
+ * 공지사항 Mapper 연동을 위한 DAO 구현소스
+ * 
+ */
 @Repository
 public class NoticeBoardDAOImpl implements NoticeBoardDAO {
 

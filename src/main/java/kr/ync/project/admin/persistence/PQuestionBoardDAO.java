@@ -6,6 +6,15 @@ import kr.ync.project.admin.domain.QnAVO;
 import kr.ync.project.admin.domain.Criteria;
 import kr.ync.project.admin.domain.SearchCriteria;
 
+/**
+ * PQuestionBoardDAO.java
+ *
+ * @Autors : 이용희
+ * @Date : 2018. 12. 14.
+ * @Description
+ * 상품문의 Mapper 연동을 위한 DAO 인터페이스
+ * 
+ */
 public interface PQuestionBoardDAO {
 
 	public void create(QnAVO vo) throws Exception;

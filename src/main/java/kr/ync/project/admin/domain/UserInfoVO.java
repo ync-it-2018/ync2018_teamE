@@ -5,6 +5,15 @@ import java.util.Date;
 
 import lombok.ToString;
 
+/**
+ * UserInfoVO.java
+ *
+ * @Autors : 이용희
+ * @Date : 2018. 12. 14.
+ * @Description
+ * 회원관리 VO 객체
+ * 
+ */
 @ToString
 public class UserInfoVO {
 	private String user_id;

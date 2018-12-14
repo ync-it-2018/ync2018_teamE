@@ -1,5 +1,14 @@
 package kr.ync.project.admin.domain;
 
+/**
+ * Criteria.java
+ *
+ * @Autors : 이용희
+ * @Date : 2018. 12. 14.
+ * @Description
+ * 페이징 처리를 위한 클래스
+ * 
+ */
 public class Criteria {
 
 	private int page;
